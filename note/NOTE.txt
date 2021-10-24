@@ -1,0 +1,24 @@
+Structure:Management
+Table:
+---tb_user:
++)user_id
++)user_nick
++)user_pass
++)user_level
++)user_status
+---tb_userinfo
++)user_id
++)user_name
++)user_dob(ngày sinh)
++)user_job
++)user_email
++)user_phone( đt)
++)user_address(địa chỉ)
++)group_id
+---tb_calender:
++)user_id
++)group_id
++)cal_name( tên lịch)
++)create_on(tgian tạo)
++)date_time(tgian)
++)note(ghi chú)
