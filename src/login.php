@@ -1,7 +1,7 @@
 <?php include('./reuse/header.php'); ?>
 
 <div class="container-fluid px-0">
-    <section class="vh-100" style="background-color: #eee;">
+    <section class="vh-100" style="background-image: url('../imgs/BG.jpg')">
         <div class="container h-100">
             <div class="row d-flex justify-content-center align-items-center h-75">
                 <div class=" col-md-5 col-lg-5">
