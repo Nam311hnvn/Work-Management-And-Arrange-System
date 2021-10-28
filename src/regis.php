@@ -1,6 +1,6 @@
 <?php include('./reuse/header.php'); ?>
 <div class="container-fluid px-0">
-    <div class="row">
+    <div class="row p-0 m-0">
         <div class="col">
             <nav class="navbar navbar-expand-lg navbar-light">
                 <div class="container-fluid">
@@ -37,32 +37,32 @@
                                     <form class="mx-4" action="" method="post">
                                         <h2 class="fw-bold text-center">Sign Up!</h2>
                                         <div class="input-group flex-nowrap py-3">
-                                            <span class="input-group-text" id="addon-wrapping">Username</span>
+                                            <span class="input-group-text col-2" id="addon-wrapping">Username</span>
                                             <input type="text" class="form-control" placeholder="Enter your Username"
                                                 aria-label="Username" aria-describedby="addon-wrapping" id="Username">
                                         </div>
                                         <div class="input-group flex-nowrap pb-3">
-                                            <span class="input-group-text" id="addon-wrapping">Name</span>
+                                            <span class="input-group-text col-2" id="addon-wrapping">Name</span>
                                             <input type="text" class="form-control" placeholder="Enter your Name"
                                                 aria-label="Name" aria-describedby="addon-wrapping" id="Name">
                                         </div>
                                         <div class="input-group flex-nowrap pb-3">
-                                            <span class="input-group-text" id="addon-wrapping">Job</span>
+                                            <span class="input-group-text col-2" id="addon-wrapping">Job</span>
                                             <input type="text" class="form-control" placeholder="Job"
                                                 aria-label="Job" aria-describedby="addon-wrapping" id="Job">
                                         </div>
                                         <div class="input-group flex-nowrap pb-3">
-                                            <span class="input-group-text" id="addon-wrapping">Email</span>
+                                            <span class="input-group-text col-2" id="addon-wrapping">Email</span>
                                             <input type="text" class="form-control" placeholder="Enter your Email"
                                                 aria-label="Email" aria-describedby="addon-wrapping" id="Email">
                                         </div>
                                         <div class="input-group flex-nowrap pb-3">
-                                            <span class="input-group-text" id="addon-wrapping">Password</span>
+                                            <span class="input-group-text col-2" id="addon-wrapping">Password</span>
                                             <input type="text" class="form-control" placeholder="Enter your Password"
                                                 aria-label="Password" aria-describedby="addon-wrapping" id="Password">
                                         </div>
                                         <div class="input-group flex-nowrap pb-3">
-                                            <span class="input-group-text" id="addon-wrapping">Confirm Password</span>
+                                            <span class="input-group-text col-2" id="addon-wrapping">Confirm Password</span>
                                             <input type="text" class="form-control" placeholder="Enter your Password"
                                                 aria-label="Confirm_Password" aria-describedby="addon-wrapping" id="Password2">
                                         </div>
