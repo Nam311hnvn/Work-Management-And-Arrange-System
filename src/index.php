@@ -19,7 +19,7 @@ include('./reuse/header.php');
                                 <span class="fs-5 ps-0">
                                     Hãy đăng nhập.
                                 </span>
-                                <a class="nav-link text-danger fs-5" aria-current="page" href="./login.php">Đăng nhập</a>
+                                <a class="nav-link text-danger fs-5" aria-current="page" href="./login.php">(Đăng nhập)</a>
                             </li>
                         </ul>
                     </div>
