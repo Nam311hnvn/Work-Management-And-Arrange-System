@@ -17,9 +17,9 @@ include('./reuse/header.php');
                         <ul class="navbar-nav">
                             <li class="nav-item d-flex align-items-center">
                                 <span class="fs-5 ps-0">
-                                    Hãy đăng nhập.
+                                    First you have to sign in.
                                 </span>
-                                <a class="nav-link text-danger fs-5" aria-current="page" href="./login.php">(Đăng nhập)</a>
+                                <a class="nav-link text-danger fs-5" aria-current="page" href="./login.php">Sign in</a>
                             </li>
                         </ul>
                     </div>
@@ -32,9 +32,11 @@ include('./reuse/header.php');
 
 <div class="bg-image" style="background-image: url('../imgs/BG.jpg'); height: 100vh">
     <div class="container-float">
-        <div class="row">
-            <div class="col">
-                <a class="text-white"></a><h4>Free Fire</h4></a>
+        <div class="row d-flex justify-content-center align-items-center">
+            <div class="col-md-6 position-absolute top-50 start-30">
+                <h1 class="text-center text-white fs-1">TIME IS FREE, BUT IT'S PRICELESS.</h1>
+                <h1 class="text-center text-white fs-1">YOU CAN'T OWN IT BUT YOU CAN USE IT.</h1>
+                <h1 class="text-center text-white fs-1">YOU CAN'T KEEP IT BUT YOU CAN SPEND.</h1>
             </div>
         </div>
     </div>
