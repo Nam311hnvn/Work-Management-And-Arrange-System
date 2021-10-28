@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 24, 2021 at 04:06 PM
+-- Generation Time: Oct 28, 2021 at 03:54 PM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.10
 
@@ -39,6 +39,24 @@ CREATE TABLE `tb_calendar` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `tb_project`
+--
+
+CREATE TABLE `tb_project` (
+  `pj_id` int(30) UNSIGNED NOT NULL,
+  `pj_name` varchar(200) NOT NULL,
+  `pj_note` text NOT NULL,
+  `pj_status` varchar(50) NOT NULL,
+  `pj_start` date NOT NULL,
+  `pj_end` date NOT NULL,
+  `manager_id` int(11) NOT NULL,
+  `user_ids` text NOT NULL,
+  `date_create` datetime NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `tb_user`
 --
 
@@ -47,6 +65,7 @@ CREATE TABLE `tb_user` (
   `user_nick` varchar(30) NOT NULL,
   `user_pass` varchar(100) NOT NULL,
   `user_level` int(11) DEFAULT NULL,
+  `regis_date` datetime NOT NULL DEFAULT current_timestamp(),
   `user_status` tinyint(1) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -79,6 +98,12 @@ ALTER TABLE `tb_calendar`
   ADD KEY `user_id` (`user_id`);
 
 --
+-- Indexes for table `tb_project`
+--
+ALTER TABLE `tb_project`
+  ADD PRIMARY KEY (`pj_id`);
+
+--
 -- Indexes for table `tb_user`
 --
 ALTER TABLE `tb_user`
@@ -94,6 +119,12 @@ ALTER TABLE `tb_userinfo`
 --
 -- AUTO_INCREMENT for dumped tables
 --
+
+--
+-- AUTO_INCREMENT for table `tb_project`
+--
+ALTER TABLE `tb_project`
+  MODIFY `pj_id` int(30) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `tb_user`
