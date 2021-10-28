@@ -15,10 +15,11 @@ include('./reuse/header.php');
 
                     <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
                         <ul class="navbar-nav">
-                            <li class="nav-item">
-                                <a class="nav-link" aria-current="page" href="./login.php">
-                                    <h5 class="text-danger">(Đăng nhập)</h5>
-                                </a>
+                            <li class="nav-item d-flex align-items-center">
+                                <span class="fs-5 ps-0">
+                                    Hãy đăng nhập.
+                                </span>
+                                <a class="nav-link text-danger fs-5" aria-current="page" href="./login.php">Đăng nhập</a>
                             </li>
                         </ul>
                     </div>
