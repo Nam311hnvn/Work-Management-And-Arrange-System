@@ -39,8 +39,6 @@
                                     <li><a class="dropdown-item" href="#"><i class="fas fa-power-off"></i>Logout</a></li>
                                 </ul>
                             </li>
-
-
                         </ul>
                     </div>
                 </div>
