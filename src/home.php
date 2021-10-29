@@ -13,7 +13,7 @@ include('./reuse/header.php');
                         <span class="navbar-toggler-icon"></span>
                     </button>
 
-                    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                    <div class="collapse navbar-collapse" id="navbarNav">
                         <ul class="navbar-nav">
                             <nav class="navbar navbar-expand-lg ">
                                 <li class="nav-item">
@@ -28,7 +28,6 @@ include('./reuse/header.php');
                                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                         <li><a class="dropdown-item" href="#">Add new</a></li>
                                         <li><a class="dropdown-item" href="#">List</a></li>
-
                                     </ul>
                                 </li>
                                 <li class="nav-item">
