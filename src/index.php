@@ -59,8 +59,6 @@
         </div>
     </div>
 
-
-
     <?php
 include('./reuse/footer.php');
 ?>
