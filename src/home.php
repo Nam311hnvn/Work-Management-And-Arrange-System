@@ -1,9 +1,6 @@
 <?php
 include('./reuse/header.php');
-?>
-
-
-                    
+?>                 
 <div class="container-fluid">
     <div class="col-12">
         <div class="card">
@@ -24,8 +21,6 @@ include('./reuse/header.php');
                     </tr>
                 </thead>
             </table>
->>>>>>> master
-
         </div>
         <div class="col-md-4">
             <div class="class col-12">
