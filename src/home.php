@@ -1,54 +1,57 @@
 <?php
 include('./reuse/header.php');
 ?>
-<div class="container-fluid px-0">
-    <div class="row p-0 m-0">
-        <div class="col">
-            <nav class="navbar navbar-expand-lg " style="background-color:#ccebff">
-                <div class="container-fluid">
-                    <a class="navbar-brand" href="index.php">
-                        <h3 class="text" href="./home.php"><b>Task Management System</b></h3>
-                    </a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
 
-                    <div class="collapse navbar-collapse" id="navbarNav">
-                        <ul class="navbar-nav">
-                            <nav class="navbar navbar-expand-lg ">
-                                <li class="nav-item">
-                                    <a class="nav-link " aria-current="page" href="#">                                    
-                                        <p>Dashboard</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                        Projects
-                                    </a>
-                                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                        <li><a class="dropdown-item" href="#">Add new</a></li>
-                                        <li><a class="dropdown-item" href="#">List</a></li>
-                                    </ul>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">
-                                        Task
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">
-                                        Report
-                                    </a>
-                                </li>
 
-                        </ul>
+                    
+<div class="container-fluid">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body">
+                Welcome !
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-8">
+            <table class="table table-responsive">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Project</th>
+                        <th scope="col">Status</th>
+                        <th scope="col"></th>
+                    </tr>
+                </thead>
+            </table>
+>>>>>>> master
+
+        </div>
+        <div class="col-md-4">
+            <div class="class col-12">
+                <div class="small-box bg-light shadow-sm border">
+                    <div class="inner">
+                        <p>Total Projects</p>
+                    </div>
+                    <div class="icon">
+                        <i class="fa fa-layer-group"></i>
                     </div>
                 </div>
-            </nav>
-
+            </div>
+            <div class="class col-12">
+                <div class="small-box bg-light shadow-sm border">
+                    <div class="inner">
+                        <p>Total Tasks</p>
+                    </div>
+                    <div class="icon">
+                        <i class="fa fa-tasks"></i>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
+
 
 
 
