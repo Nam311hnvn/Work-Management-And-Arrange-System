@@ -45,7 +45,7 @@
     </div>
 <!-- Section Regis -->
     <div class="container-fluid px-0">
-        <section class="vh-100" style="background-image: url('../imgs/BG.jpg')">
+        <section class="vh-100" style="background-image: url('../asset/imgs/BG.jpg')">
             <div class="container h-100">
                 <div class="row d-flex justify-content-center align-items-center h-75">
                     <div class=" col-md-9 col-lg-9">
@@ -59,12 +59,12 @@
                                                 <span class="input-group-text col-2" id="addon-wrapping">Username</span>
                                                 <input type="text" class="form-control"
                                                     placeholder="Enter your Username" aria-label="Username"
-                                                    aria-describedby="addon-wrapping" id="Username">
+                                                    aria-describedby="addon-wrapping" id="Username" required autofocus>
                                             </div>
                                             <div class="input-group flex-nowrap pb-3">
                                                 <span class="input-group-text col-2" id="addon-wrapping">Name</span>
                                                 <input type="text" class="form-control" placeholder="Enter your Name"
-                                                    aria-label="Name" aria-describedby="addon-wrapping" id="Name">
+                                                    aria-label="Name" aria-describedby="addon-wrapping" id="Name" required>
                                             </div>
                                             <div class="input-group flex-nowrap pb-3">
                                                 <span class="input-group-text col-2" id="addon-wrapping">Job</span>
@@ -73,21 +73,21 @@
                                             </div>
                                             <div class="input-group flex-nowrap pb-3">
                                                 <span class="input-group-text col-2" id="addon-wrapping">Email</span>
-                                                <input type="text" class="form-control" placeholder="Enter your Email"
-                                                    aria-label="Email" aria-describedby="addon-wrapping" id="Email">
+                                                <input type="email" class="form-control" placeholder="Enter your Email"
+                                                    aria-label="Email" aria-describedby="addon-wrapping" id="Email" required>
                                             </div>
                                             <div class="input-group flex-nowrap pb-3">
                                                 <span class="input-group-text col-2" id="addon-wrapping">Password</span>
-                                                <input type="text" class="form-control"
+                                                <input type="password" class="form-control"
                                                     placeholder="Enter your Password" aria-label="Password"
-                                                    aria-describedby="addon-wrapping" id="Password">
+                                                    aria-describedby="addon-wrapping" id="Password" required>
                                             </div>
                                             <div class="input-group flex-nowrap pb-3">
                                                 <span class="input-group-text col-2" id="addon-wrapping">Confirm
                                                     Password</span>
-                                                <input type="text" class="form-control"
+                                                <input type="password" class="form-control"
                                                     placeholder="Enter your Password" aria-label="Confirm_Password"
-                                                    aria-describedby="addon-wrapping" id="Password2">
+                                                    aria-describedby="addon-wrapping" id="Password2" required>
                                             </div>
                                             <div class="d-flex justify-content-start mb-3 mb-lg-4">
                                                 <button type="submit" class="btn btn-primary" name='Signin'
