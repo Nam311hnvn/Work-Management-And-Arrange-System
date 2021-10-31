@@ -1,6 +1,6 @@
 <?php include('../reuse/header.php'); ?>
 <div class="content-header">
-    <div class="container-fluid">
+    <div class="container">
         <div class="row mb-2">
             <div class="col-sm-4">
                 <h4>Task List</h4>
@@ -10,17 +10,17 @@
     </div>
 </div>
 
-<div class="container-fluid">
+<div class="container border border-top border-primary rounded-2">
     <div class="row pt-2">
         <div class="col">
             <div class="mb-2 mb-lg-0 d-flex justify-content-end">
                 <div class="col-md-2 ">
                     <div class="card-tools">
-                        <a class="btn btn-sm border-primary me-2" href=""> <i class="fal fa-plus"></i>Add New Project</a>
+                        <a class="btn btn-sm btn-outline-success border-primary me-2" href="new_project.php"> <i class="fal fa-plus"></i>Add New Project</a>
                     </div>
                 </div>
             </div>
-            <div class="container-fluid">
+            <div class="container-fluid ">
                 <div class="row pt-2">
                     <div class="col">
                         <div class="mb-2 mb-lg-0 d-flex justify-content-end">
@@ -44,14 +44,28 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <th scope="row">1</th>
-                                <td>Mark</td>
-                                <td>Otto</td>
-                                <td>@mdo</td>
-                                <td>Otto</td>
-                                <td>@mdo</td>
-                            </tr>
+                            <?php
+                            //Bước 1:
+                            include '../reuse/config.php';
+                            //Bước 2:
+                            $sql = "SELECT * FROM tb_project";
+                            $result = mysqli_query($conn, $sql);
+                            if (mysqli_num_rows($result) > 0) {
+                                while ($row = mysqli_fetch_assoc($result)) {
+                                    echo '<tr>';
+                                    echo '<th scope="row">' . $row['pj_id'] . '</th>';
+                                    echo '<td>' . $row['pj_name'] . '</td>';
+                                    echo '<td>' . $row['pj_start'] . '</td>';
+                                    echo '<td>' . $row['pj_end'] . '</td>';
+                                    echo '<td>' . $row['pj_status'] . '</td>';
+                                    echo '<td>';
+                                    echo '<a class = "btn btn-primary me-2" href = "">Sửa</a>';
+                                    echo '<a class = "btn btn-danger" href = "">Xóa</a>';
+                                    echo '<td>';
+                                    echo '</tr>';
+                                }
+                            }
+                            ?>
                         </tbody>
                     </table>
                 </div>

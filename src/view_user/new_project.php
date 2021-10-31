@@ -15,7 +15,7 @@
             <form action="">
                 <div class="row">
                     <div class="col-md-6">
-                        <div class="form-group ">
+                        <div class="form-group">
                             <label for="" class="control-label">Name</label>
                             <input type="text" class="form-control form-control-sm border border-primary border-1 rounded">
                         </div>
