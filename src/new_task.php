@@ -4,7 +4,7 @@
         <div class="container ">
             <div class="row mb-2 ">
                 <div class="col-sm-4">
-                    <h4>New Project</h4>
+                    <h4>New Task</h4>
                 </div>
                 <hr class="border border-bottom-5 border-primary">
             </div>
@@ -17,7 +17,14 @@
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label for="" class="control-label">Name</label>
+                                <label for="" class="control-label">Name Project</label>
+                                <input type="text" class="form-control form-control-sm border border-primary border-1 rounded">
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="" class="control-label">Name Task</label>
                                 <input type="text" class="form-control form-control-sm border border-primary border-1 rounded">
                             </div>
                         </div>
@@ -49,17 +56,11 @@
 
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label for="" class="control-label">Project Team Members</label>
-                                <input type="text" class="form-control form-control-sm border border-primary border-1 rounded">
-                            </div>
-                        </div>
-
-                        <div class="col-md-6">
-                            <div class="form-group">
                                 <label for="" class="control-label">Note</label>
                                 <input type="text" class="form-control form-control-sm border border-primary border-1 rounded">
                             </div>
                         </div>
+                        
                         <div class="border-3 border-top mt-3 px-0 ">
                             <div class="d-flex w-100 justify-content-center align-items-center">
                                 <button type="button" class="btn btn-primary mt-2">Save</button>

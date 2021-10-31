@@ -1,7 +1,7 @@
 <?php include('./reuse/header.php'); ?>
 <div class="content-header">
 	<div class="container">
-		<div class="row mb-2 ">
+		<div class="row mb-2 mt-2">
 			<div class="col-sm-4">
 				<h4>Project List</h4>
 			</div>
@@ -13,10 +13,17 @@
 <div class="container border border-top border-primary rounded-2">
 	<div class="row pt-2">
 		<div class="col">
-			<div class="mb-2 mb-lg-0 d-flex justify-content-end">
+			<div class="mb-2  mb-lg-0 d-flex justify-content-end">
+				<div class="col-md-2 ">
+					<div class="card-tools">
+						<a class="btn btn-sm btn-outline-success border-primary me-2" href="new_project.php"> <i class="fal fa-plus"></i>Add New Project</a>
+					</div>
+				</div>
+			</div>
+			<div class="mt-2 mb-2 mb-lg-0 d-flex justify-content-end">
 				<div class="col-md-2 ">
 					<form class="d-flex">
-						<input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+						<input class="form-control me-2 " type="search" placeholder="Search" aria-label="Search">
 						<button class="btn btn-outline-success" type="submit">Search</button>
 					</form>
 				</div>
