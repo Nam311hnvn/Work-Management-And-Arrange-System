@@ -42,9 +42,9 @@
             </div>
         </div>
     </div>
-<!-- Section Login -->
+    <!-- Section Login -->
     <div class="container-fluid px-0">
-        <section class="vh-100" style="background-image: url('../imgs/BG.jpg')">
+        <section class="vh-100" style="background-image: url('../asset/imgs/BG.jpg')">
             <div class="container h-100">
                 <div class="row d-flex justify-content-center align-items-center h-75">
                     <div class=" col-md-5 col-lg-5">
@@ -55,16 +55,16 @@
                                         <form class="mx-4" action="" method="post">
                                             <h2 class="fw-bold text-center">Log in!</h2>
                                             <div class="input-group flex-nowrap py-3">
-                                                <span class="input-group-text col-3" id="addon-wrapping">Email</span>
-                                                <input type="text" class="form-control" placeholder="Enter your Email"
+                                                <span class="input-group-text col-3" id="addon-wrapping"><i class="fas fa-user-alt pe-1"></i>Username</span>
+                                                <input type="text" class="form-control" placeholder="Enter your Username"
                                                     aria-label="Username" aria-describedby="addon-wrapping"
-                                                    id="Login_email">
+                                                    id="Login_Username" required autofocus>
                                             </div>
                                             <div class="input-group flex-nowrap pb-3">
-                                                <span class="input-group-text col-3" id="addon-wrapping">Password</span>
-                                                <input type="text" class="form-control"
+                                                <span class="input-group-text col-3" id="addon-wrapping"><i class="fas fa-key pe-1"></i>Password</span>
+                                                <input type="password" class="form-control"
                                                     placeholder="Enter your Password" aria-label="Password"
-                                                    aria-describedby="addon-wrapping" id="Login_Password">
+                                                    aria-describedby="addon-wrapping" id="Login_Password" required>
                                             </div>
                                             <div class="d-flex justify-content-start mb-3 mb-lg-4">
                                                 <a class="text-decoration-none" href="#">New around here? Sign up</a>

@@ -12,7 +12,7 @@
 
 <body>
     <header class="container-fluid bg-primary">
-        <div class="container">
+        <div class="container-fluid">
             <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
                 <div class="container-fluid">
                     <a class="navbar-brand fs-5 ps-3" href=""><i class="fas fa-home"></i> Task Management System</a>
@@ -25,18 +25,19 @@
                                 <a class="nav-link active" aria-current="page" href=""></a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="project_list.php">Project List</a>
+
+                                <a class="nav-link text-white" href="src/view_user/project_list.php">Project List</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="task_list.php"><i class="fas fa-tasks"></i> Task</a>
+                                <a class="nav-link text-white" href="src/view_user/task_list.php">Task List</a>
                             </li>
                             <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     Username
                                 </a>
-                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <li><a class="dropdown-item" href="#"><i class="fas fa-cog"></i>Manage Account</a></li>
-                                    <li><a class="dropdown-item" href="#"><i class="fas fa-power-off"></i>Logout</a></li>
+                                <ul class="dropdown-menu bg-primary" aria-labelledby="navbarDropdown">
+                                    <li><a class="dropdown-item text-white" href="#"><i class="fas fa-cog"></i>Manage Account</a></li>
+                                    <li><a class="dropdown-item text-white" href="#"><i class="fas fa-power-off"></i>Logout</a></li>
                                 </ul>
                             </li>
                         </ul>
