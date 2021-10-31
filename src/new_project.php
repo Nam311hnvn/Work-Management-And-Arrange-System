@@ -1,4 +1,4 @@
-<?php include('../reuse/header.php'); ?>
+<?php include('./reuse/header.php'); ?>
 <div class="content-header">
     <div class="container-fluid">
         <div class="row mb-2 ">
@@ -68,4 +68,4 @@
     <button type="button" class="btn btn-primary">Save</button>
 </div>
 
-<?php include('../reuse/footer.php'); ?>
+<?php include('./reuse/footer.php'); ?>
