@@ -67,7 +67,7 @@
                                                     aria-describedby="addon-wrapping" id="Login_Password" required>
                                             </div>
                                             <div class="d-flex justify-content-start mb-3 mb-lg-4">
-                                                <a class="text-decoration-none" href="#">New around here? Sign up</a>
+                                                <a class="text-decoration-none" href="./regis.php">New around here? Sign up</a>
                                             </div>
                                             <div class="d-flex justify-content-start mb-3 mb-lg-4">
                                                 <button type="submit" class="btn btn-primary" name='Login'
