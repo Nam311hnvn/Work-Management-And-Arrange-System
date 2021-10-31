@@ -7,7 +7,7 @@ $(document).ready(function(){
             type: 'post',
             data: {Email:email, Pass:pass},
             success:function(resp){
-                alert(resp);
+                alert(resp);git 
             }
 
 
