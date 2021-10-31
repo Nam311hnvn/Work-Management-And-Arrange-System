@@ -1,5 +1,4 @@
 <?php include('./reuse/header.php'); ?>
-<<<<<<< HEAD
 <div class="containerbg" style="background-color: #e6f2ff;">
     <div class="content-header" style="background-color: #e6f2ff;">
         <div class="container ">
@@ -8,6 +7,7 @@
                     <h4>New Project</h4>
                 </div>
                 <hr class="border border-bottom-5 border-primary">
+
             </div>
         </div>
     </div>
