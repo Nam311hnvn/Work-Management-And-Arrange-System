@@ -1,7 +1,7 @@
-<?php include('../reuse/header.php'); ?>
+<?php include('./reuse/header.php'); ?>
 <div class="content-header">
     <div class="container">
-        <div class="row mb-2">
+        <div class="row mb-2 mt-2">
             <div class="col-sm-4">
                 <h4>Task List</h4>
             </div>
@@ -46,7 +46,7 @@
                         <tbody>
                             <?php
                             //Bước 1:
-                            include '../reuse/config.php';
+                            include './reuse/config.php';
                             //Bước 2:
                             $sql = "SELECT * FROM tb_project";
                             $result = mysqli_query($conn, $sql);
@@ -73,4 +73,4 @@
         </div>
     </div>
 </div>
-<?php include('../reuse/footer.php'); ?>
+<?php include('./reuse/footer.php'); ?>

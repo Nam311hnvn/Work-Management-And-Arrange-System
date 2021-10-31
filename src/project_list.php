@@ -1,4 +1,4 @@
-<?php include('../reuse/header.php'); ?>
+<?php include('./reuse/header.php'); ?>
 <div class="content-header">
 	<div class="container">
 		<div class="row mb-2 ">
@@ -34,31 +34,31 @@
 				</thead>
 				<tbody>
 					<?php
-						//Bước 1:
-						include '../reuse/config.php';
-						//Bước 2:
-						$sql = "SELECT * FROM tb_project";
-						$result = mysqli_query($conn, $sql);
-						if(mysqli_num_rows($result) > 0){
-							while($row = mysqli_fetch_assoc($result)){
-								echo '<tr>';
-									echo '<th scope="row">'.$row['pj_id'].'</th>';
-									echo '<td>'.$row['pj_name'].'</td>';
-									echo '<td>'.$row['pj_start'].'</td>';
-									echo '<td>'.$row['pj_end'].'</td>';
-									echo '<td>'.$row['pj_status'].'</td>';
-									echo '<td>';
-                                    echo '<a class = "btn btn-primary me-2" href = "">Sửa</a>';
-                                    echo '<a class = "btn btn-danger" href = "">Xóa</a>';
-                                    echo '<td>';
-									echo '</tr>';
-							}
+					//Bước 1:
+					include './reuse/config.php';
+					//Bước 2:
+					$sql = "SELECT * FROM tb_project";
+					$result = mysqli_query($conn, $sql);
+					if (mysqli_num_rows($result) > 0) {
+						while ($row = mysqli_fetch_assoc($result)) {
+							echo '<tr>';
+							echo '<th scope="row">' . $row['pj_id'] . '</th>';
+							echo '<td>' . $row['pj_name'] . '</td>';
+							echo '<td>' . $row['pj_start'] . '</td>';
+							echo '<td>' . $row['pj_end'] . '</td>';
+							echo '<td>' . $row['pj_status'] . '</td>';
+							echo '<td>';
+							echo '<a class = "btn btn-primary me-2" href = "">Sửa</a>';
+							echo '<a class = "btn btn-danger" href = "">Xóa</a>';
+							echo '<td>';
+							echo '</tr>';
 						}
+					}
 					?>
-					
+
 				</tbody>
 			</table>
 		</div>
 	</div>
 </div>
-<?php include('../reuse/footer.php'); ?>
+<?php include('./reuse/footer.php'); ?>
