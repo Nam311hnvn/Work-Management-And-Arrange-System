@@ -12,7 +12,7 @@
 
 <body>
     <header class="container-fluid bg-primary">
-        <div class="container">
+        <div class="container-fluid">
             <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
                 <div class="container-fluid">
                     <a class="navbar-brand fs-4" href="#">Task Management System</a>
