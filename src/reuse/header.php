@@ -22,14 +22,10 @@
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav ms-auto mb-2 mb-lg-0 fs-5">
                             <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href=""></a>
+                                <a class="nav-link text-white" href="project_list.php"><i class="fas fa-layer-group me-1"></i> Projects</a>
                             </li>
                             <li class="nav-item">
-
-                                <a class="nav-link text-white" href="project_list.php">Project List</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-white" href="task_list.php"><i class="fas fa-tasks"></i> Task</a>
+                                <a class="nav-link text-white" href="task_list.php"><i class="fas fa-tasks me-1"></i> Task</a>
                             </li>
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
