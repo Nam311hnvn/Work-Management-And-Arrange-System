@@ -25,18 +25,18 @@
                                 <a class="nav-link active" aria-current="page" href="#"><i class="fas fa-home"></i></a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Project List</a>
+                                <a class="nav-link text-white" href="src/view_user/project_list.php">Project List</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Task List</a>
+                                <a class="nav-link text-white" href="src/view_user/task_list.php">Task List</a>
                             </li>
                             <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     Username
                                 </a>
-                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <li><a class="dropdown-item" href="#"><i class="fas fa-cog"></i>Manage Account</a></li>
-                                    <li><a class="dropdown-item" href="#"><i class="fas fa-power-off"></i>Logout</a></li>
+                                <ul class="dropdown-menu bg-primary" aria-labelledby="navbarDropdown">
+                                    <li><a class="dropdown-item text-white" href="#"><i class="fas fa-cog"></i>Manage Account</a></li>
+                                    <li><a class="dropdown-item text-white" href="#"><i class="fas fa-power-off"></i>Logout</a></li>
                                 </ul>
                             </li>
                         </ul>
