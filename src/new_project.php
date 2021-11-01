@@ -1,7 +1,11 @@
+<<<<<<< HEAD
 <?php include('./reuse/header.php');
 include('./reuse/config.php')
 ?>
 
+=======
+<?php include('./reuse/header.php'); ?>
+>>>>>>> b74c5bac2e923373ebf1d6c1930d9d566db62dd7
 <div class="containerbg" style="background-color: #e6f2ff;">
     <div class="content-header" style="background-color: #e6f2ff;">
         <div class="container ">
@@ -10,6 +14,7 @@ include('./reuse/config.php')
                     <h4>New Project</h4>
                 </div>
                 <hr class="border border-bottom-5 border-primary">
+
             </div>
         </div>
     </div>
