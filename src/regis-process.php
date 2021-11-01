@@ -10,6 +10,24 @@ if(isset($POST['signup'])){
     $pass2 = $POST['pass2'];
 
     include('./reuse/config.php');
+
+    $sql ="SELECT * FROM tb_user WHERE user_nick= '$usernick' ";
+    $result = mysqli_query($conn, $sql);
+
+    if (mysqli_num_rows($result) > 0) {
+        echo 'Wrong';
+    } else {
+        $pass_hash = password_hash($pass1, PASSWORD_DEFAULT);
+        $code = md5(uniqid(rand(), true));
+
+        $sql_2="INSERT INTO tb_user "
+    
+    
+    
+    }
+
+
+
 }
 
 
