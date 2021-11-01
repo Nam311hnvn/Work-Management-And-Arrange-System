@@ -1,11 +1,14 @@
 <?php
 include('./reuse/header.php');
 ?>                 
+<?php
+include('./reuse/config.php');
+?>
 <div class="container-fluid">
     <div class="col-12">
         <div class="card">
             <div class="card-body">
-                Welcome !
+                <!-- Welcome <?php echo $_SESSION['user_name']; ?>!! -->
             </div>
         </div>
     </div>
@@ -46,13 +49,6 @@ include('./reuse/header.php');
         </div>
     </div>
 </div>
-
-
-
-
-
-
-
 
 
 

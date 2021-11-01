@@ -42,6 +42,9 @@
             </div>
         </div>
     </div>
+
+
+
     <!-- Section Login -->
     <div class="container-fluid px-0">
         <section class="vh-100" style="background-image: url('../asset/imgs/BG.jpg')">
@@ -52,19 +55,19 @@
                             <div class="card-body p-m-5 top-50">
                                 <div class="row justify-content-center">
                                     <div class="col-md-12">
-                                        <form class="mx-4" action="" method="post">
+                                        <form class="mx-4" action="login-process.php" method="POST">
                                             <h2 class="fw-bold text-center">Log in!</h2>
                                             <div class="input-group flex-nowrap py-3">
                                                 <span class="input-group-text col-3" id="addon-wrapping"><i class="fas fa-user-alt pe-1"></i>Username</span>
                                                 <input type="text" class="form-control" placeholder="Enter your Username"
                                                     aria-label="Username" aria-describedby="addon-wrapping"
-                                                    id="Login_Username" required autofocus>
+                                                    id="Login_Username" name="txtNick" required autofocus>
                                             </div>
                                             <div class="input-group flex-nowrap pb-3">
                                                 <span class="input-group-text col-3" id="addon-wrapping"><i class="fas fa-key pe-1"></i>Password</span>
                                                 <input type="password" class="form-control"
                                                     placeholder="Enter your Password" aria-label="Password"
-                                                    aria-describedby="addon-wrapping" id="Login_Password" required>
+                                                    aria-describedby="addon-wrapping" id="Login_Password" name="txtPass"required>
                                             </div>
                                             <div class="d-flex justify-content-start mb-3 mb-lg-4">
                                                 <a class="text-decoration-none" href="#">New around here? Sign up</a>
