@@ -55,8 +55,8 @@
 							echo '<td>' . $row['pj_end'] . '</td>';
 							echo '<td>' . $row['pj_status'] . '</td>';
 							echo '<td>';
-							echo '<a class = "btn btn-primary me-2" href = "">Sửa</a>';
-							echo '<a class = "btn btn-danger" href = "">Xóa</a>';
+							echo '<a class = "btn btn-primary me-2" href = "editProject.php">Sửa</a>';
+							echo '<a class = "btn btn-danger" href = "deleteProject.php">Xóa</a>';
 							echo '<td>';
 							echo '</tr>';
 						}
