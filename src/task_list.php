@@ -16,11 +16,11 @@
             <div class="mb-2 mb-lg-0 d-flex justify-content-end">
                 <div class="col-md-2 ">
                     <div class="card-tools">
-                        <a class="btn btn-sm btn-outline-success border-primary me-2" href="new_project.php"> <i class="fal fa-plus"></i>Add New Project</a>
+                        <a class="btn btn-sm btn-outline-success border-primary me-2" href="new_task.php"> <i class="fal fa-plus"></i>Add New Task</a>
                     </div>
                 </div>
             </div>
-            <div class="container-fluid ">
+            <div class="">
                 <div class="row pt-2">
                     <div class="col">
                         <div class="mb-2 mb-lg-0 d-flex justify-content-end">
@@ -37,9 +37,11 @@
                             <tr>
                                 <th scope="col">#</th>
                                 <th scope="col">Project</th>
+                                <th scope="col">Task</th>
                                 <th scope="col">Date Started</th>
                                 <th scope="col">Dua Date</th>
-                                <th scope="col">Status</th>
+                                <th scope="col">Create On</th>
+                                <th scope="col">Note</th>
                                 <th scope="col">Action</th>
                             </tr>
                         </thead>
@@ -48,21 +50,25 @@
                             //Bước 1:
                             include './reuse/config.php';
                             //Bước 2:
-                            $sql = "SELECT * FROM tb_project";
+                            $sql = "SELECT p.pj_name, t.task_name, t.task_start, t.task_end, t.created_on, t.task_note FROM tb_task t, tb_project p";
                             $result = mysqli_query($conn, $sql);
-                            if (mysqli_num_rows($result) > 0) {
+                            if(mysqli_num_rows($result)>0){
                                 while ($row = mysqli_fetch_assoc($result)) {
+                                    $a = 1;
                                     echo '<tr>';
-                                    echo '<th scope="row">' . $row['pj_id'] . '</th>';
+                                    echo '<th scope="row">'.$a.'</th>';
                                     echo '<td>' . $row['pj_name'] . '</td>';
-                                    echo '<td>' . $row['pj_start'] . '</td>';
-                                    echo '<td>' . $row['pj_end'] . '</td>';
-                                    echo '<td>' . $row['pj_status'] . '</td>';
+                                    echo '<td>' . $row['task_name'] . '</td>';
+                                    echo '<td>' . $row['task_start'] . '</td>';
+                                    echo '<td>' . $row['task_end'] . '</td>';
+                                    echo '<td>' . $row['created_on'] . '</td>';
+                                    echo '<td>' . $row['task_note'] . '</td>';
                                     echo '<td>';
                                     echo '<a class = "btn btn-primary me-2" href = "">Sửa</a>';
                                     echo '<a class = "btn btn-danger" href = "">Xóa</a>';
                                     echo '<td>';
                                     echo '</tr>';
+                                    $a += 1;
                                 }
                             }
                             ?>
