@@ -14,3 +14,19 @@ $(document).ready(function(){
         })
     })
 })
+
+function checkPassword() {
+    let password = document.getElementsByName("password").values;
+    let cpass = document.getElementsByName("cpass").values;
+    console.log(password,cpass);
+
+    let mess =  document.getElementsByName("checkpass");
+    if (password.length != 0) {
+        if (password == cpass) {
+            mess.textContent = "Passwords match";
+        } else {
+            mess.textContent = "Passwords dont match";
+        }
+        
+    }
+}

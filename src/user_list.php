@@ -15,8 +15,8 @@
                 <div class="mb-2 mb-lg-0 d-flex justify-content-end">
                     <div class="col-md-2 ">
                         <div class="card-tools">
-                            <a class="btn btn-sm btn-outline-success border-primary me-2" href="new_project.php"> <i
-                                    class="fal fa-plus"></i>Add New Project</a>
+                            <a class="btn btn-sm btn-outline-success border-primary me-2" href="update&add_user.php"> <i
+                                    class="fas fa-user-plus"></i>Add User</a>
                         </div>
                     </div>
                 </div>
@@ -40,32 +40,41 @@
                                     <th scope="col">Username</th>
                                     <th scope="col">Name</th>
                                     <th scope="col">Date of Birth</th>
+                                    <th scope="col">Phone</th>
                                     <th scope="col">Role</th>
                                     <th scope="col">Action</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <?php
+                            <?php
                             //Bước 1:
                             include './reuse/config.php';
                             //Bước 2:
-                            $sql = "SELECT * FROM  tb_user a, tb_userinfo b where a.user_id = b.user_id ";
+                            $sql = "SELECT a.user_id,a.user_nick ,b.user_name,b.user_job,b.user_dob,b.user_phone, a.user_level  FROM  tb_user a, user_info b where a.user_id = b.user_id ";
+                            
                             $result = mysqli_query($conn, $sql);
                             $count=1;
                             if (mysqli_num_rows($result) > 0) {
                                 while ($row = mysqli_fetch_assoc($result)) {
+                                    if ($row['user_level'] == 1) {
+                                        $Level = 'Admin';
+                                    }
+                                    else{
+                                        $Level = 'User';
+                                    }
                                     echo '<tr>';
-                                    echo '<th scope="row">' .$a . '</th>';
-                                    echo '<td>' . $row['user_name'] . '</td>';
+                                    echo '<th scope="row">' .$count++ . '</th>';
                                     echo '<td>' . $row['user_nick'] . '</td>';
+                                    echo '<td>' . $row['user_name'] . '</td>';
                                     echo '<td>' . $row['user_dob'] . '</td>';
-                                    echo '<td>' . $row['user_status'] . '</td>';
+                                    echo '<td>' . $row['user_phone'] . '</td>';
+                                    echo '<td>' . $Level . '</td>';
                                     echo '<td>';
-                                    echo '<a class = "btn btn-primary me-2" href = "">Sửa</a>';
-                                    echo '<a class = "btn btn-danger" href = "">Xóa</a>';
+                                    echo '<a class = "btn btn-primary me-2" href ="update&add_user.php?id='.$row['user_id'].' ">Sửa</a>';
+                                    echo '<a class = "btn btn-danger" id = "delete" href = "delete_user.php?user-id='.$row['user_id'].' ">Xóa</a>';
                                     echo '<td>';
                                     echo '</tr>';
-                                    $count +=1;
+
                                 }
                             }
                             ?>
@@ -77,4 +86,11 @@
         </div>
     </div>s
 </div>
+<script>$(document).ready(function(){
+    $('#delete').click(function(){
+        
+    })
+})
+
+</script>
 <?php include('./reuse/footer.php'); ?>
