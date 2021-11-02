@@ -5,17 +5,10 @@ include('./reuse/header.php');
 include('./reuse/config.php');
 ?>
 <div class="container-fluid">
-<<<<<<< HEAD
-    <div class="col-12">
-        <div class="card">
-            <div class="card-body">
-                <!-- Welcome <?php echo $_SESSION['user_name']; ?>!! -->
-=======
     <div class="col-12 py-2">
         <div class="card ">
             <div class="card-body ">
                 Welcome !
->>>>>>> ba3a661985a1ca68f8555219b9883f81b9b4cd09
             </div>
         </div>
     </div>

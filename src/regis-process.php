@@ -1,5 +1,5 @@
 <?php
-
+include('send.php');
 if(isset($_POST['SbmRegis'])){
     $usernick = $_POST['usernick'];
     $username = $_POST['username'];
@@ -25,6 +25,7 @@ if(isset($_POST['SbmRegis'])){
         
         if($result_2 >=1){
             echo 'đki thành công';
+            sendEmail($email,$code);
         }else{
             echo ' đki thất bại';
         }

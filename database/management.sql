@@ -83,13 +83,9 @@ CREATE TABLE `tb_user` (
 
 INSERT INTO `tb_user` (`user_id`, `user_nick`, `user_pass`, `user_email`, `user_code`, `user_level`, `user_regisdate`, `user_status`) VALUES
 (1, 'admin', 'admin123', 'admin@admin.com', '', 1, '2021-11-01 16:54:46', 1),
-<<<<<<< HEAD
-(2, 'Chubedan', 'chubedan', 'phong25292@gmail.com', '', 0, '2021-11-01 17:40:35', 0);
-=======
 (2, 'Chubedan', 'chubedan', 'phong25292@gmail.com', '', 0, '2021-11-01 17:40:35', 0),
 (3, 'abc', '123', '123', '', 1, '2021-11-02 00:12:30', 0),
 (5, 'dfsdf', 'sdfsdf', 'sdfsdf', 'sdfsdf', 0, '2021-11-02 00:12:55', 0);
->>>>>>> ba3a661985a1ca68f8555219b9883f81b9b4cd09
 
 -- --------------------------------------------------------
 
