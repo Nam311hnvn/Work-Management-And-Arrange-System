@@ -52,31 +52,31 @@
                             <div class="card-body p-m-5 top-50">
                                 <div class="row justify-content-center">
                                     <div class="col-md-12">
-                                        <form class="mx-4" action="" method="post">
+                                        <form class="mx-4" action="regis-process.php" method="post">
                                             <h2 class="fw-bold text-center">Sign Up!</h2>
                                             <div class="input-group flex-nowrap py-3">
                                                 <span class="input-group-text col-2" id="addon-wrapping">Username</span>
-                                                <input type="text" class="form-control" placeholder="Enter your Username" aria-label="Username" aria-describedby="addon-wrapping" id="Username" required autofocus>
+                                                <input type="text" class="form-control" placeholder="Enter your Username" aria-label="Username" aria-describedby="addon-wrapping" id="usernick" name="usernick"required autofocus>
                                             </div>
                                             <div class="input-group flex-nowrap pb-3">
                                                 <span class="input-group-text col-2" id="addon-wrapping">Name</span>
-                                                <input type="text" class="form-control" placeholder="Enter your Name" aria-label="Name" aria-describedby="addon-wrapping" id="Name" required>
+                                                <input type="text" class="form-control" placeholder="Enter your Name" aria-label="Name" aria-describedby="addon-wrapping" id="username" name="username"required>
                                             </div>
                                             <div class="input-group flex-nowrap pb-3">
                                                 <span class="input-group-text col-2" id="addon-wrapping">Email</span>
-                                                <input type="email" class="form-control" placeholder="Enter your Email" aria-label="Email" aria-describedby="addon-wrapping" id="Email" required>
+                                                <input type="email" class="form-control" placeholder="Enter your Email" aria-label="Email" aria-describedby="addon-wrapping" id="useremail" name="useremail" required>
                                             </div>
                                             <div class="input-group flex-nowrap pb-3">
                                                 <span class="input-group-text col-2" id="addon-wrapping">Password</span>
-                                                <input type="password" class="form-control" placeholder="Enter your Password" aria-label="Password" aria-describedby="addon-wrapping" id="Password" required>
+                                                <input type="password" class="form-control" placeholder="Enter your Password" aria-label="Password" aria-describedby="addon-wrapping" id="pass1" name="pass1"required>
                                             </div>
                                             <div class="input-group flex-nowrap pb-3">
                                                 <span class="input-group-text col-2" id="addon-wrapping">Confirm
                                                     Password</span>
-                                                <input type="password" class="form-control" placeholder="Enter your Password" aria-label="Confirm_Password" aria-describedby="addon-wrapping" id="Password2" required>
+                                                <input type="password" class="form-control" placeholder="Enter your Password" aria-label="Confirm_Password" aria-describedby="addon-wrapping" id="pass2" name="pass2"required>
                                             </div>
                                             <div class="d-flex justify-content-start mb-3 mb-lg-4">
-                                                <button type="submit" class="btn btn-primary" name='Signin' id='Signin'>Register</button>
+                                                <button type="submit" class="btn btn-primary" name='SbmRegis' id='Regis'>Register</button>
                                             </div>
                                         </form>
                                     </div>
