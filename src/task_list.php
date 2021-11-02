@@ -50,13 +50,15 @@
                             //Bước 1:
                             include './reuse/config.php';
                             //Bước 2:
-                            $sql = "SELECT p.pj_name, t.task_name, t.task_start, t.task_end, t.created_on, t.task_note FROM tb_task t, tb_project p";
+                            $sql = "SELECT * FROM tb_task t, tb_project p
+                            WHERE t.pj_id = p.pj_id OR t.pj_id = 0";
                             $result = mysqli_query($conn, $sql);
+					        $count = 1;
+                            echo $sql;
                             if(mysqli_num_rows($result)>0){
                                 while ($row = mysqli_fetch_assoc($result)) {
-                                    $a = 1;
                                     echo '<tr>';
-                                    echo '<th scope="row">'.$a.'</th>';
+                                    echo '<th scope="row">'.$count++.'</th>';
                                     echo '<td>' . $row['pj_name'] . '</td>';
                                     echo '<td>' . $row['task_name'] . '</td>';
                                     echo '<td>' . $row['task_start'] . '</td>';
@@ -64,11 +66,10 @@
                                     echo '<td>' . $row['created_on'] . '</td>';
                                     echo '<td>' . $row['task_note'] . '</td>';
                                     echo '<td>';
-                                    echo '<a class = "btn btn-primary me-2" href = "">Sửa</a>';
-                                    echo '<a class = "btn btn-danger" href = "">Xóa</a>';
+                                    echo '<a class = "btn btn-primary me-2" href = "edit_task.php?id='.$row['task_id'].'">Sửa</a>';
+                                    echo '<a class = "btn btn-danger" href = "delete_task.php?id='.$row['task_id'].'">Xóa</a>';
                                     echo '<td>';
                                     echo '</tr>';
-                                    $a += 1;
                                 }
                             }
                             ?>

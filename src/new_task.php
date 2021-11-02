@@ -13,57 +13,47 @@
     <div class="col-lg-12 container">
         <div class="card card-outline card-primary">
             <div class="card-body">
-                <form action="">
+                <form action="process_new_task.php" method="POST">
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="" class="control-label">Name Project</label>
-                                <input type="text" class="form-control form-control-sm border border-primary border-1 rounded">
+                                <input type="text" name="pjName" id="pjName" class="form-control form-control-sm border border-primary border-1 rounded">
                             </div>
                         </div>
 
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="" class="control-label">Name Task</label>
-                                <input type="text" class="form-control form-control-sm border border-primary border-1 rounded">
+                                <input type="text" name="taskName" id="taskName" class="form-control form-control-sm border border-primary border-1 rounded">
                             </div>
                         </div>
 
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label for="">Status</label>
-                                <select name="status" id="status" class="form-control form-select custom-select-sm border border-primary border-1 rounded">
-                                    <option value="">Pending</option>
-                                    <option value="">On-Hold</option>
-                                    <option value="">Done</option>
-                                </select>
-                            </div>
-                        </div>
 
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="" class="control-label">Start Date</label>
-                                <input type="date" class="form-control form-control-sm border border-primary border-1 rounded">
+                                <input type="date" name="taskStart" id="taskStart" class="form-control form-control-sm border border-primary border-1 rounded">
                             </div>
                         </div>
 
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="" class="control-label">End Date</label>
-                                <input type="date" class="form-control form-control-sm border border-primary border-1 rounded">
+                                <input type="date" name="taskEnd" id="taskEnd" class="form-control form-control-sm border border-primary border-1 rounded">
                             </div>
                         </div>
 
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="" class="control-label">Note</label>
-                                <input type="text" class="form-control form-control-sm border border-primary border-1 rounded">
+                                <input type="text" name="taskNote" id="taskNote" class="form-control form-control-sm border border-primary border-1 rounded">
                             </div>
                         </div>
                         
                         <div class="border-3 border-top mt-3 px-0 ">
                             <div class="d-flex w-100 justify-content-center align-items-center">
-                                <button type="button" class="btn btn-primary mt-2">Save</button>
+                                <button type="submit" class="btn btn-primary mt-2">Save</button>
                             </div>
                         </div>
                     </div>
