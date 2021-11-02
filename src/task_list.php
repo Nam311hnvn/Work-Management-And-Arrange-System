@@ -38,8 +38,9 @@
                                 <th scope="col">#</th>
                                 <th scope="col">Project</th>
                                 <th scope="col">Task</th>
+                                <th scope="col">Date Started</th>
+                                <th scope="col">Dua Date</th>
                                 <th scope="col">Create On</th>
-                                <th scope="col">Date Time</th>
                                 <th scope="col">Note</th>
                                 <th scope="col">Action</th>
                             </tr>
@@ -49,18 +50,19 @@
                             //Bước 1:
                             include './reuse/config.php';
                             //Bước 2:
-                            $sql = "SELECT p.pj_name, c.cal_name, c.create_on, c.date_time, c.note FROM tb_calendar c, tb_project p";
+                            $sql = "SELECT p.pj_name, t.task_name, t.task_start, t.task_end, t.created_on, t.task_note FROM tb_task t, tb_project p";
                             $result = mysqli_query($conn, $sql);
-                            if (mysqli_num_rows($result) > 0) {
+                            if(mysqli_num_rows($result)>0){
                                 while ($row = mysqli_fetch_assoc($result)) {
                                     $a = 1;
                                     echo '<tr>';
                                     echo '<th scope="row">'.$a.'</th>';
                                     echo '<td>' . $row['pj_name'] . '</td>';
-                                    echo '<td>' . $row['cal_name'] . '</td>';
-                                    echo '<td>' . $row['create_on'] . '</td>';
-                                    echo '<td>' . $row['date_time'] . '</td>';
-                                    echo '<td>' . $row['note'] . '</td>';
+                                    echo '<td>' . $row['task_name'] . '</td>';
+                                    echo '<td>' . $row['task_start'] . '</td>';
+                                    echo '<td>' . $row['task_end'] . '</td>';
+                                    echo '<td>' . $row['created_on'] . '</td>';
+                                    echo '<td>' . $row['task_note'] . '</td>';
                                     echo '<td>';
                                     echo '<a class = "btn btn-primary me-2" href = "">Sửa</a>';
                                     echo '<a class = "btn btn-danger" href = "">Xóa</a>';
