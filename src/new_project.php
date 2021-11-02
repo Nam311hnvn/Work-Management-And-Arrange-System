@@ -21,16 +21,14 @@ include('./reuse/config.php')
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="" class="control-label">Name</label>
-                                <input type="text" name="pjName" id="pjName"
-                                    class="form-control form-control-sm border border-dark border-1 rounded">
+                                <input type="text" name="pjName" id="pjName" class="form-control form-control-sm border border-dark border-1 rounded">
                             </div>
                         </div>
 
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="">Status</label>
-                                <select name="pjStatus" id="pjStatus"
-                                    class="form-control form-select custom-select-sm border border-dark rounded">
+                                <select name="pjStatus" id="pjStatus" class="form-control form-select custom-select-sm border border-dark rounded">
                                     <option value="1">Pending</option>
                                     <option value="2">On-Hold</option>
                                     <option value="3">Done</option>
@@ -41,16 +39,14 @@ include('./reuse/config.php')
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="" class="control-label">Start Date</label>
-                                <input type="date" name="pjStart" id="pjStart"
-                                    class="form-control form-control-sm border border-dark rounded">
+                                <input type="date" name="pjStart" id="pjStart" class="form-control form-control-sm border border-dark rounded">
                             </div>
                         </div>
 
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="" class="control-label">End Date</label>
-                                <input type="date" name="pjEnd" id="pjEnd"
-                                    class="form-control form-control-sm border border-dark rounded">
+                                <input type="date" name="pjEnd" id="pjEnd" class="form-control form-control-sm border border-dark rounded">
                             </div>
                         </div>
 
@@ -59,21 +55,19 @@ include('./reuse/config.php')
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="" class="control-label">Project Team Members</label>
-                                    <select name="userids[]"
-                                        class="form-control multiple-select form-control-ms  border rounded"
-                                        style="display: flex;" multiple>
+                                    <select name="userIds[]" class="form-control multiple-select form-control-ms  border rounded" style="display: flex;" multiple>
                                         <?php
                                         $sql = 'SELECT * FROM tb_user';
-                                        $query = mysqli_query( $conn, $sql);
-                                        if(mysqli_num_rows($query)>0){
-                                           foreach($query as $rowhob){                                              
-                                    ?>
-                                        <option value="<?php $rowhob['user_id']?>"><?php echo $rowhob['user_nick']; ?>
-                                        </option>
+                                        $query = mysqli_query($conn, $sql);
+                                        if (mysqli_num_rows($query) > 0) {
+                                            foreach ($query as $rowhob) {
+                                        ?>
+                                                <option value="<?php $rowhob['user_id'] ?>"><?php echo $rowhob['user_nick']; ?>
+                                                </option>
                                         <?php
-                                           }
+                                            }
                                         }
-                                    ?>
+                                        ?>
                                         <option value=""></option>
 
                                     </select>
@@ -84,26 +78,25 @@ include('./reuse/config.php')
                         <div class="col-md-12">
                             <div class="form-group">
                                 <label for="" class="control-label">Note</label>
-                                <input type="text" name="pjNote" id="pjNote"
-                                    class="form-control form-control-sm border border-dark border-1 rounded">
+                                <input type="text" name="pjNote" id="pjNote" class="form-control form-control-sm border border-dark border-1 rounded">
                             </div>
                         </div>
 
 
                         <div class="border-3 border-top mt-3 px-0 ">
                             <div class="d-flex w-100 justify-content-center align-items-center">
-                                <button type="button" class="btn btn-primary mt-2">Save</button>
+                                <button type="submit" class="btn btn-primary mt-2">Save</button>
                             </div>
                         </div>
                     </div>
+                </form>
             </div>
-            </form>
         </div>
     </div>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 <script>
-$(".mutiple-select").select2({});
+    $(".mutiple-select").select2({});
 </script>
 
 
