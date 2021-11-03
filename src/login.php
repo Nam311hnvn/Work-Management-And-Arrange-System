@@ -1,9 +1,3 @@
-<?php
-session_start();
-if (!isset($_SESSION['loginOK'])) {
-    header("Location: home.php");
-}
-?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -15,7 +9,7 @@ if (!isset($_SESSION['loginOK'])) {
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
-
+   
 <body>
 
     <div class="container-fluid px-0">
@@ -45,7 +39,6 @@ if (!isset($_SESSION['loginOK'])) {
     </div>
 
 
-
     <!-- Section Login -->
     <div class="container-fluid px-0">
         <section class="vh-100" style="background-image: url('../asset/imgs/BG.jpg')">
@@ -56,21 +49,21 @@ if (!isset($_SESSION['loginOK'])) {
                             <div class="card-body p-m-5 top-50">
                                 <div class="row justify-content-center">
                                     <div class="col-md-12">
-                                        <form class="mx-4" action="login-process.php" method="POST">
+                                        <form class="mx-4" action="" method="POST">
                                             <h2 class="fw-bold text-center">Log in!</h2>
                                             <div class="input-group flex-nowrap py-3">
                                                 <span class="input-group-text col-3" id="addon-wrapping"><i class="fas fa-user-alt pe-1"></i>Username</span>
-                                                <input type="text" class="form-control" placeholder="Enter your Username" aria-label="Username" aria-describedby="addon-wrapping" id="Login_Username" name="txtNick" required autofocus>
+                                                <input type="text" class="form-control" placeholder="Enter your Username" aria-label="Username" aria-describedby="addon-wrapping" id="txtNick" name="txtNick" required autofocus>
                                             </div>
                                             <div class="input-group flex-nowrap pb-3">
                                                 <span class="input-group-text col-3" id="addon-wrapping"><i class="fas fa-key pe-1"></i>Password</span>
-                                                <input type="password" class="form-control" placeholder="Enter your Password" aria-label="Password" aria-describedby="addon-wrapping" id="Login_Password" name="txtPass" required>
+                                                <input type="password" class="form-control" placeholder="Enter your Password" aria-label="Password" aria-describedby="addon-wrapping" id="txtPass" name="txtPass" required>
                                             </div>
                                             <div class="d-flex justify-content-start mb-3 mb-lg-4">
                                                 <a class="text-decoration-none" href="./regis.php">New around here? Sign up</a>
                                             </div>
                                             <div class="d-flex justify-content-start mb-3 mb-lg-4">
-                                                <button type="submit" class="btn btn-primary" name='Login' id='Login'>Log In</button>
+                                                <button type="submit" class="btn btn-primary btn-login" name='do_login' id='Login'>Log In</button>
                                             </div>
                                         </form>
                                     </div>
@@ -82,5 +75,79 @@ if (!isset($_SESSION['loginOK'])) {
                 </div>
             </div>
         </section>
-    </div>}else
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function() {
+            $(document).keypress(function(event) {
+                var keycode = (event.keyCode ? event.keyCode : event.which);
+                if (keycode == '13') {
+                    $txtNick = $('#txtNick').val();
+                    $txtPass = $('#txtPass').val();
+                    if ($txtNick== '' || $txtPass == '') {
+                        alert("Vui lòng nhập đầy đủ TK và MK");
+                    } else {
+                        $.ajax({
+                            url: "login-process.php",
+                            type: "POST",
+                            data: {
+                                do_login: "do_login",
+                                txtNick: $txtNick,
+                                txtPass: $txtPass,
+                            },
+                            success: function(response) {
+                                if (response == "admin") {
+                                    window.location.href = "home.php";
+                                } else if (response == "user") {
+                                    window.location.href = "home.php";
+                                }else if (response == "wrong") {
+                                    alert("Mật khẩu không chính xác !");
+                                } else if(response == "cxt"){
+                                    alert("TK chưa đc xác thực");
+                                }
+                                 else {
+                                    alert("Tài khoản không tồn tại")
+                                }
+                            }
+                        });
+                    }
+                }
+            });
+            $('.btn-login').click(function(event) {
+                    $txtNick = $('#txtNick').val();
+                    $txtPass = $('#txtPass').val();
+                    if ($txtNick== '' || $txtPass == '') {
+                        alert("Vui lòng nhập đầy đủ TK và MK");
+                    } else {
+                        $.ajax({
+                            url: "login-process.php",
+                            type: "POST",
+                            data: {
+                                do_login: "do_login",
+                                txtNick: $txtNick,
+                                txtPass: $txtPass,
+                            },
+                            success: function(response) {
+                                if (response == "admin") {
+                                    window.location.href = "home.php";
+                                } else if (response == "user") {
+                                    window.location.href = "home.php";
+                                }else if (response == "wrong") {
+                                    alert("Mật khẩu không chính xác !");
+                                } else if(response == "cxt"){
+                                    alert("TK chưa đc xác thực");
+                                }
+                                else {
+                                    alert("Tài khoản không tồn tại");
+                                }
+                            }
+                        });
+                    }
+                });
+    </script>
+
+
+
+
+
     <?php include('./reuse/footer.php'); ?>
