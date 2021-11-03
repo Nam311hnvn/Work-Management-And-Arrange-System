@@ -3,26 +3,35 @@
         session_start(); //Công ty dịch vụ Bảo vệ
 
         if(isset($_POST['Login'])){
-            $username = $_POST['txtNick'];
+            $usernick = $_POST['txtNick'];
             $password = $_POST['txtPass'];
 
             // Bước 01: Kết nối DB Server
-            $conn = mysqli_connect('localhost','root','','management');
-            if(!$conn){
-                die("Không thể kết nối");
-            }
+           include('./reuse/config.php');}
 
             // Bước 02: Truy vấn thông tin
-            $sql = "SELECT * FROM tb_user WHERE user_nick='$username' AND user_pass='$password'";
+            $sql = "SELECT * FROM tb_user WHERE user_nick= '$usernick' ";
             $result = mysqli_query($conn,$sql);
-
-            // Bước 03: Xác thực > Đăng nhập > Ở trên, trả về 1 bản ghi thôi
+            $user = mysqli_fetch_assoc($result);
+            // B3. Kiểm tra và xử lý kết quả
             if(mysqli_num_rows($result) > 0){
-                // Bảo vệ cửa CHÍNH: kiểm tra xác thực
-                $_SESSION['loginOK'] = $username;
-                header("Location: home.php");
+                $password_hash = $row['user_pass'];
+                
+                // Kiểm tra Mật khẩu có khớp không
+                if(password_verify($password,$password_hash)){  
+                    if($user['user_status']>0){                 
+                    $_SESSION['loginOK'] = $user;                    
+                    header("Location: home.php");
+                    }else{
+                        echo 'tài khoản chưa được xác thực';
+                    }
+                }else{
+                    echo 'Mật khẩu không khớp';
+                    header("Location: login.php");
+                }
             }else{
-                header("Location: index.php");
-            }
-        }
-    ?>
+                echo 'tài khoản không tồn tại';
+            }       
+
+    mysqli_close($conn);
+?>

@@ -20,18 +20,18 @@
             $mail->isSMTP();// gửi mail SMTP
             $mail->Host = 'smtp.gmail.com';// Set the SMTP server to send through
             $mail->SMTPAuth = true;// Enable SMTP authentication
-            $mail->Username = 'kitudu99@gmail.com';// SMTP username
+            $mail->Username = 'zenkai311@gmail.com';// SMTP username
             // Thay bằng tài khoản của các bạn
-            $mail->Password = 'ieumcomorlddojra'; // SMTP password bqicengzsrdwtrdf
+            $mail->Password = 'twunagrxdfyfrvpp'; // SMTP password bqicengzsrdwtrdf
             $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;// Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` also accepted
             $mail->Port = 587; // TCP port to connect to
             $mail->CharSet = 'UTF-8';
 
             // Cấu hình thuộc tính hiển thị của người gửi - người nhận
-            $mail->setFrom('kitudu99@gmail.com', 'Văn phòng Khoa CNTT');
+            $mail->setFrom('zenkai311@gmail.com', 'Xác nhận đăng kí tài khoản');
             // Tên hiển thị: TÊN CÁC BẠN, ví dụ: Nguyễn Sơn Lâm
 
-            $mail->addReplyTo('kitudu99@gmail.com', 'Văn phòng Khoa CNTT');
+            $mail->addReplyTo('zenkai311@gmail.com', 'Xác nhận đăng kí tài khoản');
 
             $mail->addAddress($recipient); // Đây là địa chỉ Email người nhận > sau này sẽ là BIẾN
             // Gửi tới: kitudu99@gmail.com
@@ -40,7 +40,7 @@
             $mail->Subject = '[localhost] Kích hoạt tài khoản';
             // Nội dung Email
            
-            $mail->Body = 'Nhấp vào đây để kích hoạt: <a href="http://localhost/project12/activation.php?email='.$recipient.'&code='.$code.'">Nhấp vào đây</a>';
+            $mail->Body = 'Nhấp vào đây để kích hoạt: <a href="http://localhost/BTL/src/activation.php?email='.$recipient.'&code='.$code.'">Nhấp vào đây</a>';
             // Tệp tên đính kèm Email gửi đi
             // $mail->addAttachment('pdf/Giay_bao_mat_sau.pdf'); // Nếu bạn muốn đính kèm tệp tin gửi đi
 

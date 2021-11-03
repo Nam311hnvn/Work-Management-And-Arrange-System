@@ -42,7 +42,12 @@
             </div>
         </div>
     </div>
-
+    <?php
+session_start();
+if(!isset($_SESSION['LoginOK'])){
+    header("Location: home.php");
+}
+?>
 
 
     <!-- Section Login -->
@@ -86,5 +91,5 @@
                 </div>
             </div>
         </section>
-    </div>
+    </div>}else
     <?php include('./reuse/footer.php'); ?>

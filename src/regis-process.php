@@ -20,7 +20,6 @@ if(isset($_POST['SbmRegis'])){
         $code = md5(uniqid(rand(), true));
 
         $sql_2 = "INSERT INTO tb_user (user_id, user_nick, user_name, user_pass, user_email, user_code, user_level, user_regisdate, user_status) VALUES (NULL, '$usernick', '$username', '$pass_hash', '$email', '$code', '0', current_timestamp(), '0');";
-        echo $sql_2;
         $result_2 = mysqli_query($conn, $sql_2);  
         
         if($result_2 >=1){
