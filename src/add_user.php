@@ -100,7 +100,6 @@ $(document).ready(function() {
                     success: function(response) {
                         if (response == "success") {
                             alert("Thêm thành công.");
-                            alert_toast('Data successfully saved',"success");
 					        setTimeout(function(){
 						        $('#contents').load("./user_list.php");
 					        },2000)
@@ -112,7 +111,7 @@ $(document).ready(function() {
                     }
                 });
         }
-    })
+    });
 
 })
 </script>

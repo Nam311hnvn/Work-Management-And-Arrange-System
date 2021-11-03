@@ -10,24 +10,28 @@
     $pass = $_POST["password"];
     $level = $_POST["level"];
     $id = $_POST["userid"];
+    $phone = $_POST["phone"];
 
     //SQL
-    if ($password != "") {
+    if ($pass != "") {
         $sql =" UPDATE `tb_user` SET `user_nick` ='$usernick',`user_email`='$email',user_level='$level' where tb_user.user_id='$id' " ;
     }
     else {
         $sql =" UPDATE `tb_user` SET `user_nick` ='$usernick',`user_pass`='$pass',`user_email`='$email',user_level='$level' where tb_user.user_id='$id' " ;
     }
     $result = mysqli_query($conn,$sql);
-    $sql1 ="UPDATE `user_info` SET `user_name`='$name',`user_job`='$job',`user_dob`='$dob' WHERE user_info.user_id = '$id' ";
+    mysqli_close($conn);
+    $sql1 ="UPDATE `user_info` SET `user_name`='$name',`user_job`='$job',`user_dob`='$dob',`user_phone`='$phone' WHERE user_info.user_id = '$id' ";
     $result1 = mysqli_query($conn,$sql1);
-    if ($result3 > 0 && $result4 >0) {
-        echo "success";
-    }
-    else {
+    if ( $result > 0) {
+        mysqli_close($conn);
+       echo "success";
+    }else {
+        mysqli_close($conn);
         echo "error";
     }
-
+    
+   
   
 
    
