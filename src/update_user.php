@@ -28,35 +28,39 @@
         </div>
     </div>
     <div class="container border border-primary border-2 rounded-2">
-        <form action="process_update_user.php" id="manage_user" method="post">
+        <form action="" id="manage_user" method="post">
             <div class="row">
                 <div class="col-md-6 pt-2">
                     <div class="form-group">
-                        <input type="hidden" name="userid" class="form-control form-control-sm" value="<?php if (isset($_GET["id"])) {echo $id;} ?>">
+                        <input type="hidden" id="userid" class="form-control form-control-sm" value="<?php if (isset($_GET["id"])) {echo $id;} ?>">
                     </div>
                     <div class="form-group">
                         <label for="" class="control-label">Username</label>
-                        <input type="text" name="username" class="form-control form-control-sm"value="<?php if (isset($_GET["id"])) {echo $usernick;}?>" required>
+                        <input type="text" id="usernick" class="form-control form-control-sm"value="<?php if (isset($_GET["id"])) {echo $usernick;}?>" required>
                     </div>
                     <div class="form-group">
                         <label for="" class="control-label">Name</label>
-                        <input type="text" name="name" class="form-control form-control-sm"value="<?php if (isset($_GET["id"])) {echo $username;}?>" required>
+                        <input type="text" id="name" class="form-control form-control-sm"value="<?php if (isset($_GET["id"])) {echo $username;}?>" required>
                     </div>
 
                     <div class="form-group">
                         <label for="" class="control-label">Job</label>
-                        <input type="text" name="job" class="form-control form-control-sm"value="<?php if (isset($_GET["id"])) {echo $job;}?>">
+                        <input type="text" id="job" class="form-control form-control-sm"value="<?php if (isset($_GET["id"])) {echo $job;}?>">
                     </div>
                     <div class="form-group">
                         <label for="" class="control-label">Date of Birth</label>
-                        <input type="date" class="form-control form-control-sm"name="dob" value="<?php if (isset($_GET["id"])) {echo $dob;}?>">
+                        <input type="date" class="form-control form-control-sm"id="dob" value="<?php if (isset($_GET["id"])) {echo $dob;}?>">
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">Phonenumber</label>
+                        <input type="text" id="Phone" class="form-control form-control-sm"value="<?php if (isset($_GET["id"])) {echo $phone;}?>">
                     </div>
                 </div>
                 <div class="col-md-6 pt-2">
 
                     <div class="form-group">
                         <label class="control-label">Email</label>
-                        <input type="email" class="form-control form-control-sm" name="email" required
+                        <input type="email" class="form-control form-control-sm" id="email" required
                         value="<?php if (isset($_GET["id"])) {echo $email;}?>">
                         <small id="#msg"></small>
                     </div>
@@ -76,10 +80,7 @@
                             <option value="1" <?php if(isset(($_GET["id"])) && $level == 1){echo'selected';} ?>>Admin</option>
                         </select>
                     </div>
-                    <div class="form-group">
-                        <label class="control-label">Phonenumber</label>
-                        <input type="text" name="Phone" class="form-control form-control-sm"value="<?php if (isset($_GET["id"])) {echo $phone;}?>">
-                    </div>
+
 
                 </div>
             </div>
@@ -90,16 +91,50 @@
         </form>
     </div>
 </div>
-<script>$(document).ready(function(){
-    $("#save").click(function(){
-        if ($("#password").val() == $("#cpass").val()) {
-            
-        }
-        else{
+<script>
+$(document).ready(function() {
+    $("#save").click(function() {
+        $userid = $('#userid').val();
+        $job = $('#job').val();
+        $usernick = $('#usernick').val();
+        $password = $('#password').val();
+        $level = $('#level').val();
+        $name = $('#name').val();
+        $email = $('#email').val();
+        $dob = $('#dob').val();
+        $phone = $('#phone').val();
+        if ($("#password").val() != $("#cpass").val()) 
+        {
             alert("Mật khẩu không khớp!!");
+        }else {
+            $.ajax({
+                    type: "post",
+                    url: "process_update_user.php",
+                    data: {
+                        job: $job,
+                        userid: $userid,
+                        usernick: $usernick,
+                        password: $password,
+                        level: $level,
+                        name: $name,
+                        email: $email,
+                        phone: $phone,
+                        dob: $dob,
+                    },
+                    success: function(response) {
+                        if (response == "success") {
+                            alert("Sửa thành công");
+                            alert_toast('Data successfully saved',"success");
+                            $('#contents').load("./user_list.php");
+                        } else if(response == 'error') {
+                            alert("Sửa thất bại");
+                        }
+                    }
+                });
         }
     })
 
 })
 </script>
+</scrip>
 <?php include('./reuse/footer.php'); ?>
