@@ -7,11 +7,14 @@
     $email =$_POST["email"];
     $pass = $_POST["password"];
     $level = $_POST["level"];
-    if (isset($_POST["id"])) {
-        $id = $_POST["id"];
-        $sql3 =" UPDATE tb_user SET user_nick='$username',user_pass='$pass',user_email='$email',user_level='$level' where user_id='$id' " ;
+    $userid = $_POST["userid"];
+    echo $id;
+    
+    if (isset($_POST["userid"])) {
+        $id = $_POST["userid"];
+        $sql3 =" UPDATE tb_user SET user_nick='$username',user_pass='$pass',user_email='$email',user_level='$level' where tb_user.user_id='$id' " ;
         $result3 = mysqli_query($conn,$sql3);
-        $sql4 ="UPDATE user_info SET user_name='$name',user_job='$job',user_dob='$dob' WHERE user_id = '$id'";
+        $sql4 ="UPDATE user_info SET user_name='$name',user_job='$job',user_dob='$dob' WHERE user_info.user_id = '$id'";
         $result4 = mysqli_query($conn,$sql4);
         if ($result3 > 0 && $result4 >0) {
             header("Location: user_list.php");
