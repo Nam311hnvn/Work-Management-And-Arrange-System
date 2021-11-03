@@ -13,8 +13,8 @@ include'./reuse/config.php';
 
 //Bước 2: truy vấn
 $sql = "UPDATE tb_task 
-SET task_name='$task_name',task_note='$task_note',
-user_id='$user_id',task_start='$task_start',task_end='$task_end',pj_id='$pj_name' 
+SET task_name='$task_name', task_note='$task_note',
+user_id='$user_id', task_start='$task_start', task_end='$task_end', pj_id='$pj_name' 
 WHERE task_id = '$id'";
 $result = mysqli_query($conn, $sql);
 //Bước 3: xử lý
@@ -23,8 +23,3 @@ if($result >0){
 }else{
     die ("Lỗi");
 }
-
-
-
-
-?>

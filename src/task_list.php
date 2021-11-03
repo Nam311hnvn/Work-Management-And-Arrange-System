@@ -21,52 +21,52 @@
                 </div>
             </div>
             <div class="">
-                
-                    <table class="table">
-                        <thead>
-                            <tr>
-                                <th scope="col">#</th>
-                                <th scope="col">Project</th>
-                                <th scope="col">Task</th>
-                                <th scope="col">Date Started</th>
-                                <th scope="col">Dua Date</th>
-                                <th scope="col">Create On</th>
-                                <th scope="col">Note</th>
-                                <th scope="col">Action</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <?php
-                            //Bước 1:
-                            include './reuse/config.php';
-                            //Bước 2:
-                            $sql = "SELECT t.*, p.* FROM tb_task t, tb_project p
+
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Project</th>
+                            <th scope="col">Task</th>
+                            <th scope="col">Date Started</th>
+                            <th scope="col">Dua Date</th>
+                            <th scope="col">Create On</th>
+                            <th scope="col">Note</th>
+                            <th scope="col">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php
+                        //Bước 1:
+                        include './reuse/config.php';
+                        //Bước 2:
+                        $sql = "SELECT t.*, p.* FROM tb_task t, tb_project p
                             WHERE p.pj_id = t.pj_id";
-                            $result = mysqli_query($conn, $sql);
-					        $count = 1;
-                            if(mysqli_num_rows($result)>0){
-                                while ($row = mysqli_fetch_assoc($result)) {
-                                    echo '<tr>';
-                                    echo '<th scope="row">'.$count++.'</th>';
-                                    echo '<td>' . $row['pj_name'] . '</td>';
-                                    echo '<td>' . $row['task_name'] . '</td>';
-                                    echo '<td>' . $row['task_start'] . '</td>';
-                                    echo '<td>' . $row['task_end'] . '</td>';
-                                    echo '<td>' . $row['created_on'] . '</td>';
-                                    echo '<td>' . $row['task_note'] . '</td>';
-                                    echo '<td>';
-                                    echo '<a class = "btn btn-primary me-2" href = "edit_task.php?id='.$row['task_id'].'">Sửa</a>';
-                                    echo '<a class = "btn btn-danger" href = "delete_task.php?id='.$row['task_id'].'">Xóa</a>';
-                                    echo '<td>';
-                                    echo '</tr>';
-                                }
+                        $result = mysqli_query($conn, $sql);
+                        $count = 1;
+                        if (mysqli_num_rows($result) > 0) {
+                            while ($row = mysqli_fetch_assoc($result)) {
+                                echo '<tr>';
+                                echo '<th scope="row">' . $count++ . '</th>';
+                                echo '<td>' . $row['pj_name'] . '</td>';
+                                echo '<td>' . $row['task_name'] . '</td>';
+                                echo '<td>' . $row['task_start'] . '</td>';
+                                echo '<td>' . $row['task_end'] . '</td>';
+                                echo '<td>' . $row['created_on'] . '</td>';
+                                echo '<td>' . $row['task_note'] . '</td>';
+                                echo '<td>';
+                                echo '<a class = "btn btn-primary me-2" href = "edit_task.php?id=' . $row['task_id'] . '">Sửa</a>';
+                                echo '<a class = "btn btn-danger" href = "delete_task.php?id=' . $row['task_id'] . '">Xóa</a>';
+                                echo '<td>';
+                                echo '</tr>';
                             }
-                            ?>
-                        </tbody>
-                    </table>
-                </div>
+                        }
+                        ?>
+                    </tbody>
+                </table>
             </div>
         </div>
     </div>
+</div>
 </div>
 <?php include('./reuse/footer.php'); ?>
