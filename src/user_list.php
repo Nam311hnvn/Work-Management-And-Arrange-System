@@ -88,30 +88,32 @@
                 </div>
             </div>
         </div>
-    </div>s
+    </div>
 </div>
 <script>
-$(document).ready(function() {
-    $('#deleteAccount').click(function() {
+    $(document).ready(function() {
+    $('#delete').click(function() {
             $id = $(this).attr('name'); //? bắt giá trị id của hàng cần xóa
-            if (confirm("Bạn có muốn xoá tài khoản '" + $id + "' không?")) {
+            if (confirm("Bạn có muốn xoá tài khoản này không?")) {
                 $.ajax({
                     type: "post",
-                    url: "./process/process-delete-account.php",
+                    url: "process_delete_user.php",
                     data: {
                         userid: $id,
                     },
                     success: function(response) {
                         if (response == 'success') {
-                            alert("Xoá thành công!")
-                            $('#contents').load("./model/accounts.php")
-                        } else if (response == 'error') {
-                            alert("Xoá thất bại")
+                            alert("Xoá thành công!");
+                        } else if (response == 'error'){
+                            alert("Xoá thất bại");
                         }
                     }
                 });
-            } else return false;
-
+            } else{
+                return false;
+            }
+        });
+            
 })
 </script>
 <?php include('./reuse/footer.php'); ?>
