@@ -78,7 +78,7 @@ $user_ids = [1, 2, 3, 4];
                                         if (mysqli_num_rows($query) > 0) {
                                             foreach ($query as $rowhob) {
                                         ?>
-                                                <option value="<?php $rowhob['user_id'] ?>"><?php echo $rowhob['user_nick']; ?>
+                                                <option value="<?php $rowhob['user_id'] ?>"><?php echo $rowhob['user_name']; ?>
                                                 </option>
                                         <?php
                                             }

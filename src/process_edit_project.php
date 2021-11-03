@@ -12,7 +12,7 @@ echo $id;
 include './reuse/config.php';
 $sql = "UPDATE tb_project 
         SET pj_name='$pj_name',pj_note='$pj_note',pj_start='$pj_start',pj_end='$pj_end',
-        pj_status='$pj_status',pj_manager='$manager_id',pj_userids='$user_ids',pj_createdtime=current_timestamp() 
+        pj_status='$pj_status',pj_manager='$manager_id',pj_userids='$user_ids'
         WHERE pj_id='$id'";
 $result = mysqli_query($conn, $sql);
 
