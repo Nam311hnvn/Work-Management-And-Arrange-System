@@ -1,3 +1,9 @@
+<?php
+session_start();
+if (!isset($_SESSION['loginOK'])) {
+    header("Location: home.php");
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,11 +12,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Time Control</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
-        integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
 
 <body>
@@ -23,9 +26,7 @@
                         <a class="navbar-brand" href="index.php">
                             <h3 class="text" href="./index.php"><b>TIME CONTROL!<i class="fas fa-clock"></i></b></h3>
                         </a>
-                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
-                            aria-label="Toggle navigation">
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                             <span class="navbar-toggler-icon"></span>
                         </button>
                         <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
@@ -42,12 +43,7 @@
             </div>
         </div>
     </div>
-    <?php
-session_start();
-if(!isset($_SESSION['LoginOK'])){
-    header("Location: home.php");
-}
-?>
+
 
 
     <!-- Section Login -->
@@ -64,22 +60,17 @@ if(!isset($_SESSION['LoginOK'])){
                                             <h2 class="fw-bold text-center">Log in!</h2>
                                             <div class="input-group flex-nowrap py-3">
                                                 <span class="input-group-text col-3" id="addon-wrapping"><i class="fas fa-user-alt pe-1"></i>Username</span>
-                                                <input type="text" class="form-control" placeholder="Enter your Username"
-                                                    aria-label="Username" aria-describedby="addon-wrapping"
-                                                    id="Login_Username" name="txtNick" required autofocus>
+                                                <input type="text" class="form-control" placeholder="Enter your Username" aria-label="Username" aria-describedby="addon-wrapping" id="Login_Username" name="txtNick" required autofocus>
                                             </div>
                                             <div class="input-group flex-nowrap pb-3">
                                                 <span class="input-group-text col-3" id="addon-wrapping"><i class="fas fa-key pe-1"></i>Password</span>
-                                                <input type="password" class="form-control"
-                                                    placeholder="Enter your Password" aria-label="Password"
-                                                    aria-describedby="addon-wrapping" id="Login_Password" name="txtPass"required>
+                                                <input type="password" class="form-control" placeholder="Enter your Password" aria-label="Password" aria-describedby="addon-wrapping" id="Login_Password" name="txtPass" required>
                                             </div>
                                             <div class="d-flex justify-content-start mb-3 mb-lg-4">
                                                 <a class="text-decoration-none" href="./regis.php">New around here? Sign up</a>
                                             </div>
                                             <div class="d-flex justify-content-start mb-3 mb-lg-4">
-                                                <button type="submit" class="btn btn-primary" name='Login'
-                                                    id='Login'>Log In</button>
+                                                <button type="submit" class="btn btn-primary" name='Login' id='Login'>Log In</button>
                                             </div>
                                         </form>
                                     </div>

@@ -38,10 +38,7 @@
             </div>
         </div>
     </div>
-    <?php
-    session_start(); // bắt đầu session cho người đăng nhập
-    (empty($_SESSION['loginOK']))
-    ?>
+  
     <!-- Section Regis -->
     <div class="container-fluid px-0">
         <section class="vh-100" style="background-image: url('../asset/imgs/BG.jpg')">
@@ -88,5 +85,5 @@
             </div>
         </section>
     </div>
-
+</body> 
     <?php include('./reuse/footer.php'); ?>
