@@ -68,5 +68,6 @@
         </div>
     </div>
 </div>
-</div>
+
 <?php include('../reuse/footer.php'); ?>
+

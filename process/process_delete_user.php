@@ -1,5 +1,5 @@
 <?php 
-include './reuse/config.php';
+include '../reuse/config.php';
 $id = $_POST["userid"];
 $sql = "DELETE FROM user_info WHERE user_id='$id'";
 if ($result=mysqli_query($conn, $sql)) {

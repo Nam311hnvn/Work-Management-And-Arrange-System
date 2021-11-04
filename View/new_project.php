@@ -1,9 +1,17 @@
+<<<<<<< HEAD
 <?php
     //Dịch vụ bảo vệ
     session_start();
     if(isset($_SESSION['CurrentUser'])){
         include('../reuse/header.php');
         include('../reuse/config.php');
+=======
+
+<?php session_start(); 
+include('../reuse/header.php');
+
+include('../reuse/config.php')
+>>>>>>> f661a9717721d201daa2c05fa1aa3ad9173a8316
 ?>
 
 <div class="content-header">

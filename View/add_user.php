@@ -1,4 +1,4 @@
-<?php include('./reuse/header.php')?>
+<?php include('../reuse/header.php')?>
 <div class="content-header">
     <div class="container-fluid">
         <div class="row mb-2 ">
@@ -86,7 +86,7 @@ $(document).ready(function() {
         }else {
             $.ajax({
                     type: "post",
-                    url: "process_add_user.php",
+                    url: "../process/process_add_user.php",
                     data: {
                         usernick: $usernick,
                         password: $password,
@@ -100,10 +100,6 @@ $(document).ready(function() {
                     success: function(response) {
                         if (response == "success") {
                             alert("Thêm thành công.");
-                            alert_toast('Data successfully saved',"success");
-					        setTimeout(function(){
-						        $('#contents').load("./user_list.php");
-					        },2000)
                         } else if(response == 'error') {
                             alert("Thêm thất bại.");
                         }else if(response == 'erroremail'){
@@ -112,8 +108,8 @@ $(document).ready(function() {
                     }
                 });
         }
-    })
+    });
 
 })
 </script>
-<?php include('./reuse/footer.php'); ?>
+<?php include('../reuse/footer.php'); ?>
