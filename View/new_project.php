@@ -1,30 +1,22 @@
-<<<<<<< HEAD
 <?php
     //Dịch vụ bảo vệ
     session_start();
     if(isset($_SESSION['CurrentUser'])){
         include('../reuse/header.php');
         include('../reuse/config.php');
-=======
-
-<?php session_start(); 
-include('../reuse/header.php');
-
-include('../reuse/config.php')
->>>>>>> f661a9717721d201daa2c05fa1aa3ad9173a8316
 ?>
 
 <div class="content-header">
     <div class="container ">
-        <div class="row mb-2 ">
+        <div class="row mb-2 mt-2 ">
             <div class="col-sm-4">
                 <h4>New Project</h4>
             </div>
             <hr class="border border-bottom-5 border-primary">
-
         </div>
     </div>
 </div>
+
 <div class="col-lg-12 container">
     <div class="card card-outline card-primary">
         <div class="card-body bg-light">

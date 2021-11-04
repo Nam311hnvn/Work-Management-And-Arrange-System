@@ -19,9 +19,9 @@ $user_ids = [1, 2, 3, 4];
 
 <div class="content-header">
     <div class="container ">
-        <div class="row mb-2 ">
+        <div class="row mb-2 mt-2 ">
             <div class="col-sm-4">
-                <h4>New Project</h4>
+                <h4>Update Project</h4>
             </div>
             <hr class="border border-bottom-5 border-primary">
 

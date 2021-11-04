@@ -1,16 +1,12 @@
-
-<?php session_start(); 
+<?php session_start();
 include('../reuse/header.php');
 include('../reuse/config.php'); ?>
-<div class="containerbg" style="background-color: #e6f2ff;">
-    <div class="content-header" style="background-color: #e6f2ff;">
-        <div class="container ">
-            <div class="row mb-2 ">
-                <div class="col-sm-4">
-                    <h4>New Task</h4>
-                </div>
-                <hr class="border border-bottom-5 border-primary">
 
+<div class="content-header">
+    <div class="container ">
+        <div class="row mb-2 mt-2 ">
+            <div class="col-sm-4">
+                <h4>New Task</h4>
             </div>
             <hr class="border border-bottom-5 border-primary">
         </div>
@@ -79,4 +75,4 @@ include('../reuse/config.php'); ?>
     </div>
 </div>
 
-<?php include('../reuse/footer.php'); ?>
+    <?php include('../reuse/footer.php'); ?>

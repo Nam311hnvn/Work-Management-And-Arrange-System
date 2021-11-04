@@ -14,13 +14,12 @@ $pj_start = $row1['pj_start'];
 $pj_end = $row1['pj_end'];
 // $user_ids = $row1['userIds[]'];
 $pj_note = $row1['pj_note'];
-$manager_id = 2;
 $user_ids = [1, 2, 3, 4];
 
 ?>
 <div class="content-header">
     <div class="container ">
-        <div class="row mb-2 ">
+        <div class="row mb-2 mt-2 ">
             <div class="col-sm-4">
                 <h4>View Project</h4>
             </div>
@@ -58,8 +57,6 @@ $user_ids = [1, 2, 3, 4];
                             <dd>
                                 <?php
                             
-                                //Bước 2:
-                                
                                     if ($pj_status == 1) {
                                         echo '<td ><span class="badge bg-secondary">Pending</span></td>';
                                     } else if ($pj_status == 2) {

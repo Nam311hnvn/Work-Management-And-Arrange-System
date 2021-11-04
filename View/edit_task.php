@@ -16,9 +16,9 @@ $task_note = $row['task_note'];
 
 <div class="content-header">
     <div class="container ">
-        <div class="row mb-2 ">
+        <div class="row mb-2 mt-2 ">
             <div class="col-sm-4">
-                <h4>New Task</h4>
+                <h4>Update Task</h4>
             </div>
             <hr class="border border-bottom-5 border-primary">
         </div>
