@@ -1,4 +1,4 @@
-<?php include('./reuse/header.php'); ?>
+<?php include('../reuse/header.php'); ?>
 <div class="content-header">
     <div class="container">
         <div class="row mb-2 mt-2">
@@ -79,4 +79,4 @@
         </div>
     </div>
 </div>
-<?php include('./reuse/footer.php'); ?>
+<?php include('../reuse/footer.php'); ?>

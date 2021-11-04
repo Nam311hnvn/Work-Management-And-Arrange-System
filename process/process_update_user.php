@@ -1,5 +1,5 @@
 <?php
-    include './reuse/config.php';
+    include '../reuse/config.php';
 
     //Lấy dữ liệu
     $usernick =$_POST["usernick"];

@@ -1,4 +1,4 @@
-<?php include('./reuse/header.php')?>
+<?php include('../reuse/header.php')?>
 <div class="container-header">
     <div class="content-header">
         <div class="container-fluid">
@@ -48,4 +48,4 @@
 </div>
 
 
-<?php include('./reuse/footer.php'); ?>
+<?php include('../reuse/footer.php'); ?>

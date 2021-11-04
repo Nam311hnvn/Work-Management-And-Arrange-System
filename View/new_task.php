@@ -1,4 +1,5 @@
-<?php include('./reuse/header.php'); ?>
+<?php session_start(); 
+include('../reuse/header.php'); ?>
 <div class="containerbg" style="background-color: #e6f2ff;">
     <div class="content-header" style="background-color: #e6f2ff;">
         <div class="container ">
@@ -73,4 +74,4 @@
     </div>
 </div>
 
-<?php include('./reuse/footer.php'); ?>
+<?php include('../reuse/footer.php'); ?>
