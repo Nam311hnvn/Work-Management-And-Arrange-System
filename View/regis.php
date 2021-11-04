@@ -86,4 +86,4 @@
         </section>
     </div>
 </body> 
-    <?php include('./reuse/footer.php'); ?>
+    <?php include('../reuse/footer.php'); ?>

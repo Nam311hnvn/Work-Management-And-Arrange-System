@@ -1,4 +1,4 @@
-<?php include('./reuse/header.php')?>
+<?php include('../reuse/header.php')?>
 <div class="content-header">
     <div class="container-fluid">
         <div class="row mb-2 ">
@@ -73,8 +73,8 @@
                                     echo '<td>' . $row['user_phone'] . '</td>';
                                     echo '<td>' . $Level . '</td>';
                                     echo '<td>';
-                                    echo '<a class = "btn btn-primary me-2" href ="update_user.php?id='.$row['user_id'].' ">Sửa</a>';
-                                    echo '<a class = "btn btn-danger" name = "'.$row['user_id'].'" id="delete" >Xóa</a>';
+                                    echo '<a class = "btn btn-primary me-2 " href ="update_user.php?id='.$row['user_id'].' ">Sửa</a>';
+                                    echo '<a class = "btn btn-danger deleteAccount" name = "'.$row['user_id'].'" id="delete" >Xóa</a>';
                                     echo '<td>';
                                     echo '</tr>';
 
@@ -92,7 +92,7 @@
 </div>
 <script>
     $(document).ready(function() {
-    $('#delete').click(function() {
+    $('.deleteAccount').click(function() {
             $id = $(this).attr('name'); //? bắt giá trị id của hàng cần xóa
             if (confirm("Bạn có muốn xoá tài khoản này không?")) {
                 $.ajax({
@@ -116,4 +116,4 @@
             
 })
 </script>
-<?php include('./reuse/footer.php'); ?>
+<?php include('../reuse/footer.php'); ?>
