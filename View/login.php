@@ -17,8 +17,8 @@
             <div class="col">
                 <nav class="navbar navbar-expand-lg navbar-light">
                     <div class="container-fluid">
-                        <a class="navbar-brand" href="index.php">
-                            <h3 class="text" href="./index.php"><b>TIME CONTROL!<i class="fas fa-clock"></i></b></h3>
+                        <a class="navbar-brand" href="../index.php">
+                            <h3 class="text" href="../index.php"><b>TIME CONTROL!<i class="fas fa-clock"></i></b></h3>
                         </a>
                         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                             <span class="navbar-toggler-icon"></span>
@@ -89,7 +89,9 @@
             alert("Vui lòng nhập đầy đủ TK và MK");
             } else {
             $.ajax({
+
             url: "../process/login-process.php",
+
             type: "POST",
             data: {
                 do_login: "login",
