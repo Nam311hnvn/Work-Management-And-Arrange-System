@@ -59,19 +59,16 @@ $user_ids = [1, 2, 3, 4];
                                 <?php
                             
                                 //Bước 2:
-                                $sql = "SELECT * FROM tb_project";
-                                $result = mysqli_query($conn, $sql);
-                                if (mysqli_num_rows($result) > 0) {
-                                    $row = mysqli_fetch_assoc($result);
-                                    if ($row['pj_status'] == 1) {
+                                
+                                    if ($pj_status == 1) {
                                         echo '<td ><span class="badge bg-secondary">Pending</span></td>';
-                                    } else if ($row['pj_status'] == 2) {
+                                    } else if ($pj_status == 2) {
                                         echo '<td><span class="badge bg-warning">On-Hold</span></td>';
                                     } else {
                                         echo '<td><span class="badge bg-success">Done</span></td>';
                                     }
                                     echo '<td>';
-                                }
+                                
 
                                 ?>
                             </dd>

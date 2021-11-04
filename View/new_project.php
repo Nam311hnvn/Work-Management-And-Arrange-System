@@ -1,6 +1,11 @@
-<?php include('../reuse/header.php');
-include('../reuse/config.php')
+<?php
+    //Dịch vụ bảo vệ
+    session_start();
+    if(isset($_SESSION['CurrentUser'])){
+        include('../reuse/header.php');
+        include('../reuse/config.php');
 ?>
+
 <div class="content-header">
     <div class="container ">
         <div class="row mb-2 ">
@@ -16,6 +21,7 @@ include('../reuse/config.php')
     <div class="card card-outline card-primary">
         <div class="card-body bg-light">
             <form action="../process/process_new_project.php" method="POST">
+            <input type="hidden" id="userid" class="form-control form-control-sm" value="<?php if (isset($_GET["id"])) {echo $id;} ?>">
                 <div class="row">
                     <div class="col-md-6">
                         <div class="form-group">
@@ -100,4 +106,7 @@ include('../reuse/config.php')
 </script>
 
 
-<?php include('../reuse/footer.php'); ?>
+<?php
+include('../reuse/footer.php');
+}else header("Location: ../index.php");
+?>

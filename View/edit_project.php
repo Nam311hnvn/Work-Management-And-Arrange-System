@@ -3,7 +3,6 @@ include('../reuse/config.php')
 ?>
 
 <?php
-
 $id = $_GET['id'];
 $sql1 = "SELECT * FROM tb_project WHERE pj_id = '$id'";
 $result1 = mysqli_query($conn, $sql1);
@@ -16,7 +15,6 @@ $pj_end = $row1['pj_end'];
 $pj_note = $row1['pj_note'];
 $manager_id = 2;
 $user_ids = [1, 2, 3, 4];
-
 ?>
 
 <div class="content-header">
