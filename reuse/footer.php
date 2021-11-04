@@ -10,7 +10,7 @@
     });
 </script>
 
-<div class="footer bg-light">
+<div class="footer bg-light" style="position: absolute;bottom: 0; width: 100%; line-height: 40px; background: #5286f3;">
             <div class="container">
                 <div class="row col-6 justify-content-center pt-3 pb-3 m-auto">
                     <div class="col-1">
