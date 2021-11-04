@@ -49,7 +49,7 @@
                             <div class="card-body p-m-5 top-50">
                                 <div class="row justify-content-center">
                                     <div class="col-md-12">
-                                        <form class="mx-4" action="" method="POST">
+                                        <div class="mx-4" >
                                             <h2 class="fw-bold text-center">Log in!</h2>
                                             <div class="input-group flex-nowrap py-3">
                                                 <span class="input-group-text col-3" id="addon-wrapping"><i class="fas fa-user-alt pe-1"></i>Username</span>
@@ -65,7 +65,7 @@
                                             <div class="d-flex justify-content-start mb-3 mb-lg-4">
                                                 <button type="submit" class="btn btn-primary btn-login" name='do_login' id='login'>Log In</button>
                                             </div>
-                                        </form>
+                                        </div>
                                     </div>
 
                                 </div>
@@ -89,7 +89,7 @@
             alert("Vui lòng nhập đầy đủ TK và MK");
             } else {
             $.ajax({
-            url: "login-process.php",
+            url: "./login-process.php",
             type: "POST",
             data: {
                 do_login: "login",
@@ -98,16 +98,18 @@
             },
             success: function(response) {
             if (response == "admin") {
-                window.location.href = "home.php";
+                window.location.href = "./home.php";
             } else if (response == "user") {
-                window.location.href = "home.php";
+                window.location.href = "./home.php";
             }else if (response == "wrong") {
                 alert("Mật khẩu không chính xác !");
             } else if(response == "cxt"){
                 alert("TK chưa đc xác thực");
+            }else if(response == "alert"){
+                alert("zzzz");
             }
             else {
-                alert("Tài khoản không tồn tại");
+                alert(response);
             }
             }
         });

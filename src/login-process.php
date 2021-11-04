@@ -16,9 +16,12 @@
             $row = mysqli_fetch_assoc($result);
             $level = $row['user_level'];
             // B3. Kiểm tra và xử lý kết quả
+                
                 $password_hash = $row['user_pass'];              
                 // Kiểm tra Mật khẩu có khớp không
+
                 if(password_verify($password,$password_hash)){
+                    
                         
                     if($row['user_status']>0){    
                         $_SESSION['CurrentUser'] = $usernick;
