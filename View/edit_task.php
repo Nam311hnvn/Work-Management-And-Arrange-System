@@ -1,5 +1,10 @@
-<?php include('../reuse/header.php'); ?>
-<?php include('../reuse/config.php') ?>
+<?php
+    //Dịch vụ bảo vệ
+    session_start();
+    if(isset($_SESSION['CurrentUser'])){
+        include('../reuse/header.php');
+        include('../reuse/config.php');
+?>
 
 <?php
 
@@ -24,6 +29,7 @@ $task_note = $row['task_note'];
         </div>
     </div>
 </div>
+
 <div class="col-lg-12 container">
     <div class="card card-outline card-primary">
         <div class="card-body bg-light">
@@ -69,6 +75,9 @@ $task_note = $row['task_note'];
                         </div>
                     </div>
 
+						<input type="hidden" name="userId" value="<?php echo $_SESSION['CurrentId'] ?>">
+                               
+
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="" class="control-label">Note</label>
@@ -89,4 +98,7 @@ $task_note = $row['task_note'];
 </div>
 
 
-<?php include('../reuse/footer.php'); ?>
+<?php
+include('../reuse/footer.php');
+}else header("Location: ../index.php");
+?>

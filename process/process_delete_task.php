@@ -5,5 +5,7 @@
     $result = mysqli_query($conn, $sql);
     if($result > 0) {
         header("Location: ../View/task_list.php");
+    }else{
+        die ('Lỗi');
     }
 ?>

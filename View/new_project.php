@@ -55,7 +55,6 @@
                         </div>
                     </div>
 
-
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
@@ -75,19 +74,40 @@
                                         echo "Lỗi!";
                                     }
                                     ?>
-                                
                                 </select>
                             </div>
                         </div>
                     </div>
+                    
+                    <?php if ($_SESSION['CurrentLevel'] == 1) { ?>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="" class="control-label">Project Manager</label>
+                                    <select name="pjManager" id="pjManager" class="form-control form-select rounded">
+                                        <option value=></option>
+                                        <?php
+                                            $sql ="SELECT user_name FROM tb_user ";
+                                            $result = mysqli_query($conn, $sql);
+                                            while ($row = mysqli_fetch_assoc($result)) {
+                                                echo '<option value="' . $row['user_id'] . '">' . $row['user_name'] . '</option>';
+                                            }
+                                         ?>
+                                    </select>
+                                </div>
+                            </div>
 
+                            <?php }else { ?>
+                            <input type="hidden" name="pjManager" value="<?php echo $_SESSION['CurrentId'] ?>">
+                        <?php } ?>
+
+
+					
                     <div class="col-md-12">
                         <div class="form-group">
                             <label for="" class="control-label">Note</label>
                             <input type="text" name="pjNote" id="pjNote" class="form-control form-control-sm border border-dark border-1 rounded">
                         </div>
                     </div>
-
 
                     <div class="border-3 border-top mt-3 px-0 ">
                         <div class="d-flex w-100 justify-content-center align-items-center">

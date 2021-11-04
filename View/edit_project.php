@@ -1,5 +1,9 @@
-<?php include('../reuse/header.php');
-include('../reuse/config.php')
+<?php
+    //Dịch vụ bảo vệ
+    session_start();
+    if(isset($_SESSION['CurrentUser'])){
+        include('../reuse/header.php');
+        include('../reuse/config.php');
 ?>
 
 <?php
@@ -24,10 +28,10 @@ $user_ids = [1, 2, 3, 4];
                 <h4>Update Project</h4>
             </div>
             <hr class="border border-bottom-5 border-primary">
-
         </div>
     </div>
 </div>
+
 <div class="col-lg-12 container">
     <div class="card card-outline card-primary">
         <div class="card-body bg-light">
@@ -98,6 +102,7 @@ $user_ids = [1, 2, 3, 4];
                         </div>
                     </div>
 
+                    <input type="hidden" name="pjManager" value="<?php echo $_SESSION['CurrentId'] ?>">
 
                     <div class="border-3 border-top mt-3 px-0 ">
                         <div class="d-flex w-100 justify-content-center align-items-center">
@@ -117,4 +122,7 @@ $user_ids = [1, 2, 3, 4];
 </script>
 
 
-<?php include('../reuse/footer.php'); ?>
+<?php
+include('../reuse/footer.php');
+}else header("Location: ../index.php");
+?>
