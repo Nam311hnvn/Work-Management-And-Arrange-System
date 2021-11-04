@@ -12,10 +12,10 @@
             // Bước 02: Truy vấn thông tin
             $sql = "SELECT * FROM tb_user WHERE user_nick= '$usernick' ";
             $result = mysqli_query($conn,$sql);
+            if(mysqli_num_rows($result) > 0){
             $row = mysqli_fetch_assoc($result);
             $level = $row['user_level'];
             // B3. Kiểm tra và xử lý kết quả
-            if(mysqli_num_rows($result) > 0){
                 $password_hash = $row['user_pass'];              
                 // Kiểm tra Mật khẩu có khớp không
                 if(password_verify($password,$password_hash)){

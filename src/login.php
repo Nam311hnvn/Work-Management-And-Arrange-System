@@ -63,7 +63,7 @@
                                                 <a class="text-decoration-none" href="./regis.php">New around here? Sign up</a>
                                             </div>
                                             <div class="d-flex justify-content-start mb-3 mb-lg-4">
-                                                <button type="submit" class="btn btn-primary btn-login" name='do_login' id='Login'>Log In</button>
+                                                <button type="submit" class="btn btn-primary btn-login" name='do_login' id='login'>Log In</button>
                                             </div>
                                         </form>
                                     </div>
@@ -77,45 +77,52 @@
         </section>
     </div>
     <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
-    <script>
-        $(document).ready(function() {
-            $(document).keypress(function(event) {
-                var keycode = (event.keyCode ? event.keyCode : event.which);
-                if (keycode == '13') {
-                    $txtNick = $('#txtNick').val();
-                    $txtPass = $('#txtPass').val();
-                    if ($txtNick== '' || $txtPass == '') {
-                        alert("Vui lòng nhập đầy đủ TK và MK");
-                    } else {
-                        $.ajax({
-                            url: "login-process.php",
-                            type: "POST",
-                            data: {
-                                do_login: "do_login",
-                                txtNick: $txtNick,
-                                txtPass: $txtPass,
-                            },
-                            success: function(response) {
-                                if (response == "admin") {
-                                    window.location.href = "home.php";
-                                } else if (response == "user") {
-                                    window.location.href = "home.php";
-                                }else if (response == "wrong") {
-                                    alert("Mật khẩu không chính xác !");
-                                } else if(response == "cxt"){
-                                    alert("TK chưa đc xác thực");
-                                }
-                                 else {
-                                    alert("Tài khoản không tồn tại")
-                                }
-                            }
-                        });
-                    }
-                }
-            });
-            $('.btn-login').click(function(event) {
-                    $txtNick = $('#txtNick').val();
-                    $txtPass = $('#txtPass').val();
+
+
+    
+<script> 
+    $(document).ready(function(){
+    $("#login").click(function(){
+        $txtNick = $("#txtNick").val();
+        $txtPass = $("#txtPass").val();
+        if ($txtNick== "" || $txtPass == "") {
+            alert("Vui lòng nhập đầy đủ TK và MK");
+            } else {
+            $.ajax({
+            url: "login-process.php",
+            type: "POST",
+            data: {
+                do_login: "login",
+                txtNick: $txtNick,
+                txtPass: $txtPass,
+            },
+            success: function(response) {
+            if (response == "admin") {
+                window.location.href = "home.php";
+            } else if (response == "user") {
+                window.location.href = "home.php";
+            }else if (response == "wrong") {
+                alert("Mật khẩu không chính xác !");
+            } else if(response == "cxt"){
+                alert("TK chưa đc xác thực");
+            }
+            else {
+                alert("Tài khoản không tồn tại");
+            }
+            }
+        });
+        }
+});
+
+
+
+});
+
+</script>
+
+
+
+    
                     if ($txtNick== '' || $txtPass == '') {
                         alert("Vui lòng nhập đầy đủ TK và MK");
                     } else {
@@ -143,11 +150,5 @@
                             }
                         });
                     }
-                });
-    </script>
-
-
-
-
 
     <?php include('./reuse/footer.php'); ?>
