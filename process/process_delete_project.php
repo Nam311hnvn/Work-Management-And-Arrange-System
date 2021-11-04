@@ -6,6 +6,6 @@
     if($result > 0) {
         header("Location: ../View/project_list.php");
     }else{
-        header("Location: ../View/project_list.php");
+        die('Lỗi');
     }
 ?>

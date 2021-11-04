@@ -1,4 +1,11 @@
-<?php include('../reuse/header.php'); ?>
+<?php
+    //Dịch vụ bảo vệ
+    session_start();
+    if(isset($_SESSION['CurrentUser'])){
+        include('../reuse/header.php');
+        include('../reuse/config.php');
+?>
+
 <div class="content-header">
 	<div class="container">
 		<div class="row mb-2 mt-2">
@@ -34,9 +41,7 @@
 				</thead>
 				<tbody>
 					<?php
-					//Bước 1:
-					include '../reuse/config.php';
-					//Bước 2:
+					
 					$sql = "SELECT * FROM tb_project";
 					$result = mysqli_query($conn, $sql);
 					$count = 1;
@@ -63,10 +68,13 @@
 						}
 					}
 					?>
-
 				</tbody>
 			</table>
 		</div>
 	</div>
 </div>
-<?php include('../reuse/footer.php'); ?>
+
+<?php
+include('../reuse/footer.php');
+}else header("Location: ../index.php");
+?>

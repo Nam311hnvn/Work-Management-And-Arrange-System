@@ -1,5 +1,9 @@
-<?php include('../reuse/header.php');
-include('../reuse/config.php')
+<?php
+    //Dịch vụ bảo vệ
+    session_start();
+    if(isset($_SESSION['CurrentUser'])){
+        include('../reuse/header.php');
+        include('../reuse/config.php');
 ?>
 
 <?php
@@ -109,5 +113,7 @@ $user_ids = [1, 2, 3, 4];
     $(".mutiple-select").select2({});
 </script>
 
-
-<?php include('../reuse/footer.php'); ?>
+<?php
+include('../reuse/footer.php');
+}else header("Location: ../index.php");
+?>

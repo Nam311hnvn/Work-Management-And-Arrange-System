@@ -24,7 +24,7 @@
                 if(password_verify($password,$password_hash)){
                     if($row['user_status']>0){    
                         $_SESSION['CurrentUser'] = $usernick;
-                        $_SESSION['CurrentID'] = $userid;
+                        $_SESSION['CurrentId'] = $userid;
                         $_SESSION['CurrentLevel']=$level;                                             
                         if($level == 1){
                             echo "admin";
