@@ -4,14 +4,14 @@
     //Dịch vụ bảo vệ
     session_start();
     if(isset($_SESSION['CurrentUser'])){
-        include('./reuse/header.php');
-        include('./reuse/config.php');
+        include('../reuse/header.php');
+        include('../reuse/config.php');
 ?>
 <div class="container-fluid">
     <div class="col-12 py-2">
         <div class="card ">
             <div class="card-body ">
-                Welcome !
+                Welcome <?php echo $_SESSION['CurrentUser']?>!
             </div>
         </div>
     </div>
@@ -53,7 +53,7 @@
     </div>
 </div>
 <?php
-include('./reuse/footer.php');
-}else header("Location: index.php");
+include('../reuse/footer.php');
+}else header("Location: ../index.php");
 ?>
 

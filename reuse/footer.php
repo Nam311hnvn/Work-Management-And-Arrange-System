@@ -3,8 +3,6 @@
 <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
 
 <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script> 
-
-<script src="../asset/js/myscript.js"></script>
 <script>
     $(".multiple-select").select2({
     });
@@ -18,7 +16,7 @@
                     </div>
                     <div class="col-1 ">
                     <a href="https://github.com/Nam311hnvn/Work-Management-And-AFQAAAAAdAAAAABAF" alt=""><img src="../asset/imgs/GitLogo.jpg" alt=""></a>
-                    </div>                  
+                    </div>
                 </div>
                 <div class="row col">
                     <p class="text-center">All right reserved. Design By <a href="#" class="text-decoration-none coppyright">Qbu Team</a></p>

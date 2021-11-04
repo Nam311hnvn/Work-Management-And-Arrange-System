@@ -1,5 +1,6 @@
-<?php include('./reuse/header.php');
-include('./reuse/config.php')
+<?php session_start(); 
+include('../reuse/header.php');
+include('../reuse/config.php')
 ?>
 <div class="content-header">
     <div class="container ">
@@ -100,4 +101,4 @@ include('./reuse/config.php')
 </script>
 
 
-<?php include('./reuse/footer.php'); ?>
+<?php include('../reuse/footer.php'); ?>

@@ -1,9 +1,10 @@
 
 <?php
 session_start();
-unset($_SESSION['loginOK']);
+unset($_SESSION['CurrentUser']);
+unset($_SESSION['CurrentId']);
 unset($_SESSION['CurrentLevel']);
-header('location: index.php');
+header('location: ../index.php');
 ?>
 <?php
     //? đóng kết nối

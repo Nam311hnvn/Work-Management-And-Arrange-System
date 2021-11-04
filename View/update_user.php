@@ -1,4 +1,4 @@
-<?php include('./reuse/header.php')?>
+<?php include('../reuse/header.php')?>
 <?php //Check ID
     include('./reuse/config.php');
      if (isset($_GET['id'])) {
@@ -139,5 +139,4 @@
 
 })
 </script>
-<!-- alert(reponse); -->
-<?php include('./reuse/footer.php'); ?>
+<?php include('../reuse/footer.php'); ?>
