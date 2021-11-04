@@ -9,7 +9,7 @@ $pj_name = $_POST['pjName'];
 
 
 
-include'./reuse/config.php';
+include'../reuse/config.php';
 
 //Bước 2: truy vấn
 $sql = "UPDATE tb_task 
@@ -19,7 +19,7 @@ WHERE task_id = '$id'";
 $result = mysqli_query($conn, $sql);
 //Bước 3: xử lý
 if($result >0){
-    header("Location: task_list.php");
+    header("Location: ../View/task_list.php");
 }else{
     die ("Lỗi");
 }

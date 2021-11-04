@@ -1,3 +1,4 @@
+
 <?php session_start(); 
 include('../reuse/header.php');
 include('../reuse/config.php'); ?>
@@ -9,6 +10,7 @@ include('../reuse/config.php'); ?>
                     <h4>New Task</h4>
                 </div>
                 <hr class="border border-bottom-5 border-primary">
+
             </div>
             <hr class="border border-bottom-5 border-primary">
         </div>
@@ -17,7 +19,7 @@ include('../reuse/config.php'); ?>
 <div class="col-lg-12 container">
     <div class="card card-outline card-primary">
         <div class="card-body bg-light">
-            <form action="process_new_task.php" method="POST">
+            <form action="../process/process_new_task.php" method="POST">
                 <div class="row">
                     <div class="col-md-6">
                         <div class="form-group">

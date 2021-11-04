@@ -1,5 +1,5 @@
-<?php include('./reuse/header.php');
-include('./reuse/config.php')
+<?php include('../reuse/header.php');
+include('../reuse/config.php')
 ?>
 
 <?php
@@ -57,7 +57,7 @@ $user_ids = [1, 2, 3, 4];
                             <dt><b class="border-bottom border-primary">Status</b></dt>
                             <dd>
                                 <?php
-                                include './reuse/config.php';
+                            
                                 //Bước 2:
                                 $sql = "SELECT * FROM tb_project";
                                 $result = mysqli_query($conn, $sql);
@@ -116,4 +116,4 @@ $user_ids = [1, 2, 3, 4];
 </script>
 
 
-<?php include('./reuse/footer.php'); ?>
+<?php include('../reuse/footer.php'); ?>

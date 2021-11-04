@@ -38,7 +38,7 @@
                     <tbody>
                         <?php
                         //Bước 1:
-                        include './reuse/config.php';
+                        include '../reuse/config.php';
                         //Bước 2:
                         $sql = "SELECT t.*, p.* FROM tb_task t, tb_project p
                             WHERE p.pj_id = t.pj_id";
@@ -56,7 +56,7 @@
                                 echo '<td>' . $row['task_note'] . '</td>';
                                 echo '<td>';
                                 echo '<a class = "btn btn-primary me-2" href = "edit_task.php?id=' . $row['task_id'] . '">Sửa</a>';
-                                echo '<a class = "btn btn-danger" href = "delete_task.php?id=' . $row['task_id'] . '">Xóa</a>';
+                                echo '<a class = "btn btn-danger" href = "../process/process_delete_task.php?id=' . $row['task_id'] . '">Xóa</a>';
                                 echo '<td>';
                                 echo '</tr>';
                             }
@@ -68,4 +68,6 @@
         </div>
     </div>
 </div>
+
 <?php include('../reuse/footer.php'); ?>
+
