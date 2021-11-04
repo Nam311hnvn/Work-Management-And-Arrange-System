@@ -30,7 +30,7 @@ $result = mysqli_query($conn,$sql);
 
 // Bước 3:
 if($result > 0){
-    header("Location: project_list.php");
+    header("Location: ../View/project_list.php");
 }else{
     die ("Lỗi");
 }

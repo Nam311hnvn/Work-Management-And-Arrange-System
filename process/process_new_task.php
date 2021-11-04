@@ -6,7 +6,7 @@ $task_note = $_POST['taskNote'];
 $user_id = 3;
 $pj_name = $_POST['pjName'];
 
-include'./reuse/config.php';
+include'../reuse/config.php';
 
 //Bước 2: truy vấn
 $sql = "INSERT INTO tb_task(task_name, task_note, user_id, task_start, task_end, pj_id) 
@@ -15,7 +15,7 @@ echo $sql;
 $result = mysqli_query($conn, $sql);
 //Bước 3: xử lý
 if($result >0){
-    header("Location: task_list.php");
+    header("Location: ../View/task_list.php");
 }else{
     die ("Lỗi");
 }

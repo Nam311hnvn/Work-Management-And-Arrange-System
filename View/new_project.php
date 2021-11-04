@@ -1,5 +1,7 @@
+
 <?php session_start(); 
 include('../reuse/header.php');
+
 include('../reuse/config.php')
 ?>
 <div class="content-header">
@@ -16,7 +18,7 @@ include('../reuse/config.php')
 <div class="col-lg-12 container">
     <div class="card card-outline card-primary">
         <div class="card-body bg-light">
-            <form action="process_new_project.php" method="POST">
+            <form action="../process/process_new_project.php" method="POST">
                 <div class="row">
                     <div class="col-md-6">
                         <div class="form-group">

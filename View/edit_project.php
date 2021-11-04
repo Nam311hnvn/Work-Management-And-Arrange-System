@@ -1,5 +1,5 @@
-<?php include('./reuse/header.php');
-include('./reuse/config.php')
+<?php include('../reuse/header.php');
+include('../reuse/config.php')
 ?>
 
 <?php
@@ -33,7 +33,7 @@ $user_ids = [1, 2, 3, 4];
 <div class="col-lg-12 container">
     <div class="card card-outline card-primary">
         <div class="card-body bg-light">
-            <form action="process_edit_project.php" method="POST">
+            <form action="../process/process_edit_project.php" method="POST">
                 <div class="row">
                     <div class="col-md-6">
                         <div class="form-group">
@@ -118,4 +118,4 @@ $user_ids = [1, 2, 3, 4];
 </script>
 
 
-<?php include('./reuse/footer.php'); ?>
+<?php include('../reuse/footer.php'); ?>
