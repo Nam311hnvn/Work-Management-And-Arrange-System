@@ -36,7 +36,7 @@
                                 </a>
                                 <ul class="dropdown-menu bg-primary" aria-labelledby="navbarDropdown">
                                     <li><a class="dropdown-item text-white" href="#"><i class="fas fa-cog"></i>Manage Account</a></li>
-                                    <li><a class="dropdown-item text-white" href="#"><i class="fas fa-power-off"></i>Logout</a></li>
+                                    <li><a class="dropdown-item text-white" href="logout-process.php"><i class="fas fa-power-off"></i>Logout</a></li>
                                 </ul>
                             </li>
                         </ul>
