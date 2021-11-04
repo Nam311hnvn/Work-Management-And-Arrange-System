@@ -1,4 +1,16 @@
 <?php
+
+if(isset($_POST['save-multiple']))
+{
+    $user_ids = $_POST['userIds'];
+    foreach($user_ids as $urow)
+    {
+        echo $urow;
+    }
+}
+
+
+
 $pj_name = $_POST['pjName'];
 $pj_status = $_POST['pjStatus'];
 $pj_start = $_POST['pjStart'];
@@ -6,7 +18,7 @@ $pj_end = $_POST['pjEnd'];
 // $user_ids = $_POST['userIds[]'];
 $pj_note= $_POST['pjNote'];
 $manager_id = 2;
-$user_ids = [1, 2, 3, 4];
+// $user_ids = [1, 2, 3, 4];
 
 include './reuse/config.php';
 

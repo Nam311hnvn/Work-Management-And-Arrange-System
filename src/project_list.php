@@ -55,6 +55,7 @@
 								echo '<td><span class="badge bg-success">Done</span></td>';
 							}
 							echo '<td>';
+							echo '<a class = "btn btn-success me-2" href = "view_project.php?id=' . $row['pj_id'] . '">Xem</a>';
 							echo '<a class = "btn btn-primary me-2" href = "edit_project.php?id=' . $row['pj_id'] . '">Sửa</a>';
 							echo '<a class = "btn btn-danger" href = "delete_project.php?id=' . $row['pj_id'] . '">Xóa</a>';
 							echo '<td>';

@@ -31,8 +31,8 @@ $task_note = $row['task_note'];
                 <div class="row">
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label for="pjName" class="control-label">Name Project:</label>
-                            <select class="form-select" aria-label="Default select example" name="pjName" value="<?php echo $pj_name ?>">
+                            <label for="pjName" class="control-label">Name Project</label>
+                            <select class="form-select" aria-label="Default select example" name="pjName" id="pjName" value="<?php echo $pj_name ?>">
                                 <?php
                                 $sql = "SELECT * FROM tb_project";
                                 $result = mysqli_query($conn, $sql);

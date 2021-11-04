@@ -65,10 +65,11 @@ include('./reuse/config.php')
                                             </option>
                                     <?php
                                         }
+                                    } else {
+                                        echo "Lỗi!";
                                     }
                                     ?>
-                                    <option value=""></option>
-
+                                
                                 </select>
                             </div>
                         </div>
@@ -84,7 +85,7 @@ include('./reuse/config.php')
 
                     <div class="border-3 border-top mt-3 px-0 ">
                         <div class="d-flex w-100 justify-content-center align-items-center">
-                            <button type="submit" class="btn btn-primary mt-2">Save</button>
+                            <button type="submit" name="save-multiple" class="btn btn-primary mt-2">Save</button>
                         </div>
                     </div>
                 </div>
