@@ -44,9 +44,10 @@ $user_ids = [1, 2, 3, 4];
                         <div class="form-group">
                             <label for="">Status</label>
                             <select name="pjStatus" id="pjStatus" <?php echo $pj_status ?> class="form-control form-select custom-select-sm border border-dark rounded">
-                                <option value="1">Pending</option>
-                                <option value="2">On-Hold</option>
-                                <option value="3">Done</option>
+                                <option value="1" <?php echo isset($pj_status) && $pj_status == 1 ? 'selected' : '' ?>>Pending</option>
+                                <option value="2" <?php echo isset($pj_status) && $pj_status == 2 ? 'selected' : '' ?>>On-Hold</option>
+                                <option value="3" <?php echo isset($pj_status) && $pj_status == 3 ? 'selected' : '' ?>>Done</option>
+
                             </select>
                         </div>
                     </div>
