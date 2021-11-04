@@ -1,4 +1,3 @@
-
 <?php
 
     //Dịch vụ bảo vệ
@@ -11,10 +10,30 @@
     <div class="col-12 py-2">
         <div class="card ">
             <div class="card-body ">
-                Welcome <?php echo $_SESSION['CurrentUser']?>!
+                <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                    <div class="container">
+                        <h4 class="navbar-brand" href="#" disabled>Welcome <?php echo $_SESSION['CurrentUser']?>!!</h4>
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                        data-bs-toggle="dropdown" aria-expanded="false"><i
+                                            class="fas fa-bell"></i>Notification
+                                    </a>
+                                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                        <!-- Làm SQL -->
+                                        <li><a class="dropdown-item" href="#">Thông tin</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </nav>
             </div>
         </div>
     </div>
+    
     <div class="row">
         <div class="col-md-8">
             <table class="table table-responsive">
@@ -58,4 +77,3 @@ include('../reuse/footer.php');
 }else header("Location: ../index.php");
 
 ?>
-
