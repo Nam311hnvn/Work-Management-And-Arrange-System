@@ -33,12 +33,12 @@
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav ms-auto mb-2 mb-lg-0 fs-5">
                             <li class="nav-item">
-                                <a class="nav-link text-white" href="./project_list.php"><i
+                                <a class="nav-link text-white" href="../View/project_list.php"><i
                                         class="fas fa-layer-group me-1"></i> Projects</a>
                             </li>
 
                             <li class="nav-item">
-                                <a class="nav-link text-white" href="./task_list.php"><i
+                                <a class="nav-link text-white" href="../View/task_list.php"><i
                                         class="fas fa-tasks me-1"></i> Task</a>
                             </li>
 
