@@ -47,7 +47,7 @@
         </div>
     </div>
 
-    <div class="bg-image" style="background-image: url('../asset/imgs/BG.jpg'); height: 100vh">
+    <div class="bg-image" style="background-image: url('./asset/imgs/BG.jpg'); height: 100vh">
         <div class="container-float">
             <div class="row d-flex justify-content-center align-items-center">
                 <div class="col-md-6 position-absolute top-50 start-30">

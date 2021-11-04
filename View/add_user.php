@@ -86,7 +86,7 @@ $(document).ready(function() {
         }else {
             $.ajax({
                     type: "post",
-                    url: "process_add_user.php",
+                    url: "./process/process_add_user.php",
                     data: {
                         usernick: $usernick,
                         password: $password,

@@ -54,6 +54,6 @@
 </div>
 <?php
 include('./reuse/footer.php');
-}else header("Location: index.php");
+}else header("Location: ./index.php");
 ?>
 
