@@ -35,7 +35,7 @@
                                     <span class="fs-5 ps-0">
                                         First you have to sign in.
                                     </span>
-                                    <a class="nav-link text-danger fs-5" aria-current="page" href="./login.php">Sign
+                                    <a class="nav-link text-danger fs-5" aria-current="page" href="./View/login.php">Sign
                                         in</a>
                                 </li>
                             </ul>
