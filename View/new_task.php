@@ -1,21 +1,22 @@
+<?php
+    //Dịch vụ bảo vệ
+    session_start();
+    if(isset($_SESSION['CurrentUser'])){
+        include('../reuse/header.php');
+        include('../reuse/config.php');
+?>
 
-<?php session_start(); 
-include('../reuse/header.php');
-include('../reuse/config.php'); ?>
-<div class="containerbg" style="background-color: #e6f2ff;">
-    <div class="content-header" style="background-color: #e6f2ff;">
-        <div class="container ">
-            <div class="row mb-2 ">
-                <div class="col-sm-4">
-                    <h4>New Task</h4>
-                </div>
-                <hr class="border border-bottom-5 border-primary">
-
+<div class="content-header">
+    <div class="container ">
+        <div class="row mb-2 mt-2 ">
+            <div class="col-sm-4">
+                <h4>New Task</h4>
             </div>
             <hr class="border border-bottom-5 border-primary">
         </div>
     </div>
 </div>
+
 <div class="col-lg-12 container">
     <div class="card card-outline card-primary">
         <div class="card-body bg-light">
@@ -61,6 +62,9 @@ include('../reuse/config.php'); ?>
                         </div>
                     </div>
 
+						<input type="hidden" name="userId" value="<?php echo $_SESSION['CurrentId'] ?>">
+
+
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="" class="control-label">Note</label>
@@ -79,4 +83,7 @@ include('../reuse/config.php'); ?>
     </div>
 </div>
 
-<?php include('../reuse/footer.php'); ?>
+<?php
+include('../reuse/footer.php');
+}else header("Location: ../index.php");
+?>
