@@ -89,7 +89,9 @@
             alert("Vui lòng nhập đầy đủ TK và MK");
             } else {
             $.ajax({
-            url: "./process/login-process.php",
+
+            url: "../process/login-process.php",
+
             type: "POST",
             data: {
                 do_login: "login",
@@ -121,36 +123,4 @@
 });
 
 </script>
-
-
-
-    
-                    if ($txtNick== '' || $txtPass == '') {
-                        alert("Vui lòng nhập đầy đủ TK và MK");
-                    } else {
-                        $.ajax({
-                            url: "login-process.php",
-                            type: "POST",
-                            data: {
-                                do_login: "do_login",
-                                txtNick: $txtNick,
-                                txtPass: $txtPass,
-                            },
-                            success: function(response) {
-                                if (response == "admin") {
-                                    window.location.href = "home.php";
-                                } else if (response == "user") {
-                                    window.location.href = "home.php";
-                                }else if (response == "wrong") {
-                                    alert("Mật khẩu không chính xác !");
-                                } else if(response == "cxt"){
-                                    alert("TK chưa đc xác thực");
-                                }
-                                else {
-                                    alert("Tài khoản không tồn tại");
-                                }
-                            }
-                        });
-                    }
-
-    <?php include('./reuse/footer.php'); ?>
+    <?php include('../reuse/footer.php'); ?>

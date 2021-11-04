@@ -8,7 +8,7 @@ if(isset($_POST['SbmRegis'])){
     $pass2 = $_POST['pass2'];
 }
 // ket noi db
-    include('./reuse/config.php');
+    include('../reuse/config.php');
 // truy van du lieu
     $sql ="SELECT * FROM tb_user WHERE user_email='$email' OR user_nick= '$usernick' ";
     $result = mysqli_query($conn, $sql);
