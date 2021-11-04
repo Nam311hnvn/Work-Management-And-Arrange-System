@@ -20,7 +20,7 @@ $pj_note= $_POST['pjNote'];
 $manager_id = 2;
 // $user_ids = [1, 2, 3, 4];
 
-include './reuse/config.php';
+include '../reuse/config.php';
 
 //Bước 2:
 $sql = "INSERT INTO tb_project (pj_name, pj_note, pj_start, pj_end, pj_status, pj_manager, pj_userids) 
@@ -30,7 +30,7 @@ $result = mysqli_query($conn,$sql);
 
 // Bước 3:
 if($result > 0){
-    header("Location: project_list.php");
+    header("Location: ../View/project_list.php");
 }else{
     die ("Lỗi");
 }

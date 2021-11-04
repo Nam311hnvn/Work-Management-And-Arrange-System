@@ -1,4 +1,4 @@
-<?php include('./reuse/header.php'); ?>
+<?php include('../reuse/header.php'); ?>
 <div class="content-header">
 	<div class="container">
 		<div class="row mb-2 mt-2">
@@ -35,7 +35,7 @@
 				<tbody>
 					<?php
 					//Bước 1:
-					include './reuse/config.php';
+					include '../reuse/config.php';
 					//Bước 2:
 					$sql = "SELECT * FROM tb_project";
 					$result = mysqli_query($conn, $sql);
@@ -57,7 +57,7 @@
 							echo '<td>';
 							echo '<a class = "btn btn-success me-2" href = "view_project.php?id=' . $row['pj_id'] . '">Xem</a>';
 							echo '<a class = "btn btn-primary me-2" href = "edit_project.php?id=' . $row['pj_id'] . '">Sửa</a>';
-							echo '<a class = "btn btn-danger" href = "delete_project.php?id=' . $row['pj_id'] . '">Xóa</a>';
+							echo '<a class = "btn btn-danger" href = "../process/process_delete_project.php?id=' . $row['pj_id'] . '">Xóa</a>';
 							echo '<td>';
 							echo '</tr>';
 						}
@@ -69,4 +69,4 @@
 		</div>
 	</div>
 </div>
-<?php include('./reuse/footer.php'); ?>
+<?php include('../reuse/footer.php'); ?>

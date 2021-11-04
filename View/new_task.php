@@ -1,5 +1,5 @@
-<?php include('./reuse/header.php'); ?>
-<?php include('./reuse/config.php') ?>
+<?php include('../reuse/header.php'); ?>
+<?php include('../reuse/config.php') ?>
 <div class="content-header">
     <div class="container ">
         <div class="row mb-2 ">
@@ -13,7 +13,7 @@
 <div class="col-lg-12 container">
     <div class="card card-outline card-primary">
         <div class="card-body bg-light">
-            <form action="process_new_task.php" method="POST">
+            <form action="../process/process_new_task.php" method="POST">
                 <div class="row">
                     <div class="col-md-6">
                         <div class="form-group">
@@ -73,4 +73,4 @@
     </div>
 </div>
 
-<?php include('./reuse/footer.php'); ?>
+<?php include('../reuse/footer.php'); ?>
