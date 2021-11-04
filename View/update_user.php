@@ -1,9 +1,9 @@
-<?php include('./reuse/header.php')?>
+<?php include('../reuse/header.php')?>
 <?php //Check ID
     include('./reuse/config.php');
      if (isset($_GET['id'])) {
          $id = $_GET['id'];
-         $sql = "SELECT * FROM `tb_user` t, user_info f WHERE t.user_id = 2 AND f.user_id =2;";
+         $sql = "SELECT * FROM `tb_user` t, user_info f WHERE t.user_id = '$id' AND f.user_id = '$id';";
          $result = mysqli_query($conn,$sql);
          if (mysqli_num_rows($result)>0) {
              $row = mysqli_fetch_assoc($result);
@@ -22,7 +22,7 @@
     <div class="container-fluid">
         <div class="row mb-2 ">
             <div class="col-sm-4 pt-2">
-                <h4>Add User</h4>
+                <h4>Update User</h4>
             </div>
             <hr class="border border-bottom-5 border-primary">
         </div>
@@ -53,11 +53,11 @@
                     </div>
                     <div class="form-group">
                         <label class="control-label">Phonenumber</label>
-                        <input type="text" id="Phone" class="form-control form-control-sm"value="<?php if (isset($_GET["id"])) {echo $phone;}?>">
+                        <input type="text" id="phone" class="form-control form-control-sm"value="<?php if (isset($_GET["id"])) {echo $phone;}?>">
                     </div>
                 </div>
-                <div class="col-md-6 pt-2">
 
+                <div class="col-md-6 pt-2">
                     <div class="form-group">
                         <label class="control-label">Email</label>
                         <input type="email" class="form-control form-control-sm" id="email" required
@@ -66,7 +66,7 @@
                     </div>
                     <div class="form-group">
                         <label class="control-label">Password</label>
-                        <input type="password" class="form-control form-control-sm" id="password" name="password">
+                        <input type="password" class="form-control form-control-sm" id="password" name="password" >
                     </div>
                     <div class="form-group">
                         <label class="label control-label">Confirm Password</label>
@@ -76,8 +76,8 @@
                     <div class="form-group">
                         <label class="control-label">User Role:</label>
                         <select name="level" id="level" class="form-select form-select-sm">
-                            <option value="0" <?php  if(isset(($_GET["id"])) && $level == 0){echo'selected';} ?>>User</option>
-                            <option value="1" <?php if(isset(($_GET["id"])) && $level == 1){echo'selected';} ?>>Admin</option>
+                            <option value="0" <?php echo isset($level) && $level == 0 ? 'selected' : '' ?>>User</option>
+                            <option value="1" <?php echo isset($level) && $level == 1 ? 'selected' : '' ?>>Admin</option>
                         </select>
                     </div>
 
@@ -92,11 +92,12 @@
     </div>
 </div>
 <script>
-$(document).ready(function() {
+    $(document).ready(function() {
     $("#save").click(function() {
         $userid = $('#userid').val();
         $job = $('#job').val();
         $usernick = $('#usernick').val();
+        arlert($password);
         $password = $('#password').val();
         $level = $('#level').val();
         $name = $('#name').val();
@@ -122,19 +123,20 @@ $(document).ready(function() {
                         dob: $dob,
                     },
                     success: function(response) {
-                        if (response == "success") {
-                            alert("Sửa thành công");
-                            alert_toast('Data successfully saved',"success");
-                            $('#contents').load("./user_list.php");
+                        if (response) {
+                            alert(response);
                         } else if(response == 'error') {
                             alert("Sửa thất bại");
                         }
+                        else if() {
+                            alert("Sửa thành công");
+                        }
+                    
                     }
                 });
         }
-    })
+    });
 
 })
 </script>
-</scrip>
-<?php include('./reuse/footer.php'); ?>
+<?php include('../reuse/footer.php'); ?>

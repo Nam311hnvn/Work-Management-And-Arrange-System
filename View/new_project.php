@@ -1,4 +1,7 @@
-<?php include('../reuse/header.php');
+
+<?php session_start(); 
+include('../reuse/header.php');
+
 include('../reuse/config.php')
 ?>
 <div class="content-header">
