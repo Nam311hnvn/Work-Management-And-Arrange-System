@@ -3,7 +3,11 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
+<<<<<<< HEAD
+-- Generation Time: Nov 01, 2021 at 11:46 AM
+=======
 -- Generation Time: Nov 01, 2021 at 06:17 PM
+>>>>>>> ba3a661985a1ca68f8555219b9883f81b9b4cd09
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.10
 
@@ -150,7 +154,11 @@ ALTER TABLE `tb_task`
 -- AUTO_INCREMENT for table `tb_user`
 --
 ALTER TABLE `tb_user`
+<<<<<<< HEAD
+  MODIFY `user_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+=======
   MODIFY `user_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+>>>>>>> ba3a661985a1ca68f8555219b9883f81b9b4cd09
 
 --
 -- Constraints for dumped tables
