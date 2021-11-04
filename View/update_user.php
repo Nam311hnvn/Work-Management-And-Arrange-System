@@ -1,6 +1,6 @@
 <?php include('../reuse/header.php')?>
 <?php //Check ID
-    include('./reuse/config.php');
+    include('../reuse/config.php');
      if (isset($_GET['id'])) {
          $id = $_GET['id'];
          $sql = "SELECT * FROM `tb_user` t, user_info f WHERE t.user_id = '$id' AND f.user_id = '$id';";
@@ -124,14 +124,14 @@
                     },
                     success: function(response) {
                         if (response) {
-                            alert(response);
+                            alert(response == 'success');
+                            alert("Sửa thành công");
+                            window.location.href = "./user_list.php";
+                            
                         } else if(response == 'error') {
                             alert("Sửa thất bại");
-                        }
-                        else if() {
-                            alert("Sửa thành công");
-                        }
-                    
+                            window.location.href = "./user_list.php";
+                        }     
                     }
                 });
         }
