@@ -16,7 +16,7 @@
             <div class="row justify-content-center w-auto h-auto">
 
 
-                <form class="d-flex w-75 h-75" action="" method="">
+                <div class="d-flex w-75 h-75" action="" method="">
 
                     <div class="col-md-3 pe-2">
                         <div class="form-group">
@@ -28,7 +28,7 @@
                                     $result = mysqli_query($conn, $sql);
                                             if (mysqli_num_rows($result) > 0) {
                                             while ($row = mysqli_fetch_assoc($result)) {
-                                                echo '<option value="' . $row['user_id'] . '">' . $row['user_name'] . '</option>';
+                                                echo '<option value="' . $row['pj_id'] . '">' . $row['pj_name'] . '</option>';
                                             }
                                         }
 
@@ -41,7 +41,7 @@
                     <input class="form-control me-2 px-0" type="search" placeholder="Type here ...." aria-label="Search"
                         id="Noti" name="Noti">
                     <button class="btn btn-primary" type="submit" name='btnsend' id="Send">Send</button>
-                </form>
+                </div>
 
 
             </div>

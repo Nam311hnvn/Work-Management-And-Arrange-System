@@ -103,6 +103,7 @@
                     },
                     success: function(response) {
                         if (response == 'success') {
+                            
                             alert("Xoá thành công!");
                             window.location.href = "./user_list.php";
                         } else if (response == 'error'){

@@ -47,7 +47,7 @@
                                 if ($_SESSION['CurrentLevel']==1) {
                             
                             ?> <li class="nav-item">
-                                <a class="nav-link text-white" href="./user_list.php"><i
+                                <a class="nav-link text-white" href="../View/user_list.php"><i
                                         class="fas fa-tasks me-1"></i> User Manage</a>
                             </li> <?php
                             }
