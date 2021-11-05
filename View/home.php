@@ -13,9 +13,13 @@ if($_SESSION['CurrentLevel'] ==0){
         <div class="card ">
             <div class="card-body ">
 <<<<<<< HEAD
+<<<<<<< HEAD
                 Welcome 
                 <?php echo $_SESSION['CurrentUser']?>!
 =======
+=======
+
+>>>>>>> 61f45eb42160b8d6307a9968da4a812ad146803c
                 <nav class="navbar navbar-expand-lg navbar-light bg-light">
                     <div class="container">
                         <h4 class="navbar-brand" href="#" disabled>Welcome <?php echo $_SESSION['CurrentUser']?>!!</h4>
@@ -36,8 +40,13 @@ if($_SESSION['CurrentLevel'] ==0){
 
                     </div>
                 </nav>
+<<<<<<< HEAD
 >>>>>>> abb7c17451b247ce2f79d3c9cb0cf75494851f08
             </div>
+=======
+         
+      </div>
+>>>>>>> 61f45eb42160b8d6307a9968da4a812ad146803c
         </div>
     </div>
     
@@ -105,6 +114,7 @@ if($_SESSION['CurrentLevel'] ==0){
 include('../reuse/footer.php');
 }else header("Location: ../index.php");
 <<<<<<< HEAD
+<<<<<<< HEAD
 }
 ?>
 
@@ -112,3 +122,8 @@ include('../reuse/footer.php');
 
 ?>
 >>>>>>> abb7c17451b247ce2f79d3c9cb0cf75494851f08
+=======
+
+?>
+
+>>>>>>> 61f45eb42160b8d6307a9968da4a812ad146803c

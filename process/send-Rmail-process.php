@@ -28,10 +28,10 @@
             $mail->CharSet = 'UTF-8';
 
             // Cấu hình thuộc tính hiển thị của người gửi - người nhận
-            $mail->setFrom('zenkai311@gmail.com', 'Xác nhận đăng kí tài khoản');
+            $mail->setFrom('zenkai311@gmail.com', 'Email nhắc nhở');
             // Tên hiển thị: TÊN CÁC BẠN, ví dụ: Nguyễn Sơn Lâm
 
-            $mail->addReplyTo('zenkai311@gmail.com', 'Xác nhận đăng kí tài khoản');
+            $mail->addReplyTo('zenkai311@gmail.com', 'Email nhắc nhở');
 
             $mail->addAddress($recipient); // Đây là địa chỉ Email người nhận > sau này sẽ là BIẾN
             // Gửi tới: kitudu99@gmail.com
