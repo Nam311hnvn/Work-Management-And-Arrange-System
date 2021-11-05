@@ -1,4 +1,10 @@
-<?php include('../reuse/header.php')?>
+<?php
+    //Dịch vụ bảo vệ
+    session_start();
+    if(isset($_SESSION['CurrentUser'])){
+        include('../reuse/header.php');
+        include('../reuse/config.php');
+?>
 <div class="container-header">
     <div class="content-header">
         <div class="container-fluid">
@@ -21,7 +27,7 @@
                     <div class="col-md-3 pe-2">
                         <div class="form-group">
                             <select name="ProjectID" id="ProjectID" class="form-control form-select rounded">
-                                <option value="">Select User</option>
+                                <option value="">Select Group User</option>
                                 <?php
                                     include('../reuse/config.php');
                                     $sql ="SELECT `pj_id`, `pj_name` FROM `tb_project` ";
@@ -36,8 +42,6 @@
                             </select>
                         </div>
                     </div>
-
-
                     <input class="form-control me-2 px-0" type="search" placeholder="Type here ...." aria-label="Search"
                         id="Noti" name="Noti">
                     <button class="btn btn-primary" type="submit" name='btnsend' id="Send">Send</button>
@@ -52,7 +56,7 @@
 <script>
 $(document).ready(function() {
     $("#Send").click(function() {
-        $userid = $('#Userid').val();
+        $pjid = $('#ProjectID').val();
         $Noti = $('#Noti').val();
         if ($("#Noti").val() =="") 
         {
@@ -60,10 +64,10 @@ $(document).ready(function() {
         }else {
             $.ajax({
                     type: "post",
-                    url: "../process/process_send_noti.php",
+                    url: "../process/process_send_notigr.php",
                     data: {
                         send : "send",
-                        userid: $userid,
+                        pjid: $pjid,
                         noti: $Noti,
                     },
                     success: function(response) {
@@ -80,6 +84,7 @@ $(document).ready(function() {
 })
 
 </script>
-
-
-<?php include('../reuse/footer.php'); ?>
+<?php
+include('../reuse/footer.php');
+}else header("Location: ../index.php");
+?>
