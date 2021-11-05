@@ -14,7 +14,10 @@
              $job =  $row['user_job'];
              $dob =  $row['user_dob'];
              $phone =  $row['user_phone'];
-         }
+         }else{
+         echo 'alert("bạn chưa có thông tin vui lòng Hỏi admin")'; // NGhi vấn lỗi 
+         header("Location: ../View/home.php");
+        }
 ?>
 
 <div class="container-fluid">

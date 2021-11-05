@@ -9,13 +9,15 @@
 <?php
 
 $id = $_GET['id'];
-$sql = "SELECT * FROM tb_task WHERE task_id = '$id'";
-$result = mysqli_query($conn, $sql);
-$row = mysqli_fetch_assoc($result);
-$task_name = $row['task_name'];
-$task_start = $row['task_start'];
-$task_end = $row['task_end'];
-$task_note = $row['task_note'];
+$sql_cr = "SELECT * FROM tb_task WHERE task_id = '$id'";
+$result_cr = mysqli_query($conn, $sql_cr);
+$row_cr = mysqli_fetch_assoc($result_cr);
+$task_name = $row_cr['task_name'];
+$task_start = $row_cr['task_start'];
+$task_end = $row_cr['task_end'];
+$task_note = $row_cr['task_note'];
+$task_id =  $row_cr['task_id'];
+$id_pj = $row_cr['pj_id'];
 
 ?>
 
@@ -38,18 +40,16 @@ $task_note = $row['task_note'];
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="pjName" class="control-label">Name Project</label>
-                            <select class="form-select" aria-label="Default select example" name="pjName" id="pjName" value="<?php echo $pj_name ?>">
-                                <?php
-                                $sql = "SELECT * FROM tb_project";
+                            <?php
+                                $sql = "SELECT * FROM tb_project WHERE pj_id= '$id_pj '";
                                 $result = mysqli_query($conn, $sql);
-
-                                if (mysqli_num_rows($result) > 0) {
                                     while ($row = mysqli_fetch_assoc($result)) {
-                                        echo '<option value="' . $row['pj_id'] . '">' . $row['pj_name'] . '</option>';
+                                        ?>
+                                            <input type="text" value = "<?php echo $row['pj_name']?>"class="form-control form-control-sm border border-dark border-1 rounded>">
+                                        <?php 
                                     }
-                                }
                                 ?>
-                            </select>
+                                
                         </div>
                     </div>
 

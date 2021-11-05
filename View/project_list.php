@@ -77,13 +77,13 @@
 <script>
     $(document).ready(function() {
     $('.deleteProject').click(function() {
-            $id = $(this).attr('name'); //? bắt giá trị id của hàng cần xóa
+            var id = $(this).attr('name'); //? bắt giá trị id của hàng cần xóa
             if (confirm("Bạn có muốn xoá Project này không?")) {
                 $.ajax({
                     type: "post",
                     url: "../process/process_delete_project.php",
                     data: {
-                        pjid: $id,
+                        pjid: id,
                     },
                     success: function(response) {
                         if (response == 'success') {

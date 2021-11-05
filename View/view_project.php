@@ -69,8 +69,7 @@ $user_ids = [1, 2, 3, 4];
                                         echo '<td><span class="badge bg-success">Done</span></td>';
                                     }
                                     echo '<td>';
-                                
-
+                            
                                 ?>
                             </dd>
                         </dl>
@@ -85,19 +84,16 @@ $user_ids = [1, 2, 3, 4];
             <div class="card card-outline ">
                 <div class="card-header">
                     <span><b>Team Member/s:</b></span>
-
                 </div>
                 <div class="card-body">
-                    <ul class="users-list">
+                    <ul class="users-list-name">
                         <?php
                         $sql = "SELECT * FROM tb_user";
                         $result = mysqli_query($conn, $sql);
                         while ($row = mysqli_fetch_assoc($result)) {
                         ?>
                             <li>
-
-                                <a class="" href="javascript:void(0)"><?php echo ucwords($row['user_name']) ?></a>
-                                
+                                <a class="text-decoration-none" href="javascript:void(0)"><?php echo ucwords($row['user_name']) ?></a>                               
                             </li>
                         <?php
                         }
