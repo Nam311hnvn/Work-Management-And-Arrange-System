@@ -40,13 +40,14 @@
             $mail->Subject = '[localhost] Kích hoạt tài khoản';
             // Nội dung Email
            
-            $mail->Body = 'Nhấp vào đây để kích hoạt: <a href="http://localhost/BTL/src/activation.php?email='.$recipient.'&code='.$code.'">Nhấp vào đây</a>';
+            $mail->Body = 'Nhấp vào đây để kích hoạt: <a href="http://localhost/BTL/process/activation.php?email='.$recipient.'&code='.$code.'">Nhấp vào đây</a>';
             // Tệp tên đính kèm Email gửi đi
             // $mail->addAttachment('pdf/Giay_bao_mat_sau.pdf'); // Nếu bạn muốn đính kèm tệp tin gửi đi
 
             // Gửi thư
             if($mail->send()){
-                echo 'Thư đã gửi đi thành công!';
+                echo 'Thư đã gửi đi thành công!';    
+                include('../View/login.php');            
             }
 
         }catch(Exception $e){

@@ -100,9 +100,9 @@
             },
             success: function(response) {
             if (response == "admin") {
-                window.location.href = "./home.php";
+                window.location.href = "../View/home.php";
             } else if (response == "user") {
-                window.location.href = "./home.php";
+                window.location.href = "../View/home.php";
             }else if (response == "wrong") {
                 alert("Mật khẩu không chính xác !");
             } else if(response == "cxt"){
