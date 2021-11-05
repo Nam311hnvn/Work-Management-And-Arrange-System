@@ -58,9 +58,9 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="" class="control-label">Project Team Members</label>
-                                <select name="userIds[]" class="form-control multiple-select form-control-ms  border rounded" style="display: flex;" multiple>
+                                <select name="userIds" class="form-control multiple-select form-control-ms  border rounded" style="display: flex;" multiple>
                                     <?php
-                                    $sql = 'SELECT * FROM tb_user';
+                                    $sql = 'SELECT * FROM user_info';
                                     $query = mysqli_query($conn, $sql);
                                     if (mysqli_num_rows($query) > 0) {
                                         foreach ($query as $rowhob) {
@@ -73,6 +73,7 @@
                                         echo "Lỗi!";
                                     }
                                     ?>
+                                    <option value=""></option>
                                 </select>
                             </div>
                         </div>

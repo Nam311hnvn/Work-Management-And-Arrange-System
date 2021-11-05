@@ -78,13 +78,13 @@
 <script>
     $(document).ready(function() {
     $('.deleteTask').click(function() {
-            $id = $(this).attr('name'); //? bắt giá trị id của hàng cần xóa
+            var id = $(this).attr('name'); //? bắt giá trị id của hàng cần xóa
             if (confirm("Bạn có muốn xoá Task này không?")) {
                 $.ajax({
                     type: "post",
                     url: "../process/process_delete_task.php",
                     data: {
-                        tkid: $id,
+                        taskid: id,
                     },
                     success: function(response) {
                         if (response == 'success') {

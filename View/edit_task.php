@@ -9,13 +9,14 @@
 <?php
 
 $id = $_GET['id'];
-$sql = "SELECT * FROM tb_task WHERE task_id = '$id'";
-$result = mysqli_query($conn, $sql);
-$row = mysqli_fetch_assoc($result);
-$task_name = $row['task_name'];
-$task_start = $row['task_start'];
-$task_end = $row['task_end'];
-$task_note = $row['task_note'];
+$sql_cr = "SELECT * FROM tb_task WHERE task_id = '$id'";
+$result_cr = mysqli_query($conn, $sql_cr);
+$row_cr = mysqli_fetch_assoc($result_cr);
+$task_name = $row_cr['task_name'];
+$task_start = $row_cr['task_start'];
+$task_end = $row_cr['task_end'];
+$task_note = $row_cr['task_note'];
+$task_id =  $row_cr['task_id'];
 
 ?>
 
@@ -41,13 +42,16 @@ $task_note = $row['task_note'];
                             <select class="form-select" aria-label="Default select example" name="pjName" id="pjName" value="<?php echo $pj_name ?>">
                                 <?php
                                 $sql = "SELECT * FROM tb_project";
+                                $sql1 = "SELECT p.*, t.* FROM tb_project as p, tb_task as t
+                                WHERE t.pj_id = p.pj_id AND t.task_id = '.$id.'"; // select ra thông tin 2 bảng khi có task_id bằng task_id
                                 $result = mysqli_query($conn, $sql);
-
-                                if (mysqli_num_rows($result) > 0) {
-                                    while ($row = mysqli_fetch_assoc($result)) {
-                                        echo '<option value="' . $row['pj_id'] . '">' . $row['pj_name'] . '</option>';
-                                    }
+                                $result1 = mysqli_query($conn, $sql1);
+                                $row1 = mysqli_fetch_assoc($result1);
+                                if (mysqli_num_rows($result) > 0) {   
+                                    echo '<option value="' . $row1['pj_id'] . '">' . $row1['pj_name'] . '</option>';
+                                    //while($row = mysqli_fetch_assoc($result)){                                
                                 }
+                                
                                 ?>
                             </select>
                         </div>
