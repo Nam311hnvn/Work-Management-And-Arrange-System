@@ -37,10 +37,10 @@
             // Gửi tới: kitudu99@gmail.com
             // Tiêu đề Email là gì?
             $mail->isHTML(true);   // Set email format to HTML
-            $mail->Subject = '[localhost] Kích hoạt tài khoản';
+            $mail->Subject = 'Thư thông báo';
             // Nội dung Email
            
-            $mail->Body = 'Nhấp vào đây để kích hoạt: <a href="http://localhost/BTL/process/activation.php?email='.$recipient.'&code='.$code.'">Nhấp vào đây</a>';
+            $mail->Body = '';
             // Tệp tên đính kèm Email gửi đi
             // $mail->addAttachment('pdf/Giay_bao_mat_sau.pdf'); // Nếu bạn muốn đính kèm tệp tin gửi đi
 
