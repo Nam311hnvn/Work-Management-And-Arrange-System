@@ -17,6 +17,7 @@ $task_start = $row_cr['task_start'];
 $task_end = $row_cr['task_end'];
 $task_note = $row_cr['task_note'];
 $task_id =  $row_cr['task_id'];
+$id_pj = $row_cr['pj_id'];
 
 ?>
 
@@ -39,21 +40,16 @@ $task_id =  $row_cr['task_id'];
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="pjName" class="control-label">Name Project</label>
-                            <select class="form-select" aria-label="Default select example" name="pjName" id="pjName" value="<?php echo $pj_name ?>">
-                                <?php
-                                $sql = "SELECT * FROM tb_project";
-                                $sql1 = "SELECT p.*, t.* FROM tb_project as p, tb_task as t
-                                WHERE t.pj_id = p.pj_id AND t.task_id = '.$id.'"; // select ra thông tin 2 bảng khi có task_id bằng task_id
+                            <?php
+                                $sql = "SELECT * FROM tb_project WHERE pj_id= '$id_pj '";
                                 $result = mysqli_query($conn, $sql);
-                                $result1 = mysqli_query($conn, $sql1);
-                                $row1 = mysqli_fetch_assoc($result1);
-                                if (mysqli_num_rows($result) > 0) {   
-                                    echo '<option value="' . $row1['pj_id'] . '">' . $row1['pj_name'] . '</option>';
-                                    //while($row = mysqli_fetch_assoc($result)){                                
-                                }
-                                
+                                    while ($row = mysqli_fetch_assoc($result)) {
+                                        ?>
+                                            <input type="text" value = "<?php echo $row['pj_name']?>"class="form-control form-control-sm border border-dark border-1 rounded>">
+                                        <?php 
+                                    }
                                 ?>
-                            </select>
+                                
                         </div>
                     </div>
 

@@ -21,9 +21,7 @@ if (isset($_SESSION['CurrentUser'])) {
         <div class="card card-outline card-primary">
             <div class="card-body bg-light">
                 <form action="../process/process_new_project.php" method="POST">
-                    <input type="hidden" id="userid" class="form-control form-control-sm" value="<?php if (isset($_GET["id"])) {
-                                                                                                        echo $id;
-                                                                                                    } ?>">
+                    <input type="hidden" id="userid" class="form-control form-control-sm" value="<?php if (isset($_GET["id"])) {echo $id;} ?>">
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
@@ -60,9 +58,9 @@ if (isset($_SESSION['CurrentUser'])) {
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="" class="control-label">Project Team Members</label>
-                                <select name="userIds" class="form-control multiple-select form-control-ms  border rounded" style="display: flex;" multiple>
+                                <select name="userIds[]" class="form-control multiple-select form-control-ms border rounded" style="display: flex;" multiple>
                                     <?php
-                                    $sql = 'SELECT * FROM user_info';
+                                    $sql = 'SELECT * FROM tb_user';
                                     $query = mysqli_query($conn, $sql);
                                     if (mysqli_num_rows($query) > 0) {
                                         foreach ($query as $rowhob) {
@@ -74,48 +72,44 @@ if (isset($_SESSION['CurrentUser'])) {
                                     } else {
                                         echo "Lỗi!";
                                     }
-                                    ?>
-                                    <option value=""></option>
+                                    ?>                                 
                                 </select>
                             </div>
                         </div>
 
+                            <?php if ($_SESSION['CurrentLevel'] == 1) { ?>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="" class="control-label">Project Manager</label>
+                                        <select name="pjManager" id="pjManager" class="form-control form-control-sm border border-dark rounded">
+                                            <?php
+                                            $sql = "SELECT user_name FROM tb_user ";
+                                            $result = mysqli_query($conn, $sql);
+                                            while ($row = mysqli_fetch_assoc($result)) {
+                                                echo '<option value="' . $row['user_id'] . '">' . $row['user_name'] . '</option>';
+                                            }
+                                            ?>
+                                        </select>
+                                    </div>
+                                </div>
 
-                        <?php if ($_SESSION['CurrentLevel'] == 1) { ?>
-                            <div class="col-md-6">
+                            <?php } else { ?>
+                                <input type="hidden" name="pjManager" value="<?php echo $_SESSION['CurrentId'] ?>">
+                            <?php } ?>
+
+                            <div class="col-md-12">
                                 <div class="form-group">
-                                    <label for="" class="control-label">Project Manager</label>
-                                    <select name="pjManager" id="pjManager" class="form-control form-control-sm border border-dark rounded">
-                                        <option value=></option>
-                                        <?php
-                                        $sql = "SELECT user_name FROM tb_user ";
-                                        $result = mysqli_query($conn, $sql);
-                                        while ($row = mysqli_fetch_assoc($result)) {
-                                            echo '<option value="' . $row['user_id'] . '">' . $row['user_name'] . '</option>';
-                                        }
-                                        ?>
-                                    </select>
+                                    <label for="" class="control-label">Note</label>
+                                    <input type="text" name="pjNote" id="pjNote" class="form-control form-control-sm border border-dark border-1 rounded">
                                 </div>
                             </div>
 
-                        <?php } else { ?>
-                            <input type="hidden" name="pjManager" value="<?php echo $_SESSION['CurrentId'] ?>">
-                        <?php } ?>
-
-
-                        <div class="col-md-12">
-                            <div class="form-group">
-                                <label for="" class="control-label">Note</label>
-                                <input type="text" name="pjNote" id="pjNote" class="form-control form-control-sm border border-dark border-1 rounded">
+                            <div class="border-3 border-top mt-3 px-0 ">
+                                <div class="d-flex w-100 justify-content-center align-items-center">
+                                    <button type="submit" name="save-multiple" class="btn btn-primary mt-2">Save</button>
+                                </div>
                             </div>
                         </div>
-
-                        <div class="border-3 border-top mt-3 px-0 ">
-                            <div class="d-flex w-100 justify-content-center align-items-center">
-                                <button type="submit" name="save-multiple" class="btn btn-primary mt-2">Save</button>
-                            </div>
-                        </div>
-                    </div>
                 </form>
             </div>
         </div>
