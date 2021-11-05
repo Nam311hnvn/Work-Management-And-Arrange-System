@@ -58,11 +58,6 @@
                                         <a class="dropdown-item" href="../View/Send_noti_gruser.php">Send to Group User</a></li>
                                     </ul>
                                 </li>
-                            
-                            
-                            
-                            
-                            
                             <?php
                             }
                             }
