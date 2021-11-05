@@ -17,7 +17,7 @@
 
         if($result_2 > 0){
             echo 'Tài khoản đã được kích hoạt';
-            include('./login.php');
+            include('./View/login.php');
         }
     }else{
        echo 'Không thể kích hoạt.';
