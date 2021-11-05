@@ -9,7 +9,9 @@ $pass = $_POST["password"];
 $level = $_POST["level"];
 $phone =$_POST["phone"];
 
-    $sql = "INSERT INTO `tb_user`(`user_id`, `user_nick`, `user_pass`, `user_email`, `user_code`, `user_level`, `user_regisdate`, `user_status`) VALUES ('NULL','$usernick','$pass','$email','NULL','$level',current_timestamp(),'1')";
+$pass_hash = password_hash($pass, PASSWORD_DEFAULT);
+
+    $sql = "INSERT INTO `tb_user`(`user_id`, `user_nick`,`user_name`, `user_pass`, `user_email`, `user_code`, `user_level`, `user_regisdate`, `user_status`) VALUES ('NULL','$usernick' ,'$name','$pass_hash','$email','NULL','$level',current_timestamp(),'1')";
     $result = mysqli_query($conn,$sql);
     if($result > 0){
     $sql1 = "SELECT * FROM tb_user WHERE user_email LIKE '$email'";

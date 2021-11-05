@@ -32,7 +32,7 @@ include('../reuse/header.php')?>
         </div>
     </div>
     <div class="container border border-primary border-2 rounded-2">
-        <div action="" id="update_user">
+        <div id="update_user">
             <div class="row">
                 <div class="col-md-6 pt-2">
                     <div class="form-group">
