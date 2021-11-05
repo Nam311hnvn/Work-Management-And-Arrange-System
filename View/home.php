@@ -6,13 +6,12 @@
         
 ?>
 <?php
-if($_SESSION['CurrentLevel'] ==0){
+if($_SESSION['CurrentLevel'] ==0){}
 ?>
 <div class="container-fluid">
     <div class="col-12 py-2">
         <div class="card ">
             <div class="card-body ">
-
                 <nav class="navbar navbar-expand-lg navbar-light bg-light">
                     <div class="container">
                         <h4 class="navbar-brand" href="#" disabled>Welcome <?php echo $_SESSION['CurrentUser']?>!!</h4>

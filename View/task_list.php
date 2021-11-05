@@ -61,8 +61,8 @@
                                 echo '<td>' . $row['created_on'] . '</td>';
                                 echo '<td>' . $row['task_note'] . '</td>';
                                 echo '<td>';
-                                echo '<a class = "btn btn-primary me-2" href = "edit_task.php?id=' . $row['task_id'] . '">Sửa</a>';
-                                echo '<a class = "btn btn-danger deleteTask" name = "' . $row['task_id'] . '">Xóa</a>';
+                                echo '<a class = "btn btn-primary me-2" href = "edit_task.php?id='.$row['task_id'].'">Sửa</a>';
+                                echo '<a class = "btn btn-danger deleteTask" name ="'.$row['task_id'].'" id="delete">Xóa</a>';
                                 echo '<td>';
                                 echo '</tr>';
                             }
@@ -78,18 +78,19 @@
 <script>
     $(document).ready(function() {
     $('.deleteTask').click(function() {
-            var id = $(this).attr('name'); //? bắt giá trị id của hàng cần xóa
+            $tkid = $(this).attr('name'); //? bắt giá trị id của hàng cần xóa
             if (confirm("Bạn có muốn xoá Task này không?")) {
                 $.ajax({
-                    type: "post",
+                    type: "POST",
                     url: "../process/process_delete_task.php",
                     data: {
-                        taskid: id,
+                        tkid: $tkid,
                     },
                     success: function(response) {
-                        if (response == 'success') {
+                        alert(response);
+                        if (response =='success') {
                             alert("Xoá thành công!");
-                            window.location.href = "./task_list.php";
+                            location.reload();
                         } else if (response == 'error'){
                             alert("Xoá thất bại");
                         }
