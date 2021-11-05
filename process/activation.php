@@ -4,7 +4,7 @@
     $code  = $_GET['code'];
 
     // 1. Kết nối DB Server
-    include('./reuse/config.php');
+    include('../reuse/config.php');
 
     // 2. Truy vấn dữ liệu
     $sql = "SELECT * FROM tb_user WHERE user_email='$email' OR user_code='$code'";
@@ -17,7 +17,7 @@
 
         if($result_2 > 0){
             echo 'Tài khoản đã được kích hoạt';
-            include('./View/login.php');
+            include('../View/login.php');
         }
     }else{
        echo 'Không thể kích hoạt.';
