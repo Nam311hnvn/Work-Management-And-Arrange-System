@@ -23,7 +23,7 @@
         <div class="container">
             <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
                 <div class="container-fluid">
-                    <a class="navbar-brand fs-5 ps-3" href=""><i class="fas fa-home me-3"></i> Task Management
+                    <a class="navbar-brand fs-5 ps-3" href="../View/home.php"><i class="fas fa-home me-3"></i> Task Management
                         System</a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                         data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
