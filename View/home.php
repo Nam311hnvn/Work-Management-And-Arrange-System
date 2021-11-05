@@ -24,7 +24,7 @@ if($_SESSION['CurrentLevel'] ==0){
                                             class="fas fa-bell"></i>Notification
                                     </a>
                                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                        <!-- Làm SQL -->
+                                        <!-- Làm -->
                                         <li><a class="dropdown-item" href="#">Thông tin</a></li>
                                     </ul>
                                 </li>

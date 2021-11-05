@@ -3,9 +3,9 @@
     use PHPMailer\PHPMailer\SMTP;   
     use PHPMailer\PHPMailer\Exception;
     // Chỉnh đường dẫn phù hợp với phần Tổ chức thư mục của BẠN
-    require './phpmailer/Exception.php';
-    require './phpmailer/PHPMailer.php';
-    require './phpmailer/SMTP.php';
+    require '../phpmailer/Exception.php';
+    require '../phpmailer/PHPMailer.php';
+    require '../phpmailer/SMTP.php';
     // Đóng gói đoạn xử lý gửi Email vào Function
     function sendEmail($recipient,$code){
         // 1. Cài đặt môi trường sử dụng phpmailer
@@ -40,7 +40,7 @@
             $mail->Subject = '[localhost] Kích hoạt tài khoản';
             // Nội dung Email
            
-            $mail->Body = 'Nhấp vào đây để kích hoạt: <a href="http://localhost/BTL/process/activation.php?email='.$recipient.'&code='.$code.'">Nhấp vào đây</a>';
+            $mail->Body = 'Nhấp vào đây để kích hoạt: <a href="http://localhost/BTL/src/activation.php?email='.$recipient.'&code='.$code.'">Nhấp vào đây</a>';
             // Tệp tên đính kèm Email gửi đi
             // $mail->addAttachment('pdf/Giay_bao_mat_sau.pdf'); // Nếu bạn muốn đính kèm tệp tin gửi đi
 

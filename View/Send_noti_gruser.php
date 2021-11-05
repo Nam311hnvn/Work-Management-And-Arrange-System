@@ -78,8 +78,5 @@ $(document).ready(function() {
     });
 
 })
-
 </script>
-
-
 <?php include('../reuse/footer.php'); ?>
