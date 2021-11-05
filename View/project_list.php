@@ -60,9 +60,9 @@
 								echo '<td><span class="badge bg-success">Done</span></td>';
 							}
 							echo '<td>';
-							echo '<a class = "btn btn-success me-2" href = "view_project.php?id=' . $row['pj_id'] . '">Xem</a>';
+							echo '<a class = "btn btn-secondary me-2" href = "view_project.php?id=' . $row['pj_id'] . '">Xem</a>';
 							echo '<a class = "btn btn-primary me-2" href = "edit_project.php?id=' . $row['pj_id'] . '">Sửa</a>';
-							echo '<a class = "btn btn-danger" href = "../process/process_delete_project.php?id=' . $row['pj_id'] . '">Xóa</a>';
+							echo '<a class = "btn btn-danger deleteProject" name = "' . $row['pj_id'] . '">Xóa</a>';
 							echo '<td>';
 							echo '</tr>';
 						}
@@ -73,6 +73,34 @@
 		</div>
 	</div>
 </div>
+
+<script>
+    $(document).ready(function() {
+    $('.deleteProject').click(function() {
+            $id = $(this).attr('name'); //? bắt giá trị id của hàng cần xóa
+            if (confirm("Bạn có muốn xoá Project này không?")) {
+                $.ajax({
+                    type: "post",
+                    url: "../process/process_delete_project.php",
+                    data: {
+                        pjid: $id,
+                    },
+                    success: function(response) {
+                        if (response == 'success') {
+                            alert("Xoá thành công!");
+                            window.location.href = "./project_list.php";
+                        } else if (response == 'error'){
+                            alert("Xoá thất bại");
+                        }
+                    }
+                });
+            } else{
+                return false;
+            }
+        });
+            
+})
+</script>
 
 <?php
 include('../reuse/footer.php');
