@@ -1,5 +1,4 @@
 <?php
-
 //Dịch vụ bảo vệ
 session_start();
 if (isset($_SESSION['CurrentUser'])) {
@@ -25,6 +24,7 @@ if (isset($_SESSION['CurrentUser'])) {
                                     </li>
                                 </ul>
                             </div>
+
 
                         </div>
                     </nav>

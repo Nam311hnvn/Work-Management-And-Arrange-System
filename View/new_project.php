@@ -55,7 +55,6 @@
                         </div>
                     </div>
 
-                    <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="" class="control-label">Project Team Members</label>
@@ -77,13 +76,13 @@
                                 </select>
                             </div>
                         </div>
-                    </div>
+                    
                     
                     <?php if ($_SESSION['CurrentLevel'] == 1) { ?>
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="" class="control-label">Project Manager</label>
-                                    <select name="pjManager" id="pjManager" class="form-control form-select rounded">
+                                    <select name="pjManager" id="pjManager" class="form-control form-control-sm border border-dark rounded">
                                         <option value=></option>
                                         <?php
                                             $sql ="SELECT user_name FROM tb_user ";
@@ -98,10 +97,9 @@
 
                             <?php }else { ?>
                             <input type="hidden" name="pjManager" value="<?php echo $_SESSION['CurrentId'] ?>">
-                        <?php } ?>
+                            <?php } ?>
 
-
-					
+                            
                     <div class="col-md-12">
                         <div class="form-group">
                             <label for="" class="control-label">Note</label>

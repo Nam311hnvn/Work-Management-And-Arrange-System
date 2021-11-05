@@ -7,7 +7,7 @@
     require '../phpmailer/PHPMailer.php';
     require '../phpmailer/SMTP.php';
     // Đóng gói đoạn xử lý gửi Email vào Function
-    function sendEmail($recipient,$code){
+    function sendEmail($recipient,$noti){
         // 1. Cài đặt môi trường sử dụng phpmailer
         // 2. Tạo ra đối tượng PHPMailer
         $mail = new PHPMailer(true); //Biến $mail đang là 1 object
@@ -28,25 +28,26 @@
             $mail->CharSet = 'UTF-8';
 
             // Cấu hình thuộc tính hiển thị của người gửi - người nhận
-            $mail->setFrom('zenkai311@gmail.com', 'Email nhắc nhở');
+
+            $mail->setFrom('zenkai311@gmail.com', 'Email Thông báo ');
             // Tên hiển thị: TÊN CÁC BẠN, ví dụ: Nguyễn Sơn Lâm
 
-            $mail->addReplyTo('zenkai311@gmail.com', 'Email nhắc nhở');
+            $mail->addReplyTo('zenkai311@gmail.com', 'Email Thông báo ');
+
 
             $mail->addAddress($recipient); // Đây là địa chỉ Email người nhận > sau này sẽ là BIẾN
             // Gửi tới: kitudu99@gmail.com
             // Tiêu đề Email là gì?
             $mail->isHTML(true);   // Set email format to HTML
-            $mail->Subject = 'Thư thông báo';
+            $mail->Subject = ' Thông báo từ admin:';
             // Nội dung Email
            
-            $mail->Body = '';
+            $mail->Body = '<h4>Thông báo '.$noti.'</h4>';
             // Tệp tên đính kèm Email gửi đi
             // $mail->addAttachment('pdf/Giay_bao_mat_sau.pdf'); // Nếu bạn muốn đính kèm tệp tin gửi đi
 
             // Gửi thư
             if($mail->send()){
-                echo 'Thư đã gửi đi thành công!';
             }
 
         }catch(Exception $e){
