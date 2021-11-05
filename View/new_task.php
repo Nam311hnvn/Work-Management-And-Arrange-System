@@ -65,7 +65,7 @@
 						<input type="hidden" name="userId" value="<?php echo $_SESSION['CurrentId'] ?>">
 
 
-                    <div class="col-md-6">
+                    <div class="col-md-12">
                         <div class="form-group">
                             <label for="" class="control-label">Note</label>
                             <input type="text" name="taskNote" id="taskNote" class="form-control form-control-sm border border-dark border-1 rounded">
