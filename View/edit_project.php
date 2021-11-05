@@ -1,9 +1,12 @@
-<?php include('./reuse/header.php');
-include('./reuse/config.php')
+<?php
+    //Dịch vụ bảo vệ
+    session_start();
+    if(isset($_SESSION['CurrentUser'])){
+        include('../reuse/header.php');
+        include('../reuse/config.php');
 ?>
 
 <?php
-
 $id = $_GET['id'];
 $sql1 = "SELECT * FROM tb_project WHERE pj_id = '$id'";
 $result1 = mysqli_query($conn, $sql1);
@@ -16,24 +19,23 @@ $pj_end = $row1['pj_end'];
 $pj_note = $row1['pj_note'];
 $manager_id = 2;
 $user_ids = [1, 2, 3, 4];
-
 ?>
 
 <div class="content-header">
     <div class="container ">
-        <div class="row mb-2 ">
+        <div class="row mb-2 mt-2 ">
             <div class="col-sm-4">
-                <h4>New Project</h4>
+                <h4>Update Project</h4>
             </div>
             <hr class="border border-bottom-5 border-primary">
-
         </div>
     </div>
 </div>
+
 <div class="col-lg-12 container">
     <div class="card card-outline card-primary">
         <div class="card-body bg-light">
-            <form action="process_edit_project.php" method="POST">
+            <form action="../process/process_edit_project.php" method="POST">
                 <div class="row">
                     <div class="col-md-6">
                         <div class="form-group">
@@ -46,9 +48,10 @@ $user_ids = [1, 2, 3, 4];
                         <div class="form-group">
                             <label for="">Status</label>
                             <select name="pjStatus" id="pjStatus" <?php echo $pj_status ?> class="form-control form-select custom-select-sm border border-dark rounded">
-                                <option value="1">Pending</option>
-                                <option value="2">On-Hold</option>
-                                <option value="3">Done</option>
+                                <option value="1" <?php echo isset($pj_status) && $pj_status == 1 ? 'selected' : '' ?>>Pending</option>
+                                <option value="2" <?php echo isset($pj_status) && $pj_status == 2 ? 'selected' : '' ?>>On-Hold</option>
+                                <option value="3" <?php echo isset($pj_status) && $pj_status == 3 ? 'selected' : '' ?>>Done</option>
+
                             </select>
                         </div>
                     </div>
@@ -99,6 +102,7 @@ $user_ids = [1, 2, 3, 4];
                         </div>
                     </div>
 
+                    <input type="hidden" name="pjManager" value="<?php echo $_SESSION['CurrentId'] ?>">
 
                     <div class="border-3 border-top mt-3 px-0 ">
                         <div class="d-flex w-100 justify-content-center align-items-center">
@@ -118,4 +122,7 @@ $user_ids = [1, 2, 3, 4];
 </script>
 
 
-<?php include('./reuse/footer.php'); ?>
+<?php
+include('../reuse/footer.php');
+}else header("Location: ../index.php");
+?>

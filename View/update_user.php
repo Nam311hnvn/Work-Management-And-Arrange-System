@@ -1,6 +1,6 @@
 <?php include('../reuse/header.php')?>
 <?php //Check ID
-    include('./reuse/config.php');
+    include('../reuse/config.php');
      if (isset($_GET['id'])) {
          $id = $_GET['id'];
          $sql = "SELECT * FROM `tb_user` t, user_info f WHERE t.user_id = '$id' AND f.user_id = '$id';";
@@ -109,33 +109,33 @@
             alert("Mật khẩu không khớp!!");
         }else {
             $.ajax({
-                    type: "post",
-                    url: "process_update_user.php",
-                    data: {
-                        job: $job,
-                        userid: $userid,
-                        usernick: $usernick,
-                        password: $password,
-                        level: $level,
-                        name: $name,
-                        email: $email,
-                        phone: $phone,
-                        dob: $dob,
-                    },
-                    success: function(response) {
-                        if (response) {
-                            alert(response);
-                        } else if(response == 'error') {
-                            alert("Sửa thất bại");
-                        }
-                        else if() {
-                            alert("Sửa thành công");
-                        }
-                    
-                    }
-                });
+                type: "post",
+                url: "process_update_user.php",
+                data: {
+                    job: $job,
+                    userid: $userid,
+                    usernick: $usernick,
+                    password: $password,
+                    level: $level,
+                    name: $name,
+                    email: $email,
+                    phone: $phone,
+                    dob: $dob,
+                },
+                success: function(response) {
+                    if (response) {
+                        alert(response == 'success');
+                        alert("Sửa thành công");
+                        window.location.href = "./user_list.php";
+                        
+                    } else if(response == 'error') {
+                        alert("Sửa thất bại");
+                        window.location.href = "./user_list.php";
+                    }     
+                }
+            });
         }
-    });
+    })
 
 })
 </script>
