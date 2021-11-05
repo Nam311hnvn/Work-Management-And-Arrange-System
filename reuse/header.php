@@ -27,7 +27,7 @@
                         System</a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                         data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation" >
+                        aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -43,13 +43,29 @@
                             </li>
 
                             <?php 
+                                if (isset($_SESSION['CurrentUser'])) {
                                 if ($_SESSION['CurrentLevel']==1) {
                             
                             ?> <li class="nav-item">
                                 <a class="nav-link text-white" href="../View/user_list.php"><i class="fas fa-users"></i> User Manage</a>
-                            </li> <?php
-                            }
+                            </li> 
+                            <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button"
+                                        data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-paper-plane"></i>Send Notification
+                                    </a>
+                                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                        <li><a class="dropdown-item" href="../View/Send_noti_user.php">Send to User</a></li>
+                                        <a class="dropdown-item" href="../View/Send_noti_gruser.php">Send to Group User</a></li>
+                                    </ul>
+                                </li>
                             
+                            
+                            
+                            
+                            
+                            <?php
+                            }
+                            }
                             ?>
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown"
@@ -62,10 +78,10 @@
                                     }
                                     ?>
                                 </a>
-                                <ul class="dropdown-menu bg-primary" aria-labelledby="navbarDropdown">
-                                    <li><a class="dropdown-item text-white" href="../View/manage_account.php"><i class="fas fa-cog"></i>Manage
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <li><a class="dropdown-item " href="#"><i class="fas fa-cog"></i>Manage
                                             Account</a></li>
-                                    <li><a class="dropdown-item text-white" href="../process/logout-process.php"><i
+                                    <li><a class="dropdown-item " href="../process/logout-process.php"><i
                                                 class="fas fa-power-off"></i>Logout</a></li>
                                 </ul>
                             </li>

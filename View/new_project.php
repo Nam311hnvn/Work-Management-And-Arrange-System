@@ -55,12 +55,13 @@ if (isset($_SESSION['CurrentUser'])) {
                             </div>
                         </div>
 
+                   
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="" class="control-label">Project Team Members</label>
                                 <select name="userIds[]" class="form-control multiple-select form-control-ms border rounded" style="display: flex;" multiple>
                                     <?php
-                                    $sql = 'SELECT * FROM a tb_user, b user_info';
+                                    $sql = 'SELECT * FROM tb_user';
                                     $query = mysqli_query($conn, $sql);
                                     if (mysqli_num_rows($query) > 0) {
                                         foreach ($query as $rowhob) {
@@ -69,9 +70,26 @@ if (isset($_SESSION['CurrentUser'])) {
                                             </option>
                                     <?php
                                         }
-                                    } else {
-                                        echo "Lỗi!";
                                     }
+<<<<<<< HEAD
+                                    ?>
+                                    <option value=""></option>
+
+                                </select>
+                            </div>
+                        </div>
+                   
+                    
+                    
+                    <?php if ($_SESSION['CurrentLevel'] == 1) { ?>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="" class="control-label">Project Manager</label>
+                                    <select name="pjManager" id="pjManager" class="form-control form-control-sm border border-dark rounded">
+                                        <option value=></option>
+                                        <?php
+                                            $sql ="SELECT user_name FROM tb_user ";
+=======
                                     ?>                                 
                                 </select>
                             </div>
@@ -84,6 +102,7 @@ if (isset($_SESSION['CurrentUser'])) {
                                         <select name="pjManager" id="pjManager" class="form-control form-control-sm border border-dark rounded">
                                             <?php
                                             $sql = "SELECT user_name FROM tb_user ";
+>>>>>>> e23bc423446c859cc0cb6209b840fdf0ad7f280f
                                             $result = mysqli_query($conn, $sql);
                                             while ($row = mysqli_fetch_assoc($result)) {
                                                 echo '<option value="' . $row['user_id'] . '">' . $row['user_name'] . '</option>';

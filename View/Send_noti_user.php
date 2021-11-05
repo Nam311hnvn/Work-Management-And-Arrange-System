@@ -1,4 +1,10 @@
-<?php include('../reuse/header.php')?>
+<?php
+    //Dịch vụ bảo vệ
+    session_start();
+    if(isset($_SESSION['CurrentUser'])){
+        include('../reuse/header.php');
+        include('../reuse/config.php');
+?>
 <div class="container-header">
     <div class="content-header">
         <div class="container-fluid">
@@ -65,6 +71,7 @@ $(document).ready(function() {
                         noti: $Noti,
                     },
                     success: function(response) {
+                        alert(response);
                         if (response == "success") {
                             alert("Gửi thành công.");
                         } else if(response == 'error') {
@@ -77,4 +84,7 @@ $(document).ready(function() {
 
 })
 </script>
-<?php include('../reuse/footer.php'); ?>
+<?php
+include('../reuse/footer.php');
+}else header("Location: ../index.php");
+?>
