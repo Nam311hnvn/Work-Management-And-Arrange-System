@@ -1,4 +1,8 @@
-<?php include('../reuse/header.php')?>
+<?php 
+    session_start();
+    if(isset($_SESSION['CurrentUser'])){     
+    
+include('../reuse/header.php')?>
 <?php //Check ID
     include('../reuse/config.php');
      if (isset($_GET['id'])) {
@@ -28,32 +32,38 @@
         </div>
     </div>
     <div class="container border border-primary border-2 rounded-2">
-        <form action="" id="manage_user" method="post">
+        <div action="" id="update_user">
             <div class="row">
                 <div class="col-md-6 pt-2">
                     <div class="form-group">
-                        <input type="hidden" id="userid" class="form-control form-control-sm" value="<?php if (isset($_GET["id"])) {echo $id;} ?>">
+                        <input type="hidden" id="userid" class="form-control form-control-sm"
+                            value="<?php if (isset($_GET["id"])) {echo $id;} ?>">
                     </div>
                     <div class="form-group">
                         <label for="" class="control-label">Username</label>
-                        <input type="text" id="usernick" class="form-control form-control-sm"value="<?php if (isset($_GET["id"])) {echo $usernick;}?>" required>
+                        <input type="text" id="usernick" class="form-control form-control-sm"
+                            value="<?php if (isset($_GET["id"])) {echo $usernick;}?>" required>
                     </div>
                     <div class="form-group">
                         <label for="" class="control-label">Name</label>
-                        <input type="text" id="name" class="form-control form-control-sm"value="<?php if (isset($_GET["id"])) {echo $username;}?>" required>
+                        <input type="text" id="name" class="form-control form-control-sm"
+                            value="<?php if (isset($_GET["id"])) {echo $username;}?>" required>
                     </div>
 
                     <div class="form-group">
                         <label for="" class="control-label">Job</label>
-                        <input type="text" id="job" class="form-control form-control-sm"value="<?php if (isset($_GET["id"])) {echo $job;}?>">
+                        <input type="text" id="job" class="form-control form-control-sm"
+                            value="<?php if (isset($_GET["id"])) {echo $job;}?>">
                     </div>
                     <div class="form-group">
                         <label for="" class="control-label">Date of Birth</label>
-                        <input type="date" class="form-control form-control-sm"id="dob" value="<?php if (isset($_GET["id"])) {echo $dob;}?>">
+                        <input type="date" class="form-control form-control-sm" id="dob"
+                            value="<?php if (isset($_GET["id"])) {echo $dob;}?>">
                     </div>
                     <div class="form-group">
                         <label class="control-label">Phonenumber</label>
-                        <input type="text" id="phone" class="form-control form-control-sm"value="<?php if (isset($_GET["id"])) {echo $phone;}?>">
+                        <input type="text" id="phone" class="form-control form-control-sm"
+                            value="<?php if (isset($_GET["id"])) {echo $phone;}?>">
                     </div>
                 </div>
 
@@ -61,12 +71,12 @@
                     <div class="form-group">
                         <label class="control-label">Email</label>
                         <input type="email" class="form-control form-control-sm" id="email" required
-                        value="<?php if (isset($_GET["id"])) {echo $email;}?>">
+                            value="<?php if (isset($_GET["id"])) {echo $email;}?>">
                         <small id="#msg"></small>
                     </div>
                     <div class="form-group">
                         <label class="control-label">Password</label>
-                        <input type="password" class="form-control form-control-sm" id="password" name="password" >
+                        <input type="password" class="form-control form-control-sm" id="password" name="password">
                     </div>
                     <div class="form-group">
                         <label class="label control-label">Confirm Password</label>
@@ -77,40 +87,37 @@
                         <label class="control-label">User Role:</label>
                         <select name="level" id="level" class="form-select form-select-sm">
                             <option value="0" <?php echo isset($level) && $level == 0 ? 'selected' : '' ?>>User</option>
-                            <option value="1" <?php echo isset($level) && $level == 1 ? 'selected' : '' ?>>Admin</option>
+                            <option value="1" <?php echo isset($level) && $level == 1 ? 'selected' : '' ?>>Admin
+                            </option>
                         </select>
                     </div>
-
-
                 </div>
             </div>
             <hr>
             <div class="col-lg-12 text-right justify-content-center d-flex mb-2">
-                <button type="submit" class="btn btn-primary mr-2" id="save" name="save">Save</button>
+                <button class="btn btn-primary mr-2" id="save" name="save">Save</button>
             </div>
-        </form>
+        </div>
     </div>
 </div>
 <script>
-    $(document).ready(function() {
+$(document).ready(function() {
     $("#save").click(function() {
         $userid = $('#userid').val();
         $job = $('#job').val();
         $usernick = $('#usernick').val();
-        arlert($password);
         $password = $('#password').val();
         $level = $('#level').val();
         $name = $('#name').val();
         $email = $('#email').val();
         $dob = $('#dob').val();
         $phone = $('#phone').val();
-        if ($("#password").val() != $("#cpass").val()) 
-        {
+        if ($("#password").val() != $("#cpass").val()) {
             alert("Mật khẩu không khớp!!");
-        }else {
+        } else {
             $.ajax({
                 type: "post",
-                url: "process_update_user.php",
+                url: "../process/process_update_user.php",
                 data: {
                     job: $job,
                     userid: $userid,
@@ -123,15 +130,12 @@
                     dob: $dob,
                 },
                 success: function(response) {
-                    if (response) {
-                        alert(response == 'success');
+                    if (response == 'success') {
                         alert("Sửa thành công");
                         window.location.href = "./user_list.php";
-                        
-                    } else if(response == 'error') {
+                    } else if (response == 'error') {
                         alert("Sửa thất bại");
-                        window.location.href = "./user_list.php";
-                    }     
+                    }
                 }
             });
         }
@@ -139,4 +143,8 @@
 
 })
 </script>
-<?php include('../reuse/footer.php'); ?>
+<?php include('../reuse/footer.php'); 
+}
+else { header("Location: ../index.php");
+  
+} ?>

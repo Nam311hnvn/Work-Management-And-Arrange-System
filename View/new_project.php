@@ -60,7 +60,7 @@
                                 <label for="" class="control-label">Project Team Members</label>
                                 <select name="userIds[]" class="form-control multiple-select form-control-ms  border rounded" style="display: flex;" multiple>
                                     <?php
-                                    $sql = 'SELECT * FROM tb_user';
+                                    $sql = 'SELECT * FROM a tb_user, b user_info';
                                     $query = mysqli_query($conn, $sql);
                                     if (mysqli_num_rows($query) > 0) {
                                         foreach ($query as $rowhob) {

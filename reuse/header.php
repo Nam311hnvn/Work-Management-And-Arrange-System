@@ -23,11 +23,11 @@
         <div class="container">
             <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
                 <div class="container-fluid">
-                    <a class="navbar-brand fs-5 ps-3" href=""><i class="fas fa-home me-3"></i> Task Management
+                    <a class="navbar-brand fs-5 ps-3" href="../View/home.php"><i class="fas fa-home me-3"></i> Task Management
                         System</a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                         data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
+                        aria-expanded="false" aria-label="Toggle navigation" >
                         <span class="navbar-toggler-icon"></span>
                     </button>
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -43,15 +43,13 @@
                             </li>
 
                             <?php 
-                                if (isset($_SESSION['CurrentUser'])) {
                                 if ($_SESSION['CurrentLevel']==1) {
                             
                             ?> <li class="nav-item">
-                                <a class="nav-link text-white" href="../View/user_list.php"><i
-                                        class="fas fa-tasks me-1"></i> User Manage</a>
+                                <a class="nav-link text-white" href="../View/user_list.php"><i class="fas fa-users"></i> User Manage</a>
                             </li> <?php
                             }
-                            }
+                            
                             ?>
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown"
