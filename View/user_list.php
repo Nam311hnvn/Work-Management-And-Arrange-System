@@ -1,4 +1,7 @@
-<?php include('../reuse/header.php')?>
+<?php 
+  session_start();
+  if(isset($_SESSION['CurrentUser'])){  
+    include('../reuse/header.php')?>
 <div class="content-header">
     <div class="container-fluid">
         <div class="row mb-2 ">
@@ -22,17 +25,6 @@
                 </div>
                 <div class="container-fluid ">
                     <div class="row pt-2">
-                        <div class="col">
-                            <div class="mb-2 mb-lg-0 d-flex justify-content-end">
-                                <div class="col-md-2 ">
-                                    <form class="d-flex">
-                                        <input class="form-control me-2" type="search" placeholder="Search"
-                                            aria-label="Search">
-                                        <button class="btn btn-outline-success" type="submit">Search</button>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
                         <div style="width:100% ; overflow:auto ; height:auto">
                             <table class="table">
                                 <thead>
@@ -118,4 +110,8 @@
             
 })
 </script>
-<?php include('../reuse/footer.php'); ?>
+<?php include('../reuse/footer.php'); 
+}
+else { header("Location: ../index.php");
+  
+} ?>

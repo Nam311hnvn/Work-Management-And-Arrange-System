@@ -5,16 +5,13 @@
             <div class="col-sm-4 pt-2">
                 <h4>Add User</h4>
             </div>
-            <hr class="border border-bottom-5 border-primary">
+            <hr class="border border-bottom-5 border-primary">           </hr>
         </div>
     </div>
     <div class="container border border-primary border-2 rounded-2">
-        <form action="" method="post">
+        
             <div class="row">
                 <div class="col-md-6 pt-2">
-                    <div class="form-group">
-                        <input type="hidden" id="userid" class="form-control form-control-sm">
-                    </div>
                     <div class="form-group">
                         <label for="" class="control-label">Username</label>
                         <input type="text" id="usernick" class="form-control form-control-sm" required>
@@ -62,11 +59,11 @@
                     </div>
                 </div>
             </div>
-            <hr>
+ 
             <div class="col-lg-12 text-right justify-content-center d-flex mb-2">
-                <button type="submit" class="btn btn-primary mr-2" id="save" name="save">Save</button>
+                <button class="btn btn-primary mr-2" id="save" name="save">Save</button>
             </div>
-        </form>
+        </div>
     </div>
 </div>
 <script>
@@ -100,6 +97,7 @@ $(document).ready(function() {
                     success: function(response) {
                         if (response == "success") {
                             alert("Thêm thành công.");
+                            window.location.href = "./user_list.php";
                         } else if(response == 'error') {
                             alert("Thêm thất bại.");
                         }else if(response == 'erroremail'){
