@@ -45,7 +45,7 @@ $id_pj = $row_cr['pj_id'];
                                 $result = mysqli_query($conn, $sql);
                                     while ($row = mysqli_fetch_assoc($result)) {
                                         ?>
-                                            <input type="text" value = "<?php echo $row['pj_name']?>"class="form-control form-control-sm border border-dark border-1 rounded>">
+                                            <input type="text" name = "pjName" value = "<?php echo $row['pj_name']?>"class="form-control form-control-sm border border-dark border-1 rounded>" disabled>
                                         <?php 
                                     }
                                 ?>

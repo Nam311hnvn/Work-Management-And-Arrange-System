@@ -13,7 +13,7 @@ $pj_name = $_POST['pjName'];
 //SQL
 $sql = "UPDATE tb_task 
 SET task_name='$task_name', task_note='$task_note',
-user_id='$user_id', task_start='$task_start', task_end='$task_end', pj_id='$pj_name' 
+user_id='$user_id', task_start='$task_start', task_end='$task_end' 
 WHERE task_id = '$id'";
 $result = mysqli_query($conn, $sql);
 echo $sql;

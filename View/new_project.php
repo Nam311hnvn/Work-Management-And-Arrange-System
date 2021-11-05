@@ -71,25 +71,6 @@ if (isset($_SESSION['CurrentUser'])) {
                                     <?php
                                         }
                                     }
-<<<<<<< HEAD
-                                    ?>
-                                    <option value=""></option>
-
-                                </select>
-                            </div>
-                        </div>
-                   
-                    
-                    
-                    <?php if ($_SESSION['CurrentLevel'] == 1) { ?>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label for="" class="control-label">Project Manager</label>
-                                    <select name="pjManager" id="pjManager" class="form-control form-control-sm border border-dark rounded">
-                                        <option value=></option>
-                                        <?php
-                                            $sql ="SELECT user_name FROM tb_user ";
-=======
                                     ?>                                 
                                 </select>
                             </div>
@@ -102,7 +83,6 @@ if (isset($_SESSION['CurrentUser'])) {
                                         <select name="pjManager" id="pjManager" class="form-control form-control-sm border border-dark rounded">
                                             <?php
                                             $sql = "SELECT user_name FROM tb_user ";
->>>>>>> e23bc423446c859cc0cb6209b840fdf0ad7f280f
                                             $result = mysqli_query($conn, $sql);
                                             while ($row = mysqli_fetch_assoc($result)) {
                                                 echo '<option value="' . $row['user_id'] . '">' . $row['user_name'] . '</option>';
