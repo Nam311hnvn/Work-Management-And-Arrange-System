@@ -56,32 +56,30 @@ $task_note = $row['task_note'];
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="" class="control-label">Name Task</label>
-                            <input type="text" name="taskName" id="taskName" value="<?php echo $task_name ?>" class="form-control form-control-sm border border-primary border-1 rounded">
+                            <input type="text" name="taskName" id="taskName" value="<?php echo $task_name ?>" class="form-control form-control-sm border border-dark border-1 rounded">
                         </div>
                     </div>
-
 
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="" class="control-label">Start Date</label>
-                            <input type="date" name="taskStart" id="taskStart" value="<?php echo $task_start ?>" class="form-control form-control-sm border border-primary border-1 rounded">
+                            <input type="date" name="taskStart" id="taskStart" value="<?php echo $task_start ?>" class="form-control form-control-sm border border-dark border-1 rounded">
                         </div>
                     </div>
 
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="" class="control-label">End Date</label>
-                            <input type="date" name="taskEnd" id="taskEnd" value="<?php echo $task_end ?>" class="form-control form-control-sm border border-primary border-1 rounded">
+                            <input type="date" name="taskEnd" id="taskEnd" value="<?php echo $task_end ?>" class="form-control form-control-sm border border-dark border-1 rounded">
                         </div>
                     </div>
 
 						<input type="hidden" name="userId" value="<?php echo $_SESSION['CurrentId'] ?>">
                                
-
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="" class="control-label">Note</label>
-                            <input type="text" name="taskNote" id="taskNote" value="<?php echo $task_note ?>" class="form-control form-control-sm border border-primary border-1 rounded">
+                            <input type="text" name="taskNote" id="taskNote" value="<?php echo $task_note ?>" class="form-control form-control-sm border border-dark border-1 rounded">
                         </div>
                     </div>
 

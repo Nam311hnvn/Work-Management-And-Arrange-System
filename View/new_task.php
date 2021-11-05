@@ -43,7 +43,7 @@
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="" class="control-label">Name Task</label>
-                            <input type="text" name="taskName" id="taskName" class="form-control form-control-sm border border-primary border-1 rounded">
+                            <input type="text" name="taskName" id="taskName" class="form-control form-control-sm border border-dark border-1 rounded">
                         </div>
                     </div>
 
@@ -51,14 +51,14 @@
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="" class="control-label">Start Date</label>
-                            <input type="date" name="taskStart" id="taskStart" class="form-control form-control-sm border border-primary border-1 rounded">
+                            <input type="date" name="taskStart" id="taskStart" class="form-control form-control-sm border border-dark border-1 rounded">
                         </div>
                     </div>
 
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="" class="control-label">End Date</label>
-                            <input type="date" name="taskEnd" id="taskEnd" class="form-control form-control-sm border border-primary border-1 rounded">
+                            <input type="date" name="taskEnd" id="taskEnd" class="form-control form-control-sm border border-dark border-1 rounded">
                         </div>
                     </div>
 
@@ -68,7 +68,7 @@
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="" class="control-label">Note</label>
-                            <input type="text" name="taskNote" id="taskNote" class="form-control form-control-sm border border-primary border-1 rounded">
+                            <input type="text" name="taskNote" id="taskNote" class="form-control form-control-sm border border-dark border-1 rounded">
                         </div>
                     </div>
 
