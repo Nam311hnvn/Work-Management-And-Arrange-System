@@ -10,7 +10,7 @@ $pj_end = $_POST['pjEnd'];
 $user_ids = $_POST['userIds'];
 $pj_note= $_POST['pjNote'];
 $manager_id = $_POST['pjManager'];
-// $user_ids = [1, 2, 3, 4];
+$user_ids = [1, 2, 3, 4];
 
 echo $user_ids;
 //SQL
