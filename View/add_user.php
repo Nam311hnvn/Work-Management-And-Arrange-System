@@ -1,4 +1,10 @@
-<?php include('../reuse/header.php')?>
+<?php
+    //Dịch vụ bảo vệ
+    session_start();
+    if(isset($_SESSION['CurrentUser'])){
+        include('../reuse/header.php');
+        include('../reuse/config.php');
+?>
 <div class="content-header">
     <div class="container-fluid">
         <div class="row mb-2 ">
@@ -110,4 +116,7 @@ $(document).ready(function() {
 
 })
 </script>
-<?php include('../reuse/footer.php'); ?>
+<?php
+include('../reuse/footer.php');
+}else header("Location: ../index.php");
+?>
