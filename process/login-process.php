@@ -7,7 +7,7 @@
             $password = $_POST['txtPass'];
 
             // Bước 01: Kết nối DB Server
-           include('./reuse/config.php');
+           include('../reuse/config.php');
 
             // Bước 02: Truy vấn thông tin
             $sql = "SELECT * FROM tb_user WHERE user_nick= '$usernick' ";
@@ -15,16 +15,16 @@
             if(mysqli_num_rows($result) > 0){
             $row = mysqli_fetch_assoc($result);
             $level = $row['user_level'];
+            $userid = $row['user_id'];
             // B3. Kiểm tra và xử lý kết quả
                 
                 $password_hash = $row['user_pass'];              
                 // Kiểm tra Mật khẩu có khớp không
 
                 if(password_verify($password,$password_hash)){
-                    
-                        
                     if($row['user_status']>0){    
                         $_SESSION['CurrentUser'] = $usernick;
+                        $_SESSION['CurrentId'] = $userid;
                         $_SESSION['CurrentLevel']=$level;                                             
                         if($level == 1){
                             echo "admin";

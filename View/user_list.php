@@ -1,4 +1,4 @@
-<?php include('./reuse/header.php')?>
+<?php include('../reuse/header.php')?>
 <div class="content-header">
     <div class="container-fluid">
         <div class="row mb-2 ">
@@ -50,7 +50,7 @@
                                 <tbody>
                                     <?php
                             //Bước 1:
-                            include './reuse/config.php';
+                            include '../reuse/config.php';
                             //Bước 2:
                             $sql = "SELECT a.user_email,a.user_id,a.user_nick ,b.user_name,b.user_job,b.user_dob,b.user_phone, a.user_level  FROM  tb_user a, user_info b where a.user_id = b.user_id ";
                             
@@ -73,8 +73,8 @@
                                     echo '<td>' . $row['user_phone'] . '</td>';
                                     echo '<td>' . $Level . '</td>';
                                     echo '<td>';
-                                    echo '<a class = "btn btn-primary me-2" href ="update_user.php?id='.$row['user_id'].' ">Sửa</a>';
-                                    echo '<a class = "btn btn-danger" name = "'.$row['user_id'].'" id="delete" >Xóa</a>';
+                                    echo '<a class = "btn btn-primary me-2 " href ="update_user.php?id='.$row['user_id'].' ">Sửa</a>';
+                                    echo '<a class = "btn btn-danger deleteAccount" name = "'.$row['user_id'].'" id="delete" >Xóa</a>';
                                     echo '<td>';
                                     echo '</tr>';
 
@@ -92,18 +92,20 @@
 </div>
 <script>
     $(document).ready(function() {
-    $('#delete').click(function() {
+    $('.deleteAccount').click(function() {
             $id = $(this).attr('name'); //? bắt giá trị id của hàng cần xóa
             if (confirm("Bạn có muốn xoá tài khoản này không?")) {
                 $.ajax({
                     type: "post",
-                    url: "process_delete_user.php",
+                    url: "../process/process_delete_user.php",
                     data: {
                         userid: $id,
                     },
                     success: function(response) {
                         if (response == 'success') {
+                            
                             alert("Xoá thành công!");
+                            window.location.href = "./user_list.php";
                         } else if (response == 'error'){
                             alert("Xoá thất bại");
                         }
@@ -116,4 +118,4 @@
             
 })
 </script>
-<?php include('./reuse/footer.php'); ?>
+<?php include('../reuse/footer.php'); ?>

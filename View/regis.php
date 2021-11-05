@@ -49,7 +49,7 @@
                             <div class="card-body p-m-5 top-50">
                                 <div class="row justify-content-center">
                                     <div class="col-md-12">
-                                        <form class="mx-4" action="regis-process.php" method="post">
+                                        <form class="mx-4" action="../process/regis-process.php" method="post">
                                             <h2 class="fw-bold text-center">Sign Up!</h2>
                                             <div class="input-group flex-nowrap py-3">
                                                 <span class="input-group-text col-2" id="addon-wrapping">Username</span>
@@ -86,4 +86,4 @@
         </section>
     </div>
 </body> 
-    <?php include('./reuse/footer.php'); ?>
+    <?php include('../reuse/footer.php'); ?>

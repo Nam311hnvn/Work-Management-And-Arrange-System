@@ -1,5 +1,5 @@
 <?php 
-include './reuse/config.php';
+include '../reuse/config.php';
 $usernick =$_POST["usernick"];
 $name =$_POST["name"];
 $job =$_POST["job"];
