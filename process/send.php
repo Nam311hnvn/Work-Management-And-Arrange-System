@@ -39,8 +39,8 @@
             $mail->isHTML(true);   // Set email format to HTML
             $mail->Subject = '[localhost] Kích hoạt tài khoản';
             // Nội dung Email
-           
-            $mail->Body = 'Nhấp vào đây để kích hoạt: <a href="http://localhost/BTL/process/activation.php?email='.$recipient.'&code='.$code.'">Nhấp vào đây</a>';
+            //localhost/Task_manage/Work-Management-And-Arrange-System/process/regis-process.php Sửa http tùy theo bài của bạn
+            $mail->Body = 'Nhấp vào đây để kích hoạt: <a href="http://localhost/Task_manage/Work-Management-And-Arrange-System/process/activation.php?email='.$recipient.'&code='.$code.'">Nhấp vào đây</a>';
             // Tệp tên đính kèm Email gửi đi
             // $mail->addAttachment('pdf/Giay_bao_mat_sau.pdf'); // Nếu bạn muốn đính kèm tệp tin gửi đi
 
